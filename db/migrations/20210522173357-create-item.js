@@ -33,6 +33,7 @@ module.exports = {
          },
          category_id: {
             type: Sequelize.UUID,
+            allowNull: false,
             references: {
                model: "categories",
                key: "id",

@@ -12,6 +12,11 @@ module.exports = (sequelize, DataTypes) => {
       static associate(models) {
          // define association here
          Item.belongsTo(models.Category, { foreignKey: "category_id" });
+         Item.hasMany(models.Item_Option, {
+            foreignKey: "item_id",
+            onDelete: "CASCADE",
+            hooks: true,
+         });
       }
    }
    Item.init(
@@ -59,6 +64,29 @@ module.exports = (sequelize, DataTypes) => {
          modelName: "Item",
       }
    );
+
+   Item.afterDestroy((instance, options) => {
+      instance.getItem_Options().then((item_option) => {
+         item_option.forEach((option) => {
+            sequelize.models.Item_Option.destroy({
+               where: {
+                  item_id: option.item_id,
+               },
+               individualHooks: true,
+            });
+         });
+      });
+   });
+
+   Item.afterRestore((instance, options) => {
+      console.log("after Restore");
+      sequelize.models.Item_Option.restore({
+         where: {
+            item_id: instance.id,
+         },
+         individualHooks: true,
+      });
+   });
    Item.beforeCreate((Item) => (Item.id = uuidv4()));
 
    return Item;
