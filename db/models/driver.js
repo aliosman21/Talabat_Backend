@@ -31,6 +31,18 @@ module.exports = (sequelize, DataTypes) => {
                isIn: [["OnCall", "Break", "GoingToOrder", "Delivering", "OffCall"]],
             },
          },
+         last_latitude: {
+            type: DataTypes.DECIMAL(8, 6),
+            validate: {
+               isDecimal: true,
+            },
+         },
+         last_longitude: {
+            type: DataTypes.DECIMAL(9, 6),
+            validate: {
+               isDecimal: true,
+            },
+         },
       },
       {
          sequelize,
