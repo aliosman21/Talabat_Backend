@@ -26,6 +26,7 @@ module.exports = (sequelize, DataTypes) => {
             constraints: true,
             foreignKeyConstraint: true,
          });
+         Order.belongsToMany(models.Item, { through: "Order_Item" });
       }
    }
    Order.init(

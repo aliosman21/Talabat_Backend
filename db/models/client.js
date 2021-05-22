@@ -11,6 +11,18 @@ module.exports = (sequelize, DataTypes) => {
        */
       static associate(models) {
          // define association here
+
+         Client.hasMany(models.Order, {
+            foreignKey: "client_id",
+            onDelete: "CASCADE",
+            hooks: true,
+         });
+
+         Client.hasMany(models.Client_Address, {
+            foreignKey: "id",
+            onDelete: "CASCADE",
+            hooks: true,
+         });
       }
    }
    Client.init(
@@ -45,6 +57,50 @@ module.exports = (sequelize, DataTypes) => {
          modelName: "Client",
       }
    );
+
+   Client.afterDestroy((instance, options) => {
+      console.log("after delete");
+
+      instance.getOrders().then((orders) => {
+         orders.forEach((option) => {
+            sequelize.models.Order.destroy({
+               where: {
+                  id: option.id,
+               },
+               individualHooks: true,
+            });
+         });
+      });
+
+      instance.getClient_Addresses().then((addresses) => {
+         addresses.forEach((option) => {
+            sequelize.models.Client_Address.destroy({
+               where: {
+                  id: option.id,
+               },
+               individualHooks: true,
+            });
+         });
+      });
+   });
+
+   Client.afterRestore((instance, options) => {
+      console.log("after Restore");
+      sequelize.models.Order.restore({
+         where: {
+            client_id: instance.id,
+         },
+         individualHooks: true,
+      });
+
+      sequelize.models.Client_Address.restore({
+         where: {
+            id: instance.id,
+         },
+         individualHooks: true,
+      });
+   });
+
    Client.beforeCreate((option) => (option.id = uuidv4()));
 
    return Client;

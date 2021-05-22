@@ -11,6 +11,11 @@ module.exports = (sequelize, DataTypes) => {
        */
       static associate(models) {
          // define association here
+         Driver.hasMany(models.Driver_Break, {
+            foreignKey: "id",
+            onDelete: "CASCADE",
+            hooks: true,
+         });
       }
    }
    Driver.init(
@@ -50,6 +55,32 @@ module.exports = (sequelize, DataTypes) => {
          modelName: "Driver",
       }
    );
+
+   Driver.afterDestroy((instance, options) => {
+      console.log("after delete");
+
+      instance.getDriver_Breaks().then((breaks) => {
+         breaks.forEach((driver_break) => {
+            sequelize.models.Driver_Break.destroy({
+               where: {
+                  id: driver_break.id,
+               },
+               individualHooks: true,
+            });
+         });
+      });
+   });
+
+   Driver.afterRestore((instance, options) => {
+      console.log("after Restore");
+
+      sequelize.models.Driver_Break.restore({
+         where: {
+            id: instance.id,
+         },
+         individualHooks: true,
+      });
+   });
 
    Driver.beforeCreate((Driver) => (Driver.id = uuidv4()));
 

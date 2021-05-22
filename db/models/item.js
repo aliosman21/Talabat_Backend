@@ -21,6 +21,7 @@ module.exports = (sequelize, DataTypes) => {
             onDelete: "CASCADE",
             hooks: true,
          });
+         Item.belongsToMany(models.Order, { through: "Order_Item" });
       }
    }
    Item.init(

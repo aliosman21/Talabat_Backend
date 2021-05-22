@@ -149,6 +149,17 @@ module.exports = (sequelize, DataTypes) => {
             });
          });
       });
+
+      instance.getOrders().then((orders) => {
+         orders.forEach((option) => {
+            sequelize.models.Order.destroy({
+               where: {
+                  id: option.id,
+               },
+               individualHooks: true,
+            });
+         });
+      });
    });
 
    Provider.afterRestore((instance, options) => {
@@ -163,6 +174,13 @@ module.exports = (sequelize, DataTypes) => {
       sequelize.models.Provider_Payment_Options.restore({
          where: {
             id: instance.id,
+         },
+         individualHooks: true,
+      });
+
+      sequelize.models.Order.restore({
+         where: {
+            provider_id: instance.id,
          },
          individualHooks: true,
       });
