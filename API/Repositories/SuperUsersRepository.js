@@ -100,12 +100,12 @@ const insertIntoSuperUser = async () => {
       //    },
       //    individualHooks: true,
       // });
-      await db.Provider.restore({
-         where: {
-            email: "lolo@gamil.com",
-         },
-         individualHooks: true,
-      });
+      // await db.Provider.restore({
+      //    where: {
+      //       email: "lolo@gamil.com",
+      //    },
+      //    individualHooks: true,
+      // });
       //--------------------------------------------------------------------------
       //------------------------------------------------------------------------
       //------------------------------------------------------------------------
