@@ -1,3 +1,5 @@
 node_modules
 .env
 /db/config
+
+server_certificates
