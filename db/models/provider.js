@@ -10,9 +10,18 @@ module.exports = (sequelize, DataTypes) => {
        * The `models/index` file will call this method automatically.
        */
       static associate(models) {
-         Provider.belongsTo(models.SuperUser, { foreignKey: "super_user_id" });
+         Provider.belongsTo(models.SuperUser, {
+            foreignKey: "super_user_id",
+            constraints: true,
+            foreignKeyConstraint: true,
+         });
          Provider.hasMany(models.Category, {
             foreignKey: "provider_id",
+            onDelete: "CASCADE",
+            hooks: true,
+         });
+         Provider.hasMany(models.Provider_Payment_Options, {
+            foreignKey: "id",
             onDelete: "CASCADE",
             hooks: true,
          });
@@ -129,6 +138,17 @@ module.exports = (sequelize, DataTypes) => {
             });
          });
       });
+
+      instance.getProvider_Payment_Options().then((payment_options) => {
+         payment_options.forEach((option) => {
+            sequelize.models.Provider_Payment_Options.destroy({
+               where: {
+                  id: option.id,
+               },
+               individualHooks: true,
+            });
+         });
+      });
    });
 
    Provider.afterRestore((instance, options) => {
@@ -136,6 +156,13 @@ module.exports = (sequelize, DataTypes) => {
       sequelize.models.Category.restore({
          where: {
             provider_id: instance.id,
+         },
+         individualHooks: true,
+      });
+
+      sequelize.models.Provider_Payment_Options.restore({
+         where: {
+            id: instance.id,
          },
          individualHooks: true,
       });

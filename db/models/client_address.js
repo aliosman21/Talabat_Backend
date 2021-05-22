@@ -1,9 +1,7 @@
 "use strict";
 const { Model } = require("sequelize");
-const { v4: uuidv4 } = require("uuid");
-
 module.exports = (sequelize, DataTypes) => {
-   class Additional_Option extends Model {
+   class Client_Address extends Model {
       /**
        * Helper method for defining associations.
        * This method is not a part of Sequelize lifecycle.
@@ -11,26 +9,31 @@ module.exports = (sequelize, DataTypes) => {
        */
       static associate(models) {
          // define association here
-         Additional_Option.belongsTo(models.Item_Option, {
-            foreignKey: "item_option_id",
+         Client_Address.belongsTo(models.Client, {
+            foreignKey: "id",
             constraints: true,
             foreignKeyConstraint: true,
          });
       }
    }
-   Additional_Option.init(
+   Client_Address.init(
       {
          id: { type: DataTypes.UUID, primaryKey: true, isUUID: 4 },
-         option_name: { type: DataTypes.STRING },
-         additional_price: { type: DataTypes.DECIMAL },
+         client_latitude: { type: DataTypes.DECIMAL, primaryKey: true },
+         client_longitude: { type: DataTypes.DECIMAL, primaryKey: true },
+         address_type: {
+            type: DataTypes.STRING,
+            validate: {
+               isIn: [["Home", "Work", "Other"]],
+            },
+         },
       },
       {
          sequelize,
          paranoid: true,
-         modelName: "Additional_Option",
+         modelName: "Client_Address",
       }
    );
-   Additional_Option.beforeCreate((option) => (option.id = uuidv4()));
 
-   return Additional_Option;
+   return Client_Address;
 };

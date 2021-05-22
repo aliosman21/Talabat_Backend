@@ -69,7 +69,27 @@ const insertIntoSuperUser = async () => {
       //    country: "Egypt",
       //    rating: "4",
       //    delivery_time: Date.now(),
-      //    super_user_id: "9bff980c-83f4-400e-8e4f-73722dfd5627",
+      // });
+      //------------------------------------------------------------------------
+      // const letsSee = await db.Provider.findOne({
+      //    where: {
+      //       email: "lolo@gamil.com",
+      //    },
+      //    include: db.Provider_Payment_Options,
+      // });
+      // console.log(JSON.stringify(letsSee, null, 2));
+      //------------------------------------------------------------------------
+      // const payment_options1 = await db.Provider_Payment_Options.create({
+      //    id: "5fc9472b-d353-40ac-9a20-ea4531d2c79b",
+      //    name: "gadsgasasdhgsa",
+      // });
+      // const payment_option2s = await db.Provider_Payment_Options.create({
+      //    id: "5fc9472b-d353-40ac-9a20-ea4531d2c79b",
+      //    name: "gadgsdagdsashgsa",
+      // });
+      // const payment_option3s = await db.Provider_Payment_Options.create({
+      //    id: "5fc9472b-d353-40ac-9a20-ea4531d2c79b",
+      //    name: "gadssdagsadghgsa",
       // });
    } catch (err) {
       console.log(err);
