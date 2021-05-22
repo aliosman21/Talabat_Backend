@@ -21,6 +21,7 @@ module.exports = (sequelize, DataTypes) => {
             onDelete: "CASCADE",
             hooks: true,
          });
+
          Item.belongsToMany(models.Order, { through: "Order_Item" });
       }
    }
@@ -58,9 +59,6 @@ module.exports = (sequelize, DataTypes) => {
          },
          active: {
             type: DataTypes.BOOLEAN,
-            validate: {
-               isIn: [[0, 1]],
-            },
          },
       },
       {

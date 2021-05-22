@@ -8,6 +8,8 @@ module.exports = {
             primaryKey: true,
          },
          name: {
+            allowNull: false,
+
             type: Sequelize.STRING,
          },
          logo: {
@@ -23,12 +25,18 @@ module.exports = {
             type: Sequelize.DECIMAL,
          },
          price: {
+            allowNull: false,
+
             type: Sequelize.DECIMAL,
          },
          summary: {
+            allowNull: false,
+
             type: Sequelize.STRING,
          },
          active: {
+            allowNull: false,
+
             type: Sequelize.BOOLEAN,
          },
          category_id: {

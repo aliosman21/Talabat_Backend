@@ -19,38 +19,7 @@ const selection = async () => {
 };
 const insertIntoSuperUser = async () => {
    try {
-      // await db.Provider.destroy({
-      //    where: {
-      //       email: "lolo@gamil.com",
-      //    },
-      //    individualHooks: true,
-      // });
-      // await db.Provider.restore({
-      //    where: {
-      //       email: "lolo@gamil.com",
-      //    },
-      //    individualHooks: true,
-      // });
-      //--------------------------------------------------------------------------
-      // const superUser = await db.SuperUser.create({
-      //    email: "amrali975@gamil.com",
-      //    password: "123",
-      //    name: "Ali",
-      // });
-      //------------------------------------------------------------------------
-      // const category = await db.Category.create({
-      //    name: "SomeNameA",
-      //    provider_id: "0f50660d-6308-49de-98df-b84486a3fa4e",
-      // });
-      // const category1 = await db.Category.create({
-      //    name: "SomeNameB",
-      //    provider_id: "0f50660d-6308-49de-98df-b84486a3fa4e",
-      // });
-      // const category2 = await db.Category.create({
-      //    name: "SomeNameC",
-      //    provider_id: "0f50660d-6308-49de-98df-b84486a3fa4e",
-      // });
-      //------------------------------------------------------------------------
+      //----------------------------------------------------------------------------------------------\\
       // const provider = await db.Provider.create({
       //    email: "lolo@gamil.com",
       //    password: "123",
@@ -70,6 +39,76 @@ const insertIntoSuperUser = async () => {
       //    rating: "4",
       //    delivery_time: Date.now(),
       // });
+      // const category = await db.Category.create({
+      //    name: "SomeNameA",
+      //    provider_id: provider.id,
+      // });
+      // const category1 = await db.Category.create({
+      //    name: "SomeNameB",
+      //    provider_id: provider.id,
+      // });
+      // const category2 = await db.Category.create({
+      //    name: "SomeNameC",
+      //    provider_id: provider.id,
+      // });
+      // const item1 = await db.Item.create({
+      //    name: "Burger",
+      //    logo: "gasga",
+      //    reviews_count: 50,
+      //    rating: 5,
+      //    old_price: 3.5,
+      //    price: 43,
+      //    summary: "SOme summary333",
+      //    active: false,
+      //    category_id: category2.id,
+      // });
+      // const item2 = await db.Item.create({
+      //    name: "Burger",
+      //    logo: "gasga",
+      //    reviews_count: 50,
+      //    rating: 5,
+      //    old_price: 3.5,
+      //    price: 43,
+      //    summary: "SOme summary1",
+      //    active: true,
+      //    category_id: category1.id,
+      // });
+      // const item3 = await db.Item.create({
+      //    name: "Burgegasdgdr",
+      //    logo: "gasga",
+      //    reviews_count: 50,
+      //    rating: 5,
+      //    old_price: 3.5,
+      //    price: 43,
+      //    summary: "SOme summary2",
+      //    active: true,
+      //    category_id: category2.id,
+      // });
+      // const itemOptions = await db.Item_Option.create({
+      //    section_name: "7lawa",
+      //    section_type: "RadioButton",
+      //    item_id: item3.id,
+      // });
+      // const additional = await db.Additional_Option.create({
+      //    option_name: "HGJEWO",
+      //    item_option_id: itemOptions.id,
+      // });
+      //----------------------------------------------------------------------------------------------\\
+      // await db.Provider.destroy({
+      //    where: {
+      //       email: "lolo@gamil.com",
+      //    },
+      //    individualHooks: true,
+      // });
+      await db.Provider.restore({
+         where: {
+            email: "lolo@gamil.com",
+         },
+         individualHooks: true,
+      });
+      //--------------------------------------------------------------------------
+      //------------------------------------------------------------------------
+      //------------------------------------------------------------------------
       //------------------------------------------------------------------------
       // const letsSee = await db.Provider.findOne({
       //    where: {

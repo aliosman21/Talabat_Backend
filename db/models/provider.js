@@ -25,6 +25,11 @@ module.exports = (sequelize, DataTypes) => {
             onDelete: "CASCADE",
             hooks: true,
          });
+         Provider.hasMany(models.Order, {
+            foreignKey: "provider_id",
+            onDelete: "CASCADE",
+            hooks: true,
+         });
       }
    }
    Provider.init(
