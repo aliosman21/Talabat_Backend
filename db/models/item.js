@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
             hooks: true,
          });
 
-         Item.belongsToMany(models.Order, { through: "Order_Item" });
+         Item.belongsToMany(models.Order, { through: "Order_Item", uniqueKey: "item_id" });
       }
    }
    Item.init(
