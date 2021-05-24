@@ -1,6 +1,5 @@
 const countries_list = require("../../../../assets/countries.json");
 const states = require("../../../../assets/Config");
-const moment = require("moment");
 /**
  * @param  {} name_to_validate
  */
