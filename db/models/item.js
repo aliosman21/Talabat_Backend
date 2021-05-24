@@ -57,7 +57,7 @@ module.exports = (sequelize, DataTypes) => {
          summary: {
             type: DataTypes.STRING,
          },
-         active: {
+         availability: {
             type: DataTypes.BOOLEAN,
          },
       },

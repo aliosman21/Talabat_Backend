@@ -11,12 +11,12 @@ module.exports = {
             },
             primaryKey: true,
          },
-         start_time: {
+         break_start_time: {
             type: Sequelize.DATE,
             allowNull: false,
             primaryKey: true,
          },
-         end_time: {
+         break_end_time: {
             type: Sequelize.DATE,
          },
          createdAt: {

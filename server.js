@@ -9,6 +9,10 @@ const httpsServerOptions = require("./certificates");
 const superUserAuth = require("./API/V1/SuperUsers/Authentication");
 //---------------Super User--------------------\\
 
+//---------------Provider--------------------\\
+const providerAuth = require("./API/V1/Providers/Authentication");
+//---------------Provider--------------------\\
+
 //---------------Client--------------------\\
 const clientAuth = require("./API/V1/Clients/Authentication");
 //---------------Client--------------------\\
@@ -24,8 +28,9 @@ app.use(express.json());
 //--------------------------------------Server Configurations----------------------------------------------------\\
 
 //--------------------------------------Routes-------------------------------------------------------------\\
-app.use("/api/superuser/authenticate", superUserAuth);
-app.use("/api/client/authenticate", clientAuth);
+app.use("/api/v1/superuser/authenticate", superUserAuth);
+app.use("/api/v1/client/authenticate", clientAuth);
+app.use("/api/v1/provider/authenticate", providerAuth);
 //--------------------------------------Routes-------------------------------------------------------------\\
 
 //--------------------------------------Server Listener----------------------------------------------------\\

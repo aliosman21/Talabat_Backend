@@ -19,8 +19,8 @@ module.exports = (sequelize, DataTypes) => {
    Driver_Break.init(
       {
          id: { type: DataTypes.UUID, primaryKey: true, isUUID: 4 },
-         start_time: { type: DataTypes.DATE, isDate: true },
-         end_time: { type: DataTypes.DATE, isDate: true },
+         break_start_time: { type: DataTypes.DATE, isDate: true },
+         break_end_time: { type: DataTypes.DATE, isDate: true },
       },
       {
          sequelize,

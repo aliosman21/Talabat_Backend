@@ -68,18 +68,12 @@ module.exports = (sequelize, DataTypes) => {
             },
          },
          opening_hour: {
-            type: DataTypes.DATE,
+            type: DataTypes.TIME,
             allowNull: false,
-            validate: {
-               isDate: true,
-            },
          },
          closing_hour: {
-            type: DataTypes.DATE,
+            type: DataTypes.TIME,
             allowNull: false,
-            validate: {
-               isDate: true,
-            },
          },
          delivery_fee: {
             type: DataTypes.DECIMAL,
@@ -93,11 +87,8 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
          },
          delivery_time: {
-            type: DataTypes.DATE,
+            type: DataTypes.TIME,
             allowNull: false,
-            validate: {
-               isDate: true,
-            },
          },
          provider_state: {
             type: DataTypes.STRING,

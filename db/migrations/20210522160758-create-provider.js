@@ -33,10 +33,10 @@ module.exports = {
             type: Sequelize.DECIMAL,
          },
          opening_hour: {
-            type: Sequelize.DATE,
+            type: Sequelize.TIME,
          },
          closing_hour: {
-            type: Sequelize.DATE,
+            type: Sequelize.TIME,
          },
          delivery_fee: {
             type: Sequelize.DECIMAL,
@@ -45,7 +45,7 @@ module.exports = {
             type: Sequelize.STRING,
          },
          delivery_time: {
-            type: Sequelize.DATE,
+            type: Sequelize.TIME,
          },
          provider_state: {
             type: Sequelize.STRING,

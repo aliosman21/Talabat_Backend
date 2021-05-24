@@ -34,9 +34,8 @@ module.exports = {
 
             type: Sequelize.STRING,
          },
-         active: {
+         availability: {
             allowNull: false,
-
             type: Sequelize.BOOLEAN,
          },
          category_id: {

@@ -34,7 +34,7 @@ module.exports.FindByEmail = async (Super_User_Info) => {
          return false;
       }
    } catch (err) {
-      logger.error("Database Insertion failed err: ", err);
+      logger.error("Database Selection failed err: ", err);
       return false;
    }
 };
