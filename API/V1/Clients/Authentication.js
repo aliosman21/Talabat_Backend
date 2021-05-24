@@ -3,10 +3,6 @@ const register_info_validator = require("./ServiceLevelFunctions/ValidateRegiste
 const clientRepository = require("../../Repositories/ClientRepository");
 const tokenFunctions = require("../GlobalFunction/TokenFunctions");
 
-router.get("/", async (req, res) => {
-   res.send({ Message: "Hello from client" });
-});
-
 router.post("/register", async (req, res) => {
    const validation_errors = register_info_validator(req.body);
    if (validation_errors.length === 0) {
@@ -19,7 +15,7 @@ router.post("/register", async (req, res) => {
 });
 
 router.post("/login", async (req, res) => {
-   const client_Found = await clientRepository.findByEmail(req.body);
+   const client_Found = await clientRepository.FindByEmail(req.body);
    if (client_Found) {
       res.status(200).json({
          Message: "Client Logged in successfully",

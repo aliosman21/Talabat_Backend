@@ -2,7 +2,7 @@ const db = require("../../db/models/index");
 const HashingFunctions = require("../V1/GlobalFunction/HashingFunctions");
 const logger = require("../../Logger");
 
-const insertClient = async (client_info) => {
+module.exports.InsertClient = async (client_info) => {
    try {
       await db.Client.create({
          name: client_info.name,
@@ -20,7 +20,7 @@ const insertClient = async (client_info) => {
    }
 };
 
-const findByEmail = async (client_info) => {
+module.exports.FindByEmail = async (client_info) => {
    try {
       const client_retrieved = await db.Client.findOne({
          where: {
@@ -42,5 +42,3 @@ const findByEmail = async (client_info) => {
       return false;
    }
 };
-
-module.exports = { InsertClient: insertClient, findByEmail: findByEmail };
