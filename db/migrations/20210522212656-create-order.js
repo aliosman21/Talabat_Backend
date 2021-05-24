@@ -34,7 +34,7 @@ module.exports = {
          driver_id: {
             type: Sequelize.UUID,
             references: {
-               model: "drivers",
+               model: "Drivers",
                key: "id",
             },
          },
@@ -42,7 +42,7 @@ module.exports = {
             type: Sequelize.UUID,
             allowNull: false,
             references: {
-               model: "clients",
+               model: "Clients",
                key: "id",
             },
          },
@@ -50,7 +50,7 @@ module.exports = {
             type: Sequelize.UUID,
             allowNull: false,
             references: {
-               model: "providers",
+               model: "Providers",
                key: "id",
             },
          },

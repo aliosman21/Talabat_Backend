@@ -18,7 +18,7 @@ module.exports = {
             type: Sequelize.UUID,
             allowNull: false,
             references: {
-               model: "item_options",
+               model: "Item_Options",
                key: "id",
             },
          },

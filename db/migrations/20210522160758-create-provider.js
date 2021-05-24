@@ -62,7 +62,7 @@ module.exports = {
          super_user_id: {
             type: Sequelize.UUID,
             references: {
-               model: "superusers",
+               model: "SuperUsers",
                key: "id",
             },
          },

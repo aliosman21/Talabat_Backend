@@ -6,7 +6,7 @@ module.exports = {
             type: Sequelize.UUID,
             allowNull: false,
             references: {
-               model: "drivers",
+               model: "Drivers",
                key: "id",
             },
             primaryKey: true,
