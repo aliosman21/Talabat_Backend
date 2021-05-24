@@ -2,9 +2,9 @@ const db = require("../../db/models/index");
 const HashingFunctions = require("../V1/GlobalFunction/HashingFunctions");
 const logger = require("../../Logger");
 
-const registerClientToDatabase = async (client_info) => {
+const insertClient = async (client_info) => {
    try {
-      const client = await db.Client.create({
+      await db.Client.create({
          name: client_info.name,
          email: client_info.email,
          password: await HashingFunctions.hashPassword(client_info.password),
@@ -20,4 +20,27 @@ const registerClientToDatabase = async (client_info) => {
    }
 };
 
-module.exports = { register: registerClientToDatabase };
+const findByEmail = async (client_info) => {
+   try {
+      const client_retrieved = await db.Client.findOne({
+         where: {
+            email: client_info.email,
+         },
+      });
+      if (client_retrieved) {
+         return (await HashingFunctions.hashCompare(
+            client_info.password,
+            client_retrieved.password
+         ))
+            ? client_retrieved
+            : false;
+      } else {
+         return false;
+      }
+   } catch (err) {
+      logger.error("Database Insertion failed err: ", err);
+      return false;
+   }
+};
+
+module.exports = { InsertClient: insertClient, findByEmail: findByEmail };
