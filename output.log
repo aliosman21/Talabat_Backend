@@ -1,1 +1,5 @@
 24-05-2021 22:54:49 [Logger.js] [error]: Database Insertion failed err:  Validation error
+25-05-2021 21:59:52 [Logger.js] [warn]: Attempt to access restricted resources  invalid signature
+25-05-2021 22:00:12 [Logger.js] [warn]: Attempt to access restricted resources invalid signature
+25-05-2021 22:10:49 [Logger.js] [error]: Database Insertion failed err:  Field 'name' doesn't have a default value
+25-05-2021 22:13:23 [Logger.js] [warn]: Attempt to access restricted resources invalid signature
