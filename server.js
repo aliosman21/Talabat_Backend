@@ -3,6 +3,7 @@ const express = require("express");
 const https = require("https");
 const dotenv = require("dotenv");
 const httpsServerOptions = require("./certificates");
+global.reqlib = require("app-root-path").require;
 //--------------------------------------Route Imports----------------------------------------------------\\
 
 //---------------Super User--------------------\\
