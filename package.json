@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
@@ -22,6 +22,7 @@
     "winston": "^3.3.3"
   },
   "devDependencies": {
+    "jest": "^27.0.1",
     "sequelize-cli": "^6.2.0"
   }
 }

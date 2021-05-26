@@ -1,0 +1,26 @@
+{
+   "development": {
+      "username": "root",
+      "password": "@Only_Me.88",
+      "database": "talabat_dev",
+      "host": "127.0.0.1",
+      "port": 3306,
+      "dialect": "mysql"
+   },
+   "test": {
+      "username": "root",
+      "password": "@Only_Me.88",
+      "database": "talabat_test",
+      "host": "127.0.0.1",
+      "port": 3306,
+      "dialect": "mysql"
+   },
+   "production": {
+      "username": "root",
+      "password": "@Only_Me.88",
+      "database": "talabat_production",
+      "host": "127.0.0.1",
+      "port": 3306,
+      "dialect": "mysql"
+   }
+}

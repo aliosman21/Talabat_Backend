@@ -3,10 +3,12 @@ const express = require("express");
 const https = require("https");
 const dotenv = require("dotenv");
 const httpsServerOptions = require("./certificates");
+global.reqlib = require("app-root-path").require;
 //--------------------------------------Route Imports----------------------------------------------------\\
 
 //---------------Super User--------------------\\
 const superUserAuth = require("./API/V1/SuperUsers/Authentication");
+const superUserContactUsForm = require("./API/V1/SuperUsers/ContactUs");
 //---------------Super User--------------------\\
 
 //---------------Provider--------------------\\
@@ -30,6 +32,7 @@ app.use(express.json());
 //--------------------------------------Routes-------------------------------------------------------------\\
 app.use("/api/v1/superuser/authenticate", superUserAuth);
 app.use("/api/v1/client/authenticate", clientAuth);
+app.use("/api/v1/forms/", superUserContactUsForm);
 app.use("/api/v1/provider/authenticate", providerAuth);
 //--------------------------------------Routes-------------------------------------------------------------\\
 
