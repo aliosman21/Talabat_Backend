@@ -1,1 +1,3 @@
 24-05-2021 22:54:49 [Logger.js] [error]: Database Insertion failed err:  Validation error
+25-05-2021 17:01:39 [Logger.js] [error]: Database Selection failed err:  WHERE parameter "email" has invalid "undefined" value
+25-05-2021 17:01:57 [Logger.js] [error]: Database Selection failed err:  WHERE parameter "email" has invalid "undefined" value
