@@ -31,6 +31,9 @@ app.use(express.json());
 //--------------------------------------Server Configurations----------------------------------------------------\\
 
 //--------------------------------------Routes-------------------------------------------------------------\\
+app.get("/", async (req, res) => {
+   res.send("Hello ");
+});
 app.use("/api/v1/superuser/authenticate", superUserAuth);
 app.use("/api/v1/client/authenticate", clientAuth);
 app.use("/api/v1/client/info", clientInfo);
