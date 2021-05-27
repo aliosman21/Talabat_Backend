@@ -26,9 +26,6 @@ const registerInfoValidator = (registerInformation) => {
    validators.validateProvider(registerInformation.provider_type)
       ? true
       : (return_value.error += "Location not validated \n");
-   validators.validateCoverageZone(registerInformation.coverage_zone)
-      ? true
-      : (return_value.error += "Coverage zone not validated \n");
    validators.validateTime(registerInformation.opening_hour)
       ? true
       : (return_value.error += "Opening Time not validated \n");

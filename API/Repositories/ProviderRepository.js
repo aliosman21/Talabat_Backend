@@ -1,6 +1,7 @@
 const db = require("../../db/models/index");
 const HashingFunctions = require("../V1/GlobalFunction/HashingFunctions");
 const logger = require("../../Logger");
+const { sequelize } = require("../../db/models/index");
 
 module.exports.InsertProvider = async (provider_info) => {
    try {
@@ -11,7 +12,7 @@ module.exports.InsertProvider = async (provider_info) => {
          latitude: provider_info.latitude,
          longitude: provider_info.longitude,
          provider_type: provider_info.provider_type,
-         coverage_zone: provider_info.coverage_zone,
+         formatted_address: provider_info.formatted_address,
          opening_hour: provider_info.opening_hour,
          closing_hour: provider_info.closing_hour,
          delivery_fee: provider_info.delivery_fee,
@@ -36,6 +37,23 @@ module.exports.FindByEmail = async (provider_info) => {
          },
       });
       return provider_retrieved ? provider_retrieved : false;
+   } catch (err) {
+      logger.error("Database Selection failed err: ", err);
+      return false;
+   }
+};
+module.exports.FindNearestProviders = async (marker_info) => {
+   try {
+      const providers_retrieved = await sequelize.query(
+         "CALL getNearProviders (:clientLat, :clientLong)",
+         {
+            replacements: {
+               clientLat: marker_info.latitude,
+               clientLong: marker_info.longitude,
+            },
+         }
+      );
+      return providers_retrieved ? providers_retrieved : false;
    } catch (err) {
       logger.error("Database Selection failed err: ", err);
       return false;

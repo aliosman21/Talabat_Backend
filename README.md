@@ -15,3 +15,10 @@ in postman you should disable ssl verification in order to get response
 # notes
 
 to delete all migration $ npx sequelize-cli db:migrate:undo:all
+
+
+
+
+
+# Things to document
+ The harvsine algorithm

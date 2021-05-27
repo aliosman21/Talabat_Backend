@@ -29,8 +29,8 @@ module.exports = {
          provider_type: {
             type: Sequelize.STRING,
          },
-         coverage_zone: {
-            type: Sequelize.DECIMAL,
+         formatted_address: {
+            type: Sequelize.STRING,
          },
          opening_hour: {
             type: Sequelize.TIME,

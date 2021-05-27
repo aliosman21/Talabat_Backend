@@ -13,6 +13,7 @@ const superUserContactUsForm = require("./API/V1/SuperUsers/ContactUs");
 
 //---------------Provider--------------------\\
 const providerAuth = require("./API/V1/Providers/Authentication");
+const providerSearch = require("./API/V1/Providers/ProvidersSearch");
 //---------------Provider--------------------\\
 
 //---------------Client--------------------\\
@@ -39,6 +40,7 @@ app.use("/api/v1/client/authenticate", clientAuth);
 app.use("/api/v1/client/info", clientInfo);
 app.use("/api/v1/forms/", superUserContactUsForm);
 app.use("/api/v1/provider/authenticate", providerAuth);
+app.use("/api/v1/provider/lookup", providerSearch);
 //--------------------------------------Routes-------------------------------------------------------------\\
 
 //--------------------------------------Server Listener----------------------------------------------------\\

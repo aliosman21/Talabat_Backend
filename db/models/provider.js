@@ -60,12 +60,9 @@ module.exports = (sequelize, DataTypes) => {
                isAlpha: true,
             },
          },
-         coverage_zone: {
-            type: DataTypes.DECIMAL,
+         formatted_address: {
+            type: DataTypes.STRING,
             allowNull: false,
-            validate: {
-               isDecimal: true,
-            },
          },
          opening_hour: {
             type: DataTypes.TIME,
