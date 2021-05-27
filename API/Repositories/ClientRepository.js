@@ -27,16 +27,7 @@ module.exports.FindByEmail = async (client_info) => {
             email: client_info.email,
          },
       });
-      if (client_retrieved) {
-         return (await HashingFunctions.hashCompare(
-            client_info.password,
-            client_retrieved.password
-         ))
-            ? client_retrieved
-            : false;
-      } else {
-         return false;
-      }
+      return client_retrieved ? client_retrieved : false;
    } catch (err) {
       logger.error("Database Selection failed err: ", err);
       return false;
