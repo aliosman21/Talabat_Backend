@@ -6,6 +6,7 @@ const HashComparer = require("../GlobalFunction/HashingFunctions");
 
 router.post("/register", async (req, res) => {
    const validation_errors = register_info_validator(req.body);
+   console.log(validation_errors);
    if (validation_errors.length === 0) {
       (await clientRepository.InsertClient(req.body))
          ? res.status(200).json({ Message: "Registered Successfully" })
