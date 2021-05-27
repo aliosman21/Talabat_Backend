@@ -1,11 +1,11 @@
-24-05-2021 22:54:49 [Logger.js] [error]: Database Insertion failed err:  Validation error
-<<<<<<< HEAD
-25-05-2021 17:01:39 [Logger.js] [error]: Database Selection failed err:  WHERE parameter "email" has invalid "undefined" value
-25-05-2021 17:01:57 [Logger.js] [error]: Database Selection failed err:  WHERE parameter "email" has invalid "undefined" value
-=======
-25-05-2021 21:59:52 [Logger.js] [warn]: Attempt to access restricted resources  invalid signature
-25-05-2021 22:00:12 [Logger.js] [warn]: Attempt to access restricted resources invalid signature
-25-05-2021 22:10:49 [Logger.js] [error]: Database Insertion failed err:  Field 'name' doesn't have a default value
-25-05-2021 22:13:23 [Logger.js] [warn]: Attempt to access restricted resources invalid signature
-25-05-2021 22:21:04 [Logger.js] [error]: Database Selection failed err:  connect ECONNREFUSED 127.0.0.1:3306
->>>>>>> 2bda374b84a5266769ea39a095abc715b5a3fd3f
+27-05-2021 04:11:47 [Logger.js] [error]: Database Selection failed err:  Access denied for user ''@'localhost' (using password: YES)
+27-05-2021 04:45:14 [Logger.js] [error]: Database Selection failed err:  Table 'talabat_dev.Contact_Us' doesn't exist
+27-05-2021 05:03:15 [Logger.js] [warn]: Attempt to access restricted resources jwt expired
+27-05-2021 08:35:59 [Logger.js] [error]: Database Selection failed err:  WHERE parameter "email" has invalid "undefined" value
+27-05-2021 08:38:40 [Logger.js] [error]: Database Selection failed err:  WHERE parameter "email" has invalid "undefined" value
+27-05-2021 08:47:14 [Logger.js] [error]: Database Selection failed err:  WHERE parameter "email" has invalid "undefined" value
+27-05-2021 08:47:22 [Logger.js] [error]: Database Selection failed err:  WHERE parameter "email" has invalid "undefined" value
+27-05-2021 08:48:24 [Logger.js] [error]: Database Selection failed err:  WHERE parameter "email" has invalid "undefined" value
+27-05-2021 08:49:25 [Logger.js] [error]: Database Selection failed err:  WHERE parameter "email" has invalid "undefined" value
+27-05-2021 08:53:15 [Logger.js] [error]: Database Selection failed err:  WHERE parameter "email" has invalid "undefined" value
+27-05-2021 08:54:22 [Logger.js] [error]: Database Selection failed err:  WHERE parameter "email" has invalid "undefined" value

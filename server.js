@@ -17,6 +17,7 @@ const providerAuth = require("./API/V1/Providers/Authentication");
 
 //---------------Client--------------------\\
 const clientAuth = require("./API/V1/Clients/Authentication");
+const clientInfo = require("./API/V1/Clients/ClientInfo");
 //---------------Client--------------------\\
 
 //--------------------------------------Route Imports-----------------------------------------------------------\\
@@ -32,6 +33,7 @@ app.use(express.json());
 //--------------------------------------Routes-------------------------------------------------------------\\
 app.use("/api/v1/superuser/authenticate", superUserAuth);
 app.use("/api/v1/client/authenticate", clientAuth);
+app.use("/api/v1/client/info", clientInfo);
 app.use("/api/v1/forms/", superUserContactUsForm);
 app.use("/api/v1/provider/authenticate", providerAuth);
 //--------------------------------------Routes-------------------------------------------------------------\\

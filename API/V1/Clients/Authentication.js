@@ -4,6 +4,7 @@ const clientRepository = require("../../Repositories/ClientRepository");
 const tokenFunctions = require("../GlobalFunction/TokenFunctions");
 
 router.post("/register", async (req, res) => {
+  console.log(req.body);
   const validation_errors = register_info_validator(req.body);
   console.log(validation_errors);
   if (validation_errors.length === 0) {
