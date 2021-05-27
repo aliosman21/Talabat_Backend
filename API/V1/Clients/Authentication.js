@@ -2,9 +2,9 @@ const router = require("express").Router();
 const register_info_validator = require("./ServiceLevelFunctions/ValidateRegisterFunctions");
 const clientRepository = require("../../Repositories/ClientRepository");
 const tokenFunctions = require("../GlobalFunction/TokenFunctions");
+const HashComparer = require("../GlobalFunction/HashingFunctions");
 
 router.post("/register", async (req, res) => {
-  console.log(req.body);
   const validation_errors = register_info_validator(req.body);
   console.log(validation_errors);
   if (validation_errors.length === 0) {
@@ -19,10 +19,12 @@ router.post("/register", async (req, res) => {
 router.post("/login", async (req, res) => {
   const client_Found = await clientRepository.FindByEmail(req.body);
   if (client_Found) {
-    res.status(200).json({
-      Message: "Client Logged in successfully",
-      token: tokenFunctions.generateToken(client_Found.id, "Client"),
-    });
+    (await HashComparer.hashCompare(req.body.password, client_Found.password))
+      ? res.status(200).json({
+          Message: "Client Logged in successfully",
+          token: tokenFunctions.generateToken(client_Found.id, "Client"),
+        })
+      : res.status(400).json({ Message: "Client Credentials error" });
   } else {
     res.status(400).json({ Message: "Client Credentials error" });
   }
