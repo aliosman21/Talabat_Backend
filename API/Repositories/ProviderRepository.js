@@ -42,6 +42,22 @@ module.exports.FindByEmail = async (provider_info) => {
       return false;
    }
 };
+
+module.exports.FindByID = async (provider_info) => {
+   try {
+      const provider_retrieved = await db.Provider.findOne({
+         where: {
+            id: provider_info._id,
+         },
+      });
+      return provider_retrieved ? provider_retrieved : false;
+   } catch (err) {
+      logger.error("Database Selection failed err: ", err);
+      return false;
+   }
+};
+
+
 module.exports.FindNearestProviders = async (marker_info) => {
    try {
       const providers_retrieved = await sequelize.query(

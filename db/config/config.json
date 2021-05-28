@@ -1,7 +1,7 @@
 {
    "development": {
       "username": "root",
-      "password": "@Only_Me.88",
+      "password": "NewPassword",
       "database": "talabat_dev",
       "host": "127.0.0.1",
       "port": 3306,

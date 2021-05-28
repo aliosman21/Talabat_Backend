@@ -17,3 +17,5 @@
 27-05-2021 20:53:39 [Logger.js] [error]: Database Selection failed err:  Unknown column 'openning_hour' in 'field list'
 27-05-2021 20:59:04 [Logger.js] [error]: Database Selection failed err:  Unknown column 'deleted_at' in 'where clause'
 27-05-2021 20:59:26 [Logger.js] [error]: Database Selection failed err:  Unknown column 'deleted_at' in 'where clause'
+28-05-2021 14:47:11 [Logger.js] [error]: Database Insertion failed err:  Access denied for user 'root'@'localhost' (using password: YES)
+28-05-2021 14:48:30 [Logger.js] [error]: Database Insertion failed err:  Table 'talabat_dev.superusers' doesn't exist
