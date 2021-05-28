@@ -43,6 +43,20 @@ module.exports.FindByEmail = async (provider_info) => {
    }
 };
 
+module.exports.FindByName = async (providerName) => {
+   try {
+      const provider_retrieved = await db.Provider.findOne({
+         where: {
+            name: providerName,
+         },
+      });
+      return provider_retrieved ? provider_retrieved : false;
+   } catch (err) {
+      logger.error("Database Selection failed err: ", err);
+      return false;
+   }
+};
+
 module.exports.FindByID = async (provider_info) => {
    try {
       const provider_retrieved = await db.Provider.findOne({

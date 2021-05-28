@@ -19,3 +19,15 @@
 27-05-2021 20:59:26 [Logger.js] [error]: Database Selection failed err:  Unknown column 'deleted_at' in 'where clause'
 28-05-2021 14:47:11 [Logger.js] [error]: Database Insertion failed err:  Access denied for user 'root'@'localhost' (using password: YES)
 28-05-2021 14:48:30 [Logger.js] [error]: Database Insertion failed err:  Table 'talabat_dev.superusers' doesn't exist
+28-05-2021 18:20:25 [Logger.js] [error]: Database Selection failed err:  Cannot read property 'find' of undefined
+28-05-2021 18:25:07 [Logger.js] [error]: Database Selection failed err:  Cannot read property 'find' of undefined
+28-05-2021 18:25:37 [Logger.js] [error]: Database Selection failed err:  Cannot read property 'find' of undefined
+28-05-2021 18:26:18 [Logger.js] [error]: Database Selection failed err:  Cannot read property 'find' of undefined
+28-05-2021 18:26:47 [Logger.js] [error]: Database Selection failed err:  Cannot read property 'find' of undefined
+28-05-2021 18:30:28 [Logger.js] [error]: Database Selection failed err:  Cannot read property 'findAll' of undefined
+28-05-2021 18:32:50 [Logger.js] [error]: Database Selection failed err:  Cannot read property 'findAll' of undefined
+28-05-2021 18:33:29 [Logger.js] [error]: Database Selection failed err:  Cannot read property 'find' of undefined
+28-05-2021 18:33:48 [Logger.js] [error]: Database Selection failed err:  Cannot read property 'findAll' of undefined
+28-05-2021 18:35:04 [Logger.js] [error]: Database Selection failed err:  Cannot read property 'findAll' of undefined
+28-05-2021 18:35:28 [Logger.js] [error]: Database Selection failed err:  Cannot read property 'findOne' of undefined
+28-05-2021 18:36:40 [Logger.js] [error]: Database Selection failed err:  client_retrieved is not defined

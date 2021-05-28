@@ -14,7 +14,6 @@ const superUserContactUsForm = require("./API/V1/SuperUsers/ContactUs");
 //---------------Provider--------------------\\
 const providerAuth = require("./API/V1/Providers/Authentication");
 const providerProfile = require("./API/V1/Providers/Profile");
-
 //---------------Provider--------------------\\
 
 //---------------Client--------------------\\
@@ -22,6 +21,11 @@ const clientAuth = require("./API/V1/Clients/Authentication");
 const providerSearch = require("./API/V1/Clients/ProvidersSearch");
 const clientInfo = require("./API/V1/Clients/ClientInfo");
 //---------------Client--------------------\\
+
+//---------------restaurant--------------------\\
+const restaurant = require("./API/V1/Restaurant/restaurantPage");
+//---------------restaurant--------------------\\
+
 
 //--------------------------------------Route Imports-----------------------------------------------------------\\
 
@@ -45,6 +49,9 @@ app.use("/api/v1/client/lookup", providerSearch);
 app.use("/api/v1/forms/", superUserContactUsForm);
 app.use("/api/v1/provider/authenticate", providerAuth);
 app.use("/api/v1/provider/info", providerProfile);
+
+app.use("/api/v1/restaurant", restaurant);
+
 //--------------------------------------Routes-------------------------------------------------------------\\
 
 //--------------------------------------Server Listener----------------------------------------------------\\

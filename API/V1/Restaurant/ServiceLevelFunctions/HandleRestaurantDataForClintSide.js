@@ -1,8 +1,8 @@
 
-const HandleProviderDataForClintSide = (ProviderData,OrdersData) => {
-    // todo: check super_user
+const HandleRestaurantDataForClintSide = (ProviderData) => {
+    // todo: add the restaurant menu
     data = {
-        provider :
+        RestaurantInfo :
         {
             Email : ProviderData.email,
             name : ProviderData.name,
@@ -22,10 +22,9 @@ const HandleProviderDataForClintSide = (ProviderData,OrdersData) => {
             super_user : ProviderData.super_user_id,
             deleted : ProviderData.deletedAt,
         },
-        orders : OrdersData
     }
     return data
 
 }
 
-module.exports = HandleProviderDataForClintSide;
+module.exports = HandleRestaurantDataForClintSide;
