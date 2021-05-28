@@ -49,8 +49,8 @@ app.use("/api/v1/provider/info", providerProfile);
 
 //--------------------------------------Server Listener----------------------------------------------------\\
 
-const server = https.createServer(httpsServerOptions.options, app);
-server.listen(port, () => console.log("Server Up niggas"));
+//const server = https.createServer(httpsServerOptions.options, app);
+app.listen(port, () => console.log("Server Up niggas"));
 //--------------------------------------Server Listener----------------------------------------------------\\
 
 // const io = socket(server);

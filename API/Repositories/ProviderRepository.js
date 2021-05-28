@@ -52,7 +52,19 @@ module.exports.FindByID = async (provider_info) => {
       });
       return provider_retrieved ? provider_retrieved : false;
    } catch (err) {
-      logger.error("Database Selection failed err: ", err);
+      logger.error("Database provider selection failed err: ", err);
+      return false;
+   }
+};
+
+
+module.exports.Update = async (provider,updatedData) => {
+    console.log(updatedData)
+   try {
+     provider.update(updatedData)
+      return true
+   } catch (err) {
+      logger.error("Database update provider info failed err: ", err);
       return false;
    }
 };

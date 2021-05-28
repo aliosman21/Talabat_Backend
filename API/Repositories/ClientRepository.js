@@ -68,3 +68,14 @@ module.exports.FindByID = async (client_info) => {
     return false;
   }
 };
+
+module.exports.Update = async (client,updatedData) => {
+    console.log(updatedData)
+   try {
+     client.update(updatedData)
+      return true
+   } catch (err) {
+      logger.error("Database update client info failed err: ", err);
+      return false;
+   }
+};

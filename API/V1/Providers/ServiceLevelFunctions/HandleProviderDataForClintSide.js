@@ -1,23 +1,26 @@
 
 const HandleProviderDataForClintSide = (OriginalData) => {
     // todo: check super_user
+
+
     data = {
-        Email : OrignalData.email,
-        name : OrignalData.name,
-        Reviews_count : OrignalData.reviews_count,
-        Latitude : OrignalData.latitude,
-        Longitude : OrignalData.longitude,
-        Address : OrignalData.formatted_address,
-        Opening_hour : OrignalData.opening_hour,
-        Closing_hour : OrignalData.closing_hour,
-        Delivery_fee : OrignalData.Delivery_fee,
-        Logo : OrignalData.logo,
-        Delivery_time : OrignalData.delivery_time,
-        Provider_state : OrignalData.provider_state,
-        Minimum_order : OrignalData.minimum_order,
-        Country : OrignalData.country,
-        rating : OrignalData.rating,
-        super_user : OrignalData.super_user_id,
+        Email : OriginalData.email,
+        name : OriginalData.name,
+        Reviews_count : OriginalData.reviews_count,
+        Latitude : OriginalData.latitude,
+        Longitude : OriginalData.longitude,
+        Address : OriginalData.formatted_address,
+        Opening_hour : OriginalData.opening_hour,
+        Closing_hour : OriginalData.closing_hour,
+        Delivery_fee : OriginalData.Delivery_fee,
+        Logo : OriginalData.logo,
+        Delivery_time : OriginalData.delivery_time,
+        Provider_state : OriginalData.provider_state,
+        Minimum_order : OriginalData.minimum_order,
+        Country : OriginalData.country,
+        rating : OriginalData.rating,
+        super_user : OriginalData.super_user_id,
+        deleted : OriginalData.deletedAt,
     }
     return data
 
