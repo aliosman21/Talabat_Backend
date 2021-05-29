@@ -38,3 +38,13 @@
 29-05-2021 15:52:11 [Logger.js] [error]: Database Selection failed err:  Missing where attribute in the options parameter
 29-05-2021 15:59:53 [Logger.js] [error]: Database Destruction failed err:  provider_info is not defined
 29-05-2021 16:00:05 [Logger.js] [error]: Database Destruction failed err:  provider_info is not defined
+29-05-2021 16:57:40 [Logger.js] [error]: Database Selection failed err:  Unknown column 'deleted_by' in 'field list'
+29-05-2021 17:02:12 [Logger.js] [error]: Database Selection failed err:  Unknown column 'deleted_by' in 'field list'
+29-05-2021 17:03:06 [Logger.js] [error]: Database Selection failed err:  Unknown column 'deleted_by' in 'field list'
+29-05-2021 17:04:28 [Logger.js] [error]: Database Selection failed err:  Table 'talabat_dev.providers' doesn't exist
+29-05-2021 17:06:57 [Logger.js] [error]: Database Selection failed err:  PROCEDURE talabat_dev.getNearProviders does not exist
+29-05-2021 17:08:37 [Logger.js] [error]: Database Selection failed err:  PROCEDURE talabat_dev.getNearProviders does not exist
+29-05-2021 17:09:03 [Logger.js] [error]: Database Selection failed err:  PROCEDURE talabat_dev.getNearProviders does not exist
+29-05-2021 17:16:25 [Logger.js] [error]: Database Selection failed err:  PROCEDURE talabat_dev.getNearProviders does not exist
+29-05-2021 17:16:26 [Logger.js] [error]: Database Selection failed err:  PROCEDURE talabat_dev.getNearProviders does not exist
+29-05-2021 17:16:34 [Logger.js] [warn]: Attempt to access restricted resources jwt expired

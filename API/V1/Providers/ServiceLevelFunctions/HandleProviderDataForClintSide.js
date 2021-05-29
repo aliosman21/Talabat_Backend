@@ -1,5 +1,5 @@
 
-const HandleProviderDataForClintSide = (ProviderData,OrdersData) => {
+const HandleProviderDataForClintSide = (ProviderData) => {
     // todo: check super_user
     data = {
         provider :
@@ -21,8 +21,10 @@ const HandleProviderDataForClintSide = (ProviderData,OrdersData) => {
             rating : ProviderData.rating,
             super_user : ProviderData.super_user_id,
             deleted : ProviderData.deletedAt,
+            Orders:ProviderData.Orders,
+            Categories:ProviderData.Categories
         },
-        orders : OrdersData
+
     }
     return data
 

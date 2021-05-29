@@ -50,10 +50,23 @@ module.exports.FindByName = async (providerName) => {
          where: {
             name: providerName,
          },
+          include:[
+           {
+              model: db.Category,
+              include :  {
+                    model : db.Item,
+                    include :{
+                       model : db.Item_Option
+
+                    }
+              }
+           }
+           ]
       });
+      console.log(provider_retrieved)
       return provider_retrieved ? provider_retrieved : false;
    } catch (err) {
-      logger.error("Database Selection failed err: ", err);
+      console.log(err)
       return false;
    }
 };
@@ -64,6 +77,20 @@ module.exports.FindByID = async (provider_info) => {
          where: {
             id: provider_info._id,
          },
+          include:[{
+                      model: db.Order,
+                    },
+                    {
+                       model: db.Category,
+                       include :  {
+                             model : db.Item,
+                             include :{
+                                model : db.Item_Option
+
+                             }
+                       }
+                    }
+                    ]
       });
       return provider_retrieved ? provider_retrieved : false;
    } catch (err) {
