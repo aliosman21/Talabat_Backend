@@ -31,3 +31,10 @@
 28-05-2021 18:35:04 [Logger.js] [error]: Database Selection failed err:  Cannot read property 'findAll' of undefined
 28-05-2021 18:35:28 [Logger.js] [error]: Database Selection failed err:  Cannot read property 'findOne' of undefined
 28-05-2021 18:36:40 [Logger.js] [error]: Database Selection failed err:  client_retrieved is not defined
+29-05-2021 15:35:01 [Logger.js] [error]: Database Insertion failed err:  Incorrect time value: '1622295301151' for column 'opening_hour' at row 1
+29-05-2021 15:49:27 [Logger.js] [error]: Database Insertion failed err:  Validation error
+29-05-2021 15:50:52 [Logger.js] [error]: Database Selection failed err:  t is not defined
+29-05-2021 15:51:24 [Logger.js] [error]: Database Selection failed err:  deleter is not defined
+29-05-2021 15:52:11 [Logger.js] [error]: Database Selection failed err:  Missing where attribute in the options parameter
+29-05-2021 15:59:53 [Logger.js] [error]: Database Destruction failed err:  provider_info is not defined
+29-05-2021 16:00:05 [Logger.js] [error]: Database Destruction failed err:  provider_info is not defined

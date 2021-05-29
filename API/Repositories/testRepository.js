@@ -1,5 +1,20 @@
 const db = require("../../db/models/index");
-
+// const iiiife = (async () => {
+//    try {
+//       const t = await sequelize.transaction();
+//       await db.Provider.destroy(
+//          {
+//             where: {
+//                email: "lolo@gamil.com",
+//             },
+//             individualHooks: true,
+//          },
+//          { transaction: t }
+//       );
+//    } catch (err) {
+//       console.log(err);
+//    }
+// })();
 const selection = async () => {
    // const letsSee = await db.Provider.findOne({
    //    where: {
@@ -20,25 +35,6 @@ const selection = async () => {
 const insertIntoSuperUser = async () => {
    try {
       //----------------------------------------------------------------------------------------------\\
-      // const provider = await db.Provider.create({
-      //    email: "lolo@gamil.com",
-      //    password: "123",
-      //    name: "amr",
-      //    reviews_count: 3,
-      //    latitude: "31.1951084",
-      //    longitude: "29.9391237",
-      //    provider_type: "Restaurant",
-      //    coverage_zone: "24",
-      //    opening_hour: Date.now(),
-      //    closing_hour: Date.now(),
-      //    delivery_fee: "50",
-      //    logo: "image_path",
-      //    provider_state: "active",
-      //    minimum_order: "200",
-      //    country: "Egypt",
-      //    rating: "4",
-      //    delivery_time: Date.now(),
-      // });
       // const category = await db.Category.create({
       //    name: "SomeNameA",
       //    provider_id: provider.id,

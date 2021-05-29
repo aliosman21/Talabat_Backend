@@ -56,6 +56,9 @@ module.exports = {
          country: {
             type: Sequelize.STRING,
          },
+         deleted_by: {
+            type: Sequelize.STRING,
+         },
          rating: {
             type: Sequelize.FLOAT,
          },

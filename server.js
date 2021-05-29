@@ -9,6 +9,7 @@ const httpsServerOptions = require("./certificates");
 //---------------Super User--------------------\\
 const superUserAuth = require("./API/V1/SuperUsers/Authentication");
 const superUserContactUsForm = require("./API/V1/SuperUsers/ContactUs");
+const deleteProvider = require("./API/V1/SuperUsers/DeleteProvider");
 //---------------Super User--------------------\\
 
 //---------------Provider--------------------\\
@@ -26,7 +27,6 @@ const clientInfo = require("./API/V1/Clients/ClientInfo");
 const restaurant = require("./API/V1/Restaurant/restaurantPage");
 //---------------restaurant--------------------\\
 
-
 //--------------------------------------Route Imports-----------------------------------------------------------\\
 
 //--------------------------------------Server Configurations----------------------------------------------------\\
@@ -42,6 +42,7 @@ app.get("/", async (req, res) => {
    res.send("Hello ");
 });
 app.use("/api/v1/superuser/authenticate", superUserAuth);
+app.use("/api/v1/superuser/delete/provider", deleteProvider);
 app.use("/api/v1/client/authenticate", clientAuth);
 app.use("/api/v1/client/info", clientInfo);
 app.use("/api/v1/client/lookup", providerSearch);
