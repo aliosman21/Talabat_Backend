@@ -23,7 +23,7 @@ const clientInfo = require("./API/V1/Clients/ClientInfo");
 //---------------Client--------------------\\
 
 //---------------guest--------------------\\
-const providerSearch = require("./API/V1/guest/ProvidersSearch");
+const providerSearch = require("./API/V1/Guest/ProvidersSearch");
 const restaurant = require("./API/V1/Guest/restaurantPage");
 //---------------restaurant--------------------\\
 
@@ -39,18 +39,17 @@ app.use(express.json());
 
 //--------------------------------------Routes-------------------------------------------------------------\\
 app.get("/", async (req, res) => {
-   res.send("Hello ");
+  res.send("Hello ");
 });
 app.use("/api/v1/superuser/authenticate", superUserAuth);
 app.use("/api/v1/superuser/delete/provider", deleteProvider);
 app.use("/api/v1/client/authenticate", clientAuth);
 app.use("/api/v1/client/info", clientInfo);
 
-
 app.use("/api/v1/forms/", superUserContactUsForm);
 app.use("/api/v1/provider/authenticate", providerAuth);
 app.use("/api/v1/provider/info", providerProfile);
-                     //----guest---\\
+//----guest---\\
 app.use("/api/v1/guest/restaurant", restaurant);
 app.use("/api/v1/guest/lookup", providerSearch);
 
