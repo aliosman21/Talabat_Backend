@@ -50,23 +50,57 @@ module.exports.FindByName = async (providerName) => {
          where: {
             name: providerName,
          },
-          include:[
-           {
-              model: db.Category,
-              include :  {
-                    model : db.Item,
-                    include :{
-                       model : db.Item_Option
-
-                    }
-              }
-           }
-           ]
+         include: [
+            {
+               model: db.Category,
+               include: {
+                  model: db.Item,
+                  include: {
+                     model: db.Item_Option,
+                  },
+               },
+            },
+         ],
       });
-      console.log(provider_retrieved)
+      console.log(provider_retrieved);
       return provider_retrieved ? provider_retrieved : false;
    } catch (err) {
-      console.log(err)
+      console.log(err);
+      return false;
+   }
+};
+
+module.exports.FindProviderInfoById = async (provider_id) => {
+   try {
+      const provider_retrieved = await db.Provider.findOne({
+         where: {
+            id: provider_id,
+         },
+         include: [
+            {
+               model: db.Category,
+               include: {
+                  model: db.Item,
+                  include: {
+                     model: db.Item_Option,
+                  },
+               },
+            },
+         ],
+         attributes: {
+            exclude: [
+               "password",
+               "super_user_id",
+               "createdAt",
+               "updatedAt",
+               "deletedAt",
+               "deleted_by",
+            ],
+         },
+      });
+      return provider_retrieved ? provider_retrieved : false;
+   } catch (err) {
+      logger.error("Database provider selection failed err: ", err);
       return false;
    }
 };
@@ -77,20 +111,20 @@ module.exports.FindByID = async (provider_info) => {
          where: {
             id: provider_info._id,
          },
-          include:[{
-                      model: db.Order,
-                    },
-                    {
-                       model: db.Category,
-                       include :  {
-                             model : db.Item,
-                             include :{
-                                model : db.Item_Option
-
-                             }
-                       }
-                    }
-                    ]
+         include: [
+            {
+               model: db.Order,
+            },
+            {
+               model: db.Category,
+               include: {
+                  model: db.Item,
+                  include: {
+                     model: db.Item_Option,
+                  },
+               },
+            },
+         ],
       });
       return provider_retrieved ? provider_retrieved : false;
    } catch (err) {
@@ -164,13 +198,13 @@ module.exports.destroyProviderById = async (provider_id, role) => {
 module.exports.getAllRestaurants = async () => {
    try {
       const All_Restaurants = await db.Provider.findAll({
-         attributes: ['id', 'name', 'provider_type', 'logo'],
-         where:{provider_type:"Restaurant"}
+         attributes: ["id", "name", "provider_type", "logo"],
+         where: { provider_type: "Restaurant" },
       });
-      console.log(All_Restaurants)
+      console.log(All_Restaurants);
       return All_Restaurants ? All_Restaurants : false;
    } catch (err) {
-      console.log(err)
+      console.log(err);
       return false;
    }
 };
