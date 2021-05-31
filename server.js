@@ -24,9 +24,8 @@ const clientInfo = require("./API/V1/Clients/ClientInfo");
 
 //---------------guest--------------------\\
 const providerSearch = require("./API/V1/Guest/ProvidersSearch");
-const restaurant = require("./API/V1/Guest/restaurantPage");
 //---------------restaurant--------------------\\
-const restaurant = require("./API/V1/Restaurant/restaurantPage");
+//const restaurant = require("./API/V1/Restaurant/restaurantPage");
 //---------------restaurant--------------------\\
 
 //---------------feedback----------------------\\
@@ -77,7 +76,7 @@ app.use("/api/v1/forms/", superUserContactUsForm);
 app.use("/api/v1/provider/authenticate", providerAuth);
 app.use("/api/v1/provider/info", providerProfile);
 //----guest---\\
-app.use("/api/v1/guest/restaurant", restaurant);
+//app.use("/api/v1/guest/restaurant", restaurant);
 app.use("/api/v1/guest/lookup", providerSearch);
 
 
