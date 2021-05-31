@@ -16,6 +16,7 @@ module.exports.InsertProvider = async (provider_info) => {
          opening_hour: provider_info.opening_hour,
          closing_hour: provider_info.closing_hour,
          delivery_fee: provider_info.delivery_fee,
+         deleted_by: null,
          logo: provider_info.logo,
          provider_state: "Inactive",
          minimum_order: provider_info.minimum_order,
@@ -49,10 +50,23 @@ module.exports.FindByName = async (providerName) => {
          where: {
             name: providerName,
          },
+          include:[
+           {
+              model: db.Category,
+              include :  {
+                    model : db.Item,
+                    include :{
+                       model : db.Item_Option
+
+                    }
+              }
+           }
+           ]
       });
+      console.log(provider_retrieved)
       return provider_retrieved ? provider_retrieved : false;
    } catch (err) {
-      logger.error("Database Selection failed err: ", err);
+      console.log(err)
       return false;
    }
 };
@@ -63,6 +77,20 @@ module.exports.FindByID = async (provider_info) => {
          where: {
             id: provider_info._id,
          },
+          include:[{
+                      model: db.Order,
+                    },
+                    {
+                       model: db.Category,
+                       include :  {
+                             model : db.Item,
+                             include :{
+                                model : db.Item_Option
+
+                             }
+                       }
+                    }
+                    ]
       });
       return provider_retrieved ? provider_retrieved : false;
    } catch (err) {
@@ -71,18 +99,16 @@ module.exports.FindByID = async (provider_info) => {
    }
 };
 
-
-module.exports.Update = async (provider,updatedData) => {
-    console.log(updatedData)
+module.exports.Update = async (provider, updatedData) => {
+   console.log(updatedData);
    try {
-     provider.update(updatedData)
-      return true
+      provider.update(updatedData);
+      return true;
    } catch (err) {
       logger.error("Database update provider info failed err: ", err);
       return false;
    }
 };
-
 
 module.exports.FindNearestProviders = async (marker_info) => {
    try {
@@ -98,6 +124,39 @@ module.exports.FindNearestProviders = async (marker_info) => {
       return providers_retrieved ? providers_retrieved : false;
    } catch (err) {
       logger.error("Database Selection failed err: ", err);
+      return false;
+   }
+};
+
+module.exports.destroyProviderById = async (provider_id, role) => {
+   try {
+      const t = await sequelize.transaction();
+
+      await db.Provider.update(
+         { deleted_by: role },
+         {
+            where: {
+               id: provider_id,
+            },
+            individualHooks: true,
+         },
+         { transaction: t }
+      );
+
+      await db.Provider.destroy(
+         {
+            where: {
+               id: provider_id,
+            },
+            individualHooks: true,
+         },
+         { transaction: t }
+      );
+      await t.commit();
+      return true;
+   } catch (err) {
+      logger.error("Database Destruction failed err: ", err);
+      await t.rollback();
       return false;
    }
 };

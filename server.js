@@ -9,6 +9,7 @@ const httpsServerOptions = require("./certificates");
 //---------------Super User--------------------\\
 const superUserAuth = require("./API/V1/SuperUsers/Authentication");
 const superUserContactUsForm = require("./API/V1/SuperUsers/ContactUs");
+const deleteProvider = require("./API/V1/SuperUsers/DeleteProvider");
 //---------------Super User--------------------\\
 
 //---------------Provider--------------------\\
@@ -18,10 +19,12 @@ const providerProfile = require("./API/V1/Providers/Profile");
 
 //---------------Client--------------------\\
 const clientAuth = require("./API/V1/Clients/Authentication");
-const providerSearch = require("./API/V1/Clients/ProvidersSearch");
 const clientInfo = require("./API/V1/Clients/ClientInfo");
 //---------------Client--------------------\\
 
+//---------------guest--------------------\\
+const providerSearch = require("./API/V1/Guest/ProvidersSearch");
+const restaurant = require("./API/V1/Guest/restaurantPage");
 //---------------restaurant--------------------\\
 const restaurant = require("./API/V1/Restaurant/restaurantPage");
 //---------------restaurant--------------------\\
@@ -51,7 +54,7 @@ let jsonparser = bodyparser.json();
 
 //--------------------------------------Routes-------------------------------------------------------------\\
 app.get("/", async (req, res) => {
-   res.send("Hello ");
+  res.send("Hello ");
 });
 
 
@@ -66,15 +69,16 @@ app.get("/", async (req, res) => {
    
 // })
 app.use("/api/v1/superuser/authenticate", superUserAuth);
+app.use("/api/v1/superuser/delete/provider", deleteProvider);
 app.use("/api/v1/client/authenticate", clientAuth);
 app.use("/api/v1/client/info", clientInfo);
-app.use("/api/v1/client/lookup", providerSearch);
 
 app.use("/api/v1/forms/", superUserContactUsForm);
 app.use("/api/v1/provider/authenticate", providerAuth);
 app.use("/api/v1/provider/info", providerProfile);
-
-app.use("/api/v1/restaurant", restaurant);
+//----guest---\\
+app.use("/api/v1/guest/restaurant", restaurant);
+app.use("/api/v1/guest/lookup", providerSearch);
 
 
 

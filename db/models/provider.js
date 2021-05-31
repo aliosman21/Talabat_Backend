@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
          });
          Provider.hasMany(models.Order, {
             foreignKey: "provider_id",
-            onDelete: "CASCADE",
+            // onDelete: "CASCADE",
             hooks: true,
          });
       }
@@ -63,6 +63,13 @@ module.exports = (sequelize, DataTypes) => {
          formatted_address: {
             type: DataTypes.STRING,
             allowNull: false,
+         },
+         deleted_by: {
+            type: DataTypes.STRING,
+            allowNull: true,
+            validate: {
+               isIn: [["Super User", "Provider"]],
+            },
          },
          opening_hour: {
             type: DataTypes.TIME,
@@ -145,12 +152,16 @@ module.exports = (sequelize, DataTypes) => {
 
       instance.getOrders().then((orders) => {
          orders.forEach((option) => {
-            sequelize.models.Order.destroy({
-               where: {
-                  id: option.id,
-               },
-               individualHooks: true,
-            });
+            sequelize.models.Order.update(
+               { order_status: "Canceled" },
+               {
+                  where: {
+                     id: option.id,
+                     order_status: ["Pending", "Preparing"],
+                  },
+                  individualHooks: true,
+               }
+            );
          });
       });
    });
@@ -171,12 +182,12 @@ module.exports = (sequelize, DataTypes) => {
          individualHooks: true,
       });
 
-      sequelize.models.Order.restore({
-         where: {
-            provider_id: instance.id,
-         },
-         individualHooks: true,
-      });
+      // sequelize.models.Order.restore({
+      //    where: {
+      //       provider_id: instance.id,
+      //    },
+      //    individualHooks: true,
+      // });
    });
 
    Provider.beforeCreate((Provider) => (Provider.id = uuidv4()));
