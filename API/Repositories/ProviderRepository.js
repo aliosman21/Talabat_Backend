@@ -160,3 +160,17 @@ module.exports.destroyProviderById = async (provider_id, role) => {
       return false;
    }
 };
+
+module.exports.getAllRestaurants = async () => {
+   try {
+      const All_Restaurants = await db.Provider.findAll({
+         attributes: ['id', 'name', 'provider_type', 'logo'],
+         where:{provider_type:"Restaurant"}
+      });
+      console.log(All_Restaurants)
+      return All_Restaurants ? All_Restaurants : false;
+   } catch (err) {
+      console.log(err)
+      return false;
+   }
+};

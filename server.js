@@ -3,6 +3,8 @@ const express = require("express");
 const https = require("https");
 const dotenv = require("dotenv");
 const httpsServerOptions = require("./certificates");
+const staticDirPoviders = "./images/providers";
+const path = require("path");
 
 //--------------------------------------Route Imports----------------------------------------------------\\
 
@@ -25,6 +27,7 @@ const clientInfo = require("./API/V1/Clients/ClientInfo");
 //---------------guest--------------------\\
 const providerSearch = require("./API/V1/guest/ProvidersSearch");
 const restaurant = require("./API/V1/Guest/restaurantPage");
+const allRestaurants = require("./API/V1/Guest/allRestaurants");
 //---------------restaurant--------------------\\
 
 //--------------------------------------Route Imports-----------------------------------------------------------\\
@@ -35,6 +38,7 @@ const port = process.env.PORT || 5000;
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use("/providers/images/", express.static(path.join(__dirname, staticDirPoviders)));
 //--------------------------------------Server Configurations----------------------------------------------------\\
 
 //--------------------------------------Routes-------------------------------------------------------------\\
@@ -53,7 +57,7 @@ app.use("/api/v1/provider/info", providerProfile);
                      //----guest---\\
 app.use("/api/v1/guest/restaurant", restaurant);
 app.use("/api/v1/guest/lookup", providerSearch);
-
+app.use("/api/v1/guest/restaurants", allRestaurants);
 //--------------------------------------Routes-------------------------------------------------------------\\
 
 //--------------------------------------Server Listener----------------------------------------------------\\

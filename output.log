@@ -48,3 +48,15 @@
 29-05-2021 17:16:25 [Logger.js] [error]: Database Selection failed err:  PROCEDURE talabat_dev.getNearProviders does not exist
 29-05-2021 17:16:26 [Logger.js] [error]: Database Selection failed err:  PROCEDURE talabat_dev.getNearProviders does not exist
 29-05-2021 17:16:34 [Logger.js] [warn]: Attempt to access restricted resources jwt expired
+30-05-2021 04:49:13 [Logger.js] [error]: Database Insertion failed err:  Unknown column 'deleted_by' in 'field list'
+30-05-2021 04:49:27 [Logger.js] [error]: Database Insertion failed err:  notNull Violation: Provider.formatted_address cannot be null
+30-05-2021 04:56:54 [Logger.js] [error]: Database Insertion failed err:  notNull Violation: Provider.formatted_address cannot be null
+30-05-2021 05:11:16 [Logger.js] [error]: Database Insertion failed err:  notNull Violation: Provider.formatted_address cannot be null
+30-05-2021 05:15:23 [Logger.js] [error]: Database Insertion failed err:  notNull Violation: Provider.formatted_address cannot be null
+30-05-2021 05:15:41 [Logger.js] [error]: Database Insertion failed err:  notNull Violation: Provider.formatted_address cannot be null
+30-05-2021 05:17:35 [Logger.js] [error]: Database Insertion failed err:  Validation error
+30-05-2021 05:18:06 [Logger.js] [error]: Database Insertion failed err:  Validation error
+30-05-2021 05:18:30 [Logger.js] [error]: Database Insertion failed err:  Validation error
+31-05-2021 00:26:53 [Logger.js] [error]: Database Insertion failed err:  Validation error
+31-05-2021 00:30:43 [Logger.js] [error]: Database Insertion failed err:  Validation error
+31-05-2021 06:08:34 [Logger.js] [error]: Database Insertion failed err:  Validation error
