@@ -21,8 +21,7 @@ const HandleRestaurantDataForClintSide = (ProviderData) => {
             rating : ProviderData.rating,
             super_user : ProviderData.super_user_id,
             deleted : ProviderData.deletedAt,
-//            Orders:ProviderData.Orders,
-            Categories:ProviderData.Categories
+//            Categories:ProviderData.Categories
         },
     }
     return data

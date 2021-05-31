@@ -60,3 +60,7 @@
 31-05-2021 00:26:53 [Logger.js] [error]: Database Insertion failed err:  Validation error
 31-05-2021 00:30:43 [Logger.js] [error]: Database Insertion failed err:  Validation error
 31-05-2021 06:08:34 [Logger.js] [error]: Database Insertion failed err:  Validation error
+30-05-2021 21:42:28 [Logger.js] [error]: Database Insertion failed err:  notNull Violation: Provider.formatted_address cannot be null,
+string violation: logo cannot be an array or an object
+31-05-2021 05:20:54 [Logger.js] [error]: Database Insertion failed err:  notNull Violation: Provider.formatted_address cannot be null
+31-05-2021 05:27:12 [Logger.js] [error]: Database Insertion failed err:  Data too long for column 'logo' at row 1
