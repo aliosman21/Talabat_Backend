@@ -1,4 +1,4 @@
-const Base = require("../../../../assets/Config");
+const Base = require("../../../../images/imagePath");
 var ReadableData = require("stream").Readable;
 var fs = require("fs");
 
@@ -15,11 +15,9 @@ module.exports.saveLogo = (logo, name) => {
   streamObj.pipe(
     fs.createWriteStream(
       `${
-        Base.assetsPath
-      }/uploads/provider_logo/${Date.now()}_${name}_provider.${extention}`
+        Base.providersImagesPath
+      }/providers/${Date.now()}_${name}_provider.${extention}`
     )
   );
-  return `${
-    Base.assetsPath
-  }/uploads/provider_logo/${Date.now()}_${name}_provider.${extention}`;
+  return `images/providers/${Date.now()}_${name}_provider.${extention}`;
 };
