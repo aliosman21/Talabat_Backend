@@ -201,10 +201,40 @@ module.exports.getAllRestaurants = async () => {
          attributes: ["id", "name", "provider_type", "logo"],
          where: { provider_type: "Restaurant" },
       });
-      console.log(All_Restaurants);
       return All_Restaurants ? All_Restaurants : false;
    } catch (err) {
-      console.log(err);
+      logger.error("Database get all restaurants failed err: ", err);
+      return false;
+   }
+};
+
+module.exports.getAllUnapproved = async () => {
+   try {
+      const All_Unapproved = await db.Provider.findAll({
+         attributes: ["id", "name", "provider_type"],
+         where: { provider_state: "Inactive" },
+      });
+      return All_Unapproved ? All_Unapproved : false;
+   } catch (err) {
+      logger.error("Database get all unapproved providers failed err: ", err);
+      return false;
+   }
+};
+
+module.exports.approveProvider = async (provider_id,superUser_id) => {
+   try {
+      await db.Provider.update(
+         { provider_state: "Active" , super_user_id: superUser_id},
+         {
+            where: {
+               id: provider_id,
+            },
+         },
+      );
+
+      return true;
+   } catch (err) {
+      logger.error("Database approving provider failed err: ", err);
       return false;
    }
 };
