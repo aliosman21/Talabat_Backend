@@ -10,6 +10,8 @@ module.exports.CheckAccessPrivilege = function (role) {
                process.env.TOKEN_SECRET
             );
             VerifiedToken._role === role ? next() : res.status(401).send("Access denied");
+         }else{
+            res.status(401).send("Access denied no TOKEN found");
          }
       } catch (error) {
          logger.warn("Attempt to access restricted resources", error);

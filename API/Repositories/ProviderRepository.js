@@ -223,34 +223,18 @@ module.exports.getAllUnapproved = async () => {
 
 module.exports.approveProvider = async (provider_id,superUser_id) => {
    try {
-      const t = await sequelize.transaction();
-
       await db.Provider.update(
          { provider_state: "Active" , super_user_id: superUser_id},
          {
             where: {
                id: provider_id,
             },
-            individualHooks: true,
          },
-         { transaction: t }
       );
 
-      await db.Provider.update(
-         { super_user_id: superUser_id },
-         {
-            where: {
-               id: provider_id,
-            },
-            individualHooks: true,
-         },
-         { transaction: t }
-      );
-      await t.commit();
       return true;
    } catch (err) {
       logger.error("Database approving provider failed err: ", err);
-      await t.rollback();
       return false;
    }
 };
