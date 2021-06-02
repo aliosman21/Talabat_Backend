@@ -50,23 +50,57 @@ module.exports.FindByName = async (providerName) => {
          where: {
             name: providerName,
          },
-          include:[
-           {
-              model: db.Category,
-              include :  {
-                    model : db.Item,
-                    include :{
-                       model : db.Item_Option
-
-                    }
-              }
-           }
-           ]
+         include: [
+            {
+               model: db.Category,
+               include: {
+                  model: db.Item,
+                  include: {
+                     model: db.Item_Option,
+                  },
+               },
+            },
+         ],
       });
-      console.log(provider_retrieved)
+      console.log(provider_retrieved);
       return provider_retrieved ? provider_retrieved : false;
    } catch (err) {
-      console.log(err)
+      console.log(err);
+      return false;
+   }
+};
+
+module.exports.FindProviderInfoById = async (provider_id) => {
+   try {
+      const provider_retrieved = await db.Provider.findOne({
+         where: {
+            id: provider_id,
+         },
+         include: [
+            {
+               model: db.Category,
+               include: {
+                  model: db.Item,
+                  include: {
+                     model: db.Item_Option,
+                  },
+               },
+            },
+         ],
+         attributes: {
+            exclude: [
+               "password",
+               "super_user_id",
+               "createdAt",
+               "updatedAt",
+               "deletedAt",
+               "deleted_by",
+            ],
+         },
+      });
+      return provider_retrieved ? provider_retrieved : false;
+   } catch (err) {
+      logger.error("Database provider selection failed err: ", err);
       return false;
    }
 };
@@ -77,20 +111,20 @@ module.exports.FindByID = async (provider_info) => {
          where: {
             id: provider_info._id,
          },
-          include:[{
-                      model: db.Order,
-                    },
-                    {
-                       model: db.Category,
-                       include :  {
-                             model : db.Item,
-                             include :{
-                                model : db.Item_Option
-
-                             }
-                       }
-                    }
-                    ]
+         include: [
+            {
+               model: db.Order,
+            },
+            {
+               model: db.Category,
+               include: {
+                  model: db.Item,
+                  include: {
+                     model: db.Item_Option,
+                  },
+               },
+            },
+         ],
       });
       return provider_retrieved ? provider_retrieved : false;
    } catch (err) {
@@ -157,6 +191,50 @@ module.exports.destroyProviderById = async (provider_id, role) => {
    } catch (err) {
       logger.error("Database Destruction failed err: ", err);
       await t.rollback();
+      return false;
+   }
+};
+
+module.exports.getAllRestaurants = async () => {
+   try {
+      const All_Restaurants = await db.Provider.findAll({
+         attributes: ["id", "name", "provider_type", "logo"],
+         where: { provider_type: "Restaurant",provider_state: "Active" },
+      });
+      return All_Restaurants ? All_Restaurants : false;
+   } catch (err) {
+      logger.error("Database get all restaurants failed err: ", err);
+      return false;
+   }
+};
+
+module.exports.getAllUnapproved = async () => {
+   try {
+      const All_Unapproved = await db.Provider.findAll({
+         attributes: ["id", "name", "provider_type"],
+         where: { provider_state: "Inactive" },
+      });
+      return All_Unapproved ? All_Unapproved : false;
+   } catch (err) {
+      logger.error("Database get all unapproved providers failed err: ", err);
+      return false;
+   }
+};
+
+module.exports.approveProvider = async (provider_id,superUser_id) => {
+   try {
+      await db.Provider.update(
+         { provider_state: "Active" , super_user_id: superUser_id},
+         {
+            where: {
+               id: provider_id,
+            },
+         },
+      );
+
+      return true;
+   } catch (err) {
+      logger.error("Database approving provider failed err: ", err);
       return false;
    }
 };

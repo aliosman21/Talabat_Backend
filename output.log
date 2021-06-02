@@ -1,4 +1,72 @@
+27-05-2021 20:18:05 [Logger.js] [error]: Database Insertion failed err:  notNull Violation: Provider.formatted_address cannot be null
+27-05-2021 20:18:25 [Logger.js] [error]: Database Insertion failed err:  notNull Violation: Provider.formatted_address cannot be null
+27-05-2021 20:18:46 [Logger.js] [error]: Database Insertion failed err:  notNull Violation: Provider.formatted_address cannot be null
+27-05-2021 20:19:40 [Logger.js] [error]: Database Insertion failed err:  Validation error
+27-05-2021 20:37:12 [Logger.js] [error]: Database Selection failed err:  db.Provider.query is not a function
+27-05-2021 20:37:24 [Logger.js] [error]: Database Selection failed err:  db.Provider.query is not a function
+27-05-2021 20:38:06 [Logger.js] [error]: Database Selection failed err:  db.query is not a function
+27-05-2021 20:39:46 [Logger.js] [error]: Database Selection failed err:  Table 'talabat_dev.markers' doesn't exist
+27-05-2021 20:40:13 [Logger.js] [error]: Database Selection failed err:  Table 'talabat_dev.markers' doesn't exist
+27-05-2021 20:40:53 [Logger.js] [error]: Database Selection failed err:  provider_retrieved is not defined
+27-05-2021 20:41:32 [Logger.js] [error]: Database Selection failed err:  provider_retrieved is not defined
+27-05-2021 20:46:40 [Logger.js] [error]: Database Selection failed err:  Out of range value for column 'clientLat' at row 1
+27-05-2021 20:47:08 [Logger.js] [error]: Database Selection failed err:  provider_retrieved is not defined
+27-05-2021 20:47:11 [Logger.js] [error]: Database Selection failed err:  provider_retrieved is not defined
+27-05-2021 20:52:59 [Logger.js] [error]: Database Selection failed err:  Unknown column 'openning_hour' in 'field list'
+27-05-2021 20:53:22 [Logger.js] [error]: Database Selection failed err:  Unknown column 'openning_hour' in 'field list'
+27-05-2021 20:53:39 [Logger.js] [error]: Database Selection failed err:  Unknown column 'openning_hour' in 'field list'
+27-05-2021 20:59:04 [Logger.js] [error]: Database Selection failed err:  Unknown column 'deleted_at' in 'where clause'
+27-05-2021 20:59:26 [Logger.js] [error]: Database Selection failed err:  Unknown column 'deleted_at' in 'where clause'
+28-05-2021 14:47:11 [Logger.js] [error]: Database Insertion failed err:  Access denied for user 'root'@'localhost' (using password: YES)
+28-05-2021 14:48:30 [Logger.js] [error]: Database Insertion failed err:  Table 'talabat_dev.superusers' doesn't exist
+28-05-2021 18:20:25 [Logger.js] [error]: Database Selection failed err:  Cannot read property 'find' of undefined
+28-05-2021 18:25:07 [Logger.js] [error]: Database Selection failed err:  Cannot read property 'find' of undefined
+28-05-2021 18:25:37 [Logger.js] [error]: Database Selection failed err:  Cannot read property 'find' of undefined
+28-05-2021 18:26:18 [Logger.js] [error]: Database Selection failed err:  Cannot read property 'find' of undefined
+28-05-2021 18:26:47 [Logger.js] [error]: Database Selection failed err:  Cannot read property 'find' of undefined
+28-05-2021 18:30:28 [Logger.js] [error]: Database Selection failed err:  Cannot read property 'findAll' of undefined
+28-05-2021 18:32:50 [Logger.js] [error]: Database Selection failed err:  Cannot read property 'findAll' of undefined
+28-05-2021 18:33:29 [Logger.js] [error]: Database Selection failed err:  Cannot read property 'find' of undefined
+28-05-2021 18:33:48 [Logger.js] [error]: Database Selection failed err:  Cannot read property 'findAll' of undefined
+28-05-2021 18:35:04 [Logger.js] [error]: Database Selection failed err:  Cannot read property 'findAll' of undefined
+28-05-2021 18:35:28 [Logger.js] [error]: Database Selection failed err:  Cannot read property 'findOne' of undefined
+28-05-2021 18:36:40 [Logger.js] [error]: Database Selection failed err:  client_retrieved is not defined
+29-05-2021 15:35:01 [Logger.js] [error]: Database Insertion failed err:  Incorrect time value: '1622295301151' for column 'opening_hour' at row 1
+29-05-2021 15:49:27 [Logger.js] [error]: Database Insertion failed err:  Validation error
+29-05-2021 15:50:52 [Logger.js] [error]: Database Selection failed err:  t is not defined
+29-05-2021 15:51:24 [Logger.js] [error]: Database Selection failed err:  deleter is not defined
+29-05-2021 15:52:11 [Logger.js] [error]: Database Selection failed err:  Missing where attribute in the options parameter
+29-05-2021 15:59:53 [Logger.js] [error]: Database Destruction failed err:  provider_info is not defined
+29-05-2021 16:00:05 [Logger.js] [error]: Database Destruction failed err:  provider_info is not defined
+29-05-2021 16:57:40 [Logger.js] [error]: Database Selection failed err:  Unknown column 'deleted_by' in 'field list'
+29-05-2021 17:02:12 [Logger.js] [error]: Database Selection failed err:  Unknown column 'deleted_by' in 'field list'
+29-05-2021 17:03:06 [Logger.js] [error]: Database Selection failed err:  Unknown column 'deleted_by' in 'field list'
+29-05-2021 17:04:28 [Logger.js] [error]: Database Selection failed err:  Table 'talabat_dev.providers' doesn't exist
+29-05-2021 17:06:57 [Logger.js] [error]: Database Selection failed err:  PROCEDURE talabat_dev.getNearProviders does not exist
+29-05-2021 17:08:37 [Logger.js] [error]: Database Selection failed err:  PROCEDURE talabat_dev.getNearProviders does not exist
+29-05-2021 17:09:03 [Logger.js] [error]: Database Selection failed err:  PROCEDURE talabat_dev.getNearProviders does not exist
+29-05-2021 17:16:25 [Logger.js] [error]: Database Selection failed err:  PROCEDURE talabat_dev.getNearProviders does not exist
+29-05-2021 17:16:26 [Logger.js] [error]: Database Selection failed err:  PROCEDURE talabat_dev.getNearProviders does not exist
+29-05-2021 17:16:34 [Logger.js] [warn]: Attempt to access restricted resources jwt expired
+30-05-2021 04:49:13 [Logger.js] [error]: Database Insertion failed err:  Unknown column 'deleted_by' in 'field list'
+30-05-2021 04:49:27 [Logger.js] [error]: Database Insertion failed err:  notNull Violation: Provider.formatted_address cannot be null
+30-05-2021 04:56:54 [Logger.js] [error]: Database Insertion failed err:  notNull Violation: Provider.formatted_address cannot be null
+30-05-2021 05:11:16 [Logger.js] [error]: Database Insertion failed err:  notNull Violation: Provider.formatted_address cannot be null
+30-05-2021 05:15:23 [Logger.js] [error]: Database Insertion failed err:  notNull Violation: Provider.formatted_address cannot be null
+30-05-2021 05:15:41 [Logger.js] [error]: Database Insertion failed err:  notNull Violation: Provider.formatted_address cannot be null
+30-05-2021 05:17:35 [Logger.js] [error]: Database Insertion failed err:  Validation error
+30-05-2021 05:18:06 [Logger.js] [error]: Database Insertion failed err:  Validation error
+30-05-2021 05:18:30 [Logger.js] [error]: Database Insertion failed err:  Validation error
+31-05-2021 00:26:53 [Logger.js] [error]: Database Insertion failed err:  Validation error
+31-05-2021 00:30:43 [Logger.js] [error]: Database Insertion failed err:  Validation error
+31-05-2021 06:08:34 [Logger.js] [error]: Database Insertion failed err:  Validation error
 30-05-2021 21:42:28 [Logger.js] [error]: Database Insertion failed err:  notNull Violation: Provider.formatted_address cannot be null,
 string violation: logo cannot be an array or an object
 31-05-2021 05:20:54 [Logger.js] [error]: Database Insertion failed err:  notNull Violation: Provider.formatted_address cannot be null
 31-05-2021 05:27:12 [Logger.js] [error]: Database Insertion failed err:  Data too long for column 'logo' at row 1
+31-05-2021 19:45:39 [Logger.js] [error]: Database Insertion failed err:  Validation error
+31-05-2021 19:46:58 [Logger.js] [error]: Database Insertion failed err:  Validation error
+31-05-2021 20:25:35 [Logger.js] [error]: Database provider selection failed err:  WHERE parameter "id" has invalid "undefined" value
+31-05-2021 20:25:58 [Logger.js] [error]: Database provider selection failed err:  WHERE parameter "id" has invalid "undefined" value
+31-05-2021 20:26:17 [Logger.js] [error]: Database provider selection failed err:  WHERE parameter "id" has invalid "undefined" value
+02-06-2021 04:02:25 [Logger.js] [error]: Database Insertion failed err:  Validation error

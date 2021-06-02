@@ -62,7 +62,7 @@ module.exports = (sequelize, DataTypes) => {
          },
          formatted_address: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: false, 
          },
          deleted_by: {
             type: DataTypes.STRING,

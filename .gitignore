@@ -3,3 +3,4 @@ node_modules
 server_certificates
 
 output.log
+./images/providers

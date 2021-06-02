@@ -11,4 +11,14 @@ router.post("/nearproviders", async (req, res) => {
    }
 });
 
+router.get("/providersinfo/:id", async (req, res) => {
+   console.log(req.params.id);
+   const Provider_Found = await ProviderRepo.FindProviderInfoById(req.params.id);
+   if (Provider_Found) {
+      res.status(200).json({ Provider: Provider_Found });
+   } else {
+      res.status(500).json({ Message: "Database Error Occurred" });
+   }
+});
+
 module.exports = router;
