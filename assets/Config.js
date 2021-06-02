@@ -1,1 +1,4 @@
-module.exports.Types = ["Restaurant", "Pharmacy", "Store"];
+module.exports = {
+  Types: ["Restaurant", "Pharmacy", "Store"],
+  assetsPath: __dirname,
+};
