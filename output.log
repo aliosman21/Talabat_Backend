@@ -69,3 +69,4 @@ string violation: logo cannot be an array or an object
 31-05-2021 20:25:35 [Logger.js] [error]: Database provider selection failed err:  WHERE parameter "id" has invalid "undefined" value
 31-05-2021 20:25:58 [Logger.js] [error]: Database provider selection failed err:  WHERE parameter "id" has invalid "undefined" value
 31-05-2021 20:26:17 [Logger.js] [error]: Database provider selection failed err:  WHERE parameter "id" has invalid "undefined" value
+02-06-2021 04:02:25 [Logger.js] [error]: Database Insertion failed err:  Validation error
