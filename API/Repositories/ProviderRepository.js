@@ -199,7 +199,7 @@ module.exports.getAllRestaurants = async () => {
    try {
       const All_Restaurants = await db.Provider.findAll({
          attributes: ["id", "name", "provider_type", "logo"],
-         where: { provider_type: "Restaurant" },
+         where: { provider_type: "Restaurant",provider_state: "Active" },
       });
       return All_Restaurants ? All_Restaurants : false;
    } catch (err) {
