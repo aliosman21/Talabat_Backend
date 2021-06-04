@@ -70,3 +70,14 @@ string violation: logo cannot be an array or an object
 31-05-2021 20:25:58 [Logger.js] [error]: Database provider selection failed err:  WHERE parameter "id" has invalid "undefined" value
 31-05-2021 20:26:17 [Logger.js] [error]: Database provider selection failed err:  WHERE parameter "id" has invalid "undefined" value
 02-06-2021 04:02:25 [Logger.js] [error]: Database Insertion failed err:  Validation error
+03-06-2021 18:13:30 [Logger.js] [error]: Database Selection failed err:  Column count of mysql.proc is wrong. Expected 21, found 20. Created with MariaDB 100108, now running 100418. Please use mysql_upgrade to fix this error
+03-06-2021 18:13:41 [Logger.js] [error]: Database Selection failed err:  Column count of mysql.proc is wrong. Expected 21, found 20. Created with MariaDB 100108, now running 100418. Please use mysql_upgrade to fix this error
+03-06-2021 18:14:52 [Logger.js] [error]: Database Selection failed err:  Column count of mysql.proc is wrong. Expected 21, found 20. Created with MariaDB 100108, now running 100418. Please use mysql_upgrade to fix this error
+03-06-2021 18:15:18 [Logger.js] [error]: Database Selection failed err:  Column count of mysql.proc is wrong. Expected 21, found 20. Created with MariaDB 100108, now running 100418. Please use mysql_upgrade to fix this error
+03-06-2021 18:17:30 [Logger.js] [error]: Database Selection failed err:  Column count of mysql.proc is wrong. Expected 21, found 20. Created with MariaDB 100108, now running 100418. Please use mysql_upgrade to fix this error
+03-06-2021 18:17:35 [Logger.js] [error]: Database Selection failed err:  Column count of mysql.proc is wrong. Expected 21, found 20. Created with MariaDB 100108, now running 100418. Please use mysql_upgrade to fix this error
+03-06-2021 18:22:24 [Logger.js] [error]: Database Selection failed err:  Column count of mysql.proc is wrong. Expected 21, found 20. Created with MariaDB 100108, now running 100418. Please use mysql_upgrade to fix this error
+03-06-2021 22:09:27 [Logger.js] [error]: Database Selection failed err:  Table 'talabat_dev.providers' doesn't exist
+03-06-2021 22:11:27 [Logger.js] [error]: Database Selection failed err:  Table 'talabat_dev.providers' doesn't exist
+03-06-2021 22:17:00 [Logger.js] [error]: Database Selection failed err:  Table 'talabat_dev.providers' doesn't exist
+03-06-2021 22:30:40 [Logger.js] [error]: Database Selection failed err:  Table 'talabat_dev.providers' doesn't exist
