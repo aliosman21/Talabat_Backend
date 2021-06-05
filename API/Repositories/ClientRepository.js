@@ -39,7 +39,7 @@ module.exports.FindByID = async (client_info) => {
       const client_retrieved = await db.Client.findOne({
          where: {
             id: client_info._id,
-         },
+         },include:{model: db.client_address},
          fields: ["name", "email", "mobile", "gender", "country", "date_of_birth"],
       });
       return client_retrieved ? client_retrieved : false;

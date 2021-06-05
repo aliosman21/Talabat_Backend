@@ -20,6 +20,9 @@ const providerAuth = require("./API/V1/Providers/Authentication");
 const providerProfile = require("./API/V1/Providers/Profile");
 //---------------Provider--------------------\\
 
+//----------------Orders---------------------//
+const clientooo = require("./API/V1/orders/CreateOrder");
+//----------------Orders---------------------//
 //---------------Client--------------------\\
 const clientAuth = require("./API/V1/Clients/Authentication");
 const clientInfo = require("./API/V1/Clients/ClientInfo");
@@ -70,7 +73,7 @@ app.use("/api/v1/superuser/delete/provider", deleteProvider);
 app.use("/api/v1/superuser/unapproved/providers", allUnapproved);
 app.use("/api/v1/client/authenticate", clientAuth);
 app.use("/api/v1/client/info", clientInfo);
-
+app.use("/API/V1/orders/CreateOrder",clientooo);
 app.use("/api/v1/forms/", superUserContactUsForm);
 app.use("/api/v1/provider/authenticate", providerAuth);
 app.use("/api/v1/provider/info", providerProfile);
