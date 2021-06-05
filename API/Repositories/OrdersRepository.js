@@ -4,26 +4,28 @@ const logger = require("../../Logger");
 
 module.exports.InsertOrder = async (order_info,client_info) => {
   try{
-    let total_price = 0
-    for(i in order_info.cart){
-       total_price += i.price
-    }
-      const Client_Order = await db.Order.Create({
-        pickup_latitude : client_info.client_latitude,
-        pickup_longitude: client_info.client_longitude,
-        total_price: total_price,
+   
+    console.log(order_info);
+      const Client_Order = await db.Order.create({
+        client_id: client_info.id,
+        pickup_latitude : order_info.lat,
+        pickup_longitude: order_info.lng,
+        total_price: order_info.total_price,
         order_status: order_info.order_status,
-        delivery_latitude: client_info.client_latitude,
-        delivery_longitude: client_info.client_longitude,
+        delivery_latitude: order_info.lat,
+        delivery_longitude: order_info.lng,
         provider_id: order_info.provider_id,
+        order_status: "Pending"
       })
-      for(i in order_info.cart) {
-      
-      await db.Order_items.Create({
+      //console.log(Client_Order.dataValues.client_id);
+      order_infoParsed = JSON.parse(order_info.cart);
+      for(let i = 0; i < order_infoParsed.length; i++) {
+        console.log(order_infoParsed[i]);
+      await db.Order_Item.create({
         order_id: Client_Order.id,
-        item_total_price: i.price,
-        quantity: i.quantity,
-        item_id:i.id
+        item_total_price: order_infoParsed[i].price,
+        quantity: order_infoParsed[i].quantity,
+        item_id:order_infoParsed[i].id
 
       })
     }  }

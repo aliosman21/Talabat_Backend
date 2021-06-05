@@ -6,8 +6,10 @@ const OrdersRepo = require("../../Repositories/OrdersRepository");
 
 router.post("/create", VerifyClearance.CheckAccessPrivilege("Client"), async (req, res) => {
     const client_info = jwt.decode(req.headers.authorization.split(" ")[1]);
+    
     const client_Found = await clientRepository.FindByID(client_info);
-    const Order_Create = await OrdersRepo.InsertOrder(req,client_Found);
+  
+    const Order_Create = await OrdersRepo.InsertOrder(req.body,client_Found);
    
    
    
@@ -15,3 +17,5 @@ router.post("/create", VerifyClearance.CheckAccessPrivilege("Client"), async (re
    
 
 });
+
+module.exports = router;
