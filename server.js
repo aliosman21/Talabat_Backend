@@ -18,6 +18,8 @@ const allUnapproved = require("./API/V1/SuperUsers/UnApprovedProviders");
 //---------------Provider--------------------\\
 const providerAuth = require("./API/V1/Providers/Authentication");
 const providerProfile = require("./API/V1/Providers/Profile");
+const providerOrders = require("./API/V1/Providers/orderState");
+
 //---------------Provider--------------------\\
 
 //---------------Client--------------------\\
@@ -69,6 +71,9 @@ app.use("/api/v1/client/info", clientInfo);
 app.use("/api/v1/forms/", superUserContactUsForm);
 app.use("/api/v1/provider/authenticate", providerAuth);
 app.use("/api/v1/provider/info", providerProfile);
+app.use("/api/v1/provider/orders", providerOrders);
+
+
 //----guest---\\
 //app.use("/api/v1/guest/restaurant", restaurant);
 app.use("/api/v1/guest/lookup", providerSearch);

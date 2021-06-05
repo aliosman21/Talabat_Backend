@@ -81,3 +81,14 @@ string violation: logo cannot be an array or an object
 03-06-2021 22:11:27 [Logger.js] [error]: Database Selection failed err:  Table 'talabat_dev.providers' doesn't exist
 03-06-2021 22:17:00 [Logger.js] [error]: Database Selection failed err:  Table 'talabat_dev.providers' doesn't exist
 03-06-2021 22:30:40 [Logger.js] [error]: Database Selection failed err:  Table 'talabat_dev.providers' doesn't exist
+05-06-2021 01:57:27 [Logger.js] [error]: Database Selection failed err:  WHERE parameter "provider_id" has invalid "undefined" value
+05-06-2021 01:58:56 [Logger.js] [error]: Database Selection failed err:  WHERE parameter "provider_id" has invalid "undefined" value
+05-06-2021 01:59:46 [Logger.js] [error]: Database Selection failed err:  WHERE parameter "provider_id" has invalid "undefined" value
+05-06-2021 02:02:19 [Logger.js] [error]: Database Selection failed err:  WHERE parameter "provider_id" has invalid "undefined" value
+05-06-2021 02:05:08 [Logger.js] [error]: Database Selection failed err:  WHERE parameter "provider_id" has invalid "undefined" value
+05-06-2021 02:05:29 [Logger.js] [error]: Database Selection failed err:  WHERE parameter "provider_id" has invalid "undefined" value
+05-06-2021 02:34:57 [Logger.js] [error]: Database provider selection failed err:  WHERE parameter "id" has invalid "undefined" value
+05-06-2021 02:34:57 [Logger.js] [error]: Database Selection failed err:  WHERE parameter "provider_id" has invalid "undefined" value
+05-06-2021 05:30:40 [Logger.js] [error]: Database update client info failed err:  order.update is not a function
+05-06-2021 05:31:19 [Logger.js] [error]: Database update client info failed err:  order.update is not a function
+05-06-2021 05:32:06 [Logger.js] [error]: Database update client info failed err:  order.update is not a function
