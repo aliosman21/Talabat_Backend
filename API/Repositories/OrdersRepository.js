@@ -2,6 +2,7 @@ const db = require("../../db/models/index");
 const HashingFunctions = require("../V1/GlobalFunction/HashingFunctions");
 const logger = require("../../Logger");
 const order = require("../../db/models/order");
+const { sequelize } = require("../../db/models/index");
 
 module.exports.InsertOrder = async (order_info) => {
 
@@ -80,13 +81,36 @@ module.exports.Update = async (order,updatedData) => {
 };
 
 
-
-module.exports.UpdateState = async (order,state) => {
+module.exports.destroyOrderById = async (order_id, role) => {
+  
   try {
-    order.update(updatedData)
-     return true
+    const t = await sequelize.transaction();
+
+     await db.Order.update(
+        { deleted_by: role },
+        {
+           where: {
+              id: order_id,
+           },
+           individualHooks: true,
+        },
+        { transaction: t }
+     );
+
+     await db.Order.destroy(
+        {
+           where: {
+              id: order_id,
+           },
+           individualHooks: true,
+        },
+        { transaction: t }
+     );
+     await t.commit();
+     return true;
   } catch (err) {
-     logger.error("Database update client info failed err: ", err);
+     logger.error("Database Destruction failed err: ", err);
+     await t.rollback();
      return false;
   }
 };

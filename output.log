@@ -92,3 +92,4 @@ string violation: logo cannot be an array or an object
 05-06-2021 05:30:40 [Logger.js] [error]: Database update client info failed err:  order.update is not a function
 05-06-2021 05:31:19 [Logger.js] [error]: Database update client info failed err:  order.update is not a function
 05-06-2021 05:32:06 [Logger.js] [error]: Database update client info failed err:  order.update is not a function
+06-06-2021 09:44:39 [Logger.js] [error]: Database Destruction failed err:  sequelize is not defined
