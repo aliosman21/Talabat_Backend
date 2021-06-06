@@ -81,3 +81,5 @@ string violation: logo cannot be an array or an object
 03-06-2021 22:11:27 [Logger.js] [error]: Database Selection failed err:  Table 'talabat_dev.providers' doesn't exist
 03-06-2021 22:17:00 [Logger.js] [error]: Database Selection failed err:  Table 'talabat_dev.providers' doesn't exist
 03-06-2021 22:30:40 [Logger.js] [error]: Database Selection failed err:  Table 'talabat_dev.providers' doesn't exist
+04-06-2021 06:28:41 [Logger.js] [error]: Database Insertion failed err:  Validation error
+05-06-2021 20:29:01 [Logger.js] [warn]: Attempt to access restricted resources jwt malformed

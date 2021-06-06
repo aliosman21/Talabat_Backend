@@ -55,3 +55,23 @@ module.exports.Update = async (order,updatedData) => {
       return false;
    }
 };
+
+module.exports.FindOrderStatus = async (order_id) => {
+  try {
+    const Order_status = await db.Order.findOne({
+      attributes: ["order_status"],
+      where: {
+        id: order_id,
+      },
+    });
+    if (Order_status) {
+      return Order_status;
+    } else {
+      return false;
+    }
+  } catch (err) {
+    console.log(err)
+    logger.error("Database order status Selection failed err: ", err);
+    return false;
+  }
+};
