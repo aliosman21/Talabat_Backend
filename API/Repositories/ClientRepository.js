@@ -36,14 +36,17 @@ module.exports.FindByEmail = async (client_info) => {
 
 module.exports.FindByID = async (client_info) => {
    try {
+      //console.log(client_info._id);
       const client_retrieved = await db.Client.findOne({
          where: {
             id: client_info._id,
          },
-         fields: ["name", "email", "mobile", "gender", "country", "date_of_birth"],
+         fields: ["id","name", "email", "mobile", "gender", "country", "date_of_birth"],
       });
+      
       return client_retrieved ? client_retrieved : false;
    } catch (err) {
+      console.log(err);
       logger.error("Database Selection failed err: ", err);
       return false;
    }
