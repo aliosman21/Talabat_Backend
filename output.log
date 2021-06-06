@@ -81,6 +81,7 @@ string violation: logo cannot be an array or an object
 03-06-2021 22:11:27 [Logger.js] [error]: Database Selection failed err:  Table 'talabat_dev.providers' doesn't exist
 03-06-2021 22:17:00 [Logger.js] [error]: Database Selection failed err:  Table 'talabat_dev.providers' doesn't exist
 03-06-2021 22:30:40 [Logger.js] [error]: Database Selection failed err:  Table 'talabat_dev.providers' doesn't exist
+<<<<<<< HEAD
 05-06-2021 01:57:27 [Logger.js] [error]: Database Selection failed err:  WHERE parameter "provider_id" has invalid "undefined" value
 05-06-2021 01:58:56 [Logger.js] [error]: Database Selection failed err:  WHERE parameter "provider_id" has invalid "undefined" value
 05-06-2021 01:59:46 [Logger.js] [error]: Database Selection failed err:  WHERE parameter "provider_id" has invalid "undefined" value
@@ -93,3 +94,57 @@ string violation: logo cannot be an array or an object
 05-06-2021 05:31:19 [Logger.js] [error]: Database update client info failed err:  order.update is not a function
 05-06-2021 05:32:06 [Logger.js] [error]: Database update client info failed err:  order.update is not a function
 06-06-2021 09:44:39 [Logger.js] [error]: Database Destruction failed err:  sequelize is not defined
+=======
+05-06-2021 15:41:53 [Logger.js] [error]: Database Selection failed err:  Include unexpected. Element has to be either a Model, an Association or an object.
+05-06-2021 15:41:53 [Logger.js] [error]: Database insertion failed err:  db.Order.Create is not a function
+05-06-2021 15:43:46 [Logger.js] [error]: Database Selection failed err:  Include unexpected. Element has to be either a Model, an Association or an object.
+05-06-2021 15:43:46 [Logger.js] [error]: Database insertion failed err:  Field 'pickup_latitude' doesn't have a default value
+05-06-2021 15:45:14 [Logger.js] [error]: Database Selection failed err:  Include unexpected. Element has to be either a Model, an Association or an object.
+05-06-2021 15:45:14 [Logger.js] [error]: Database insertion failed err:  Field 'pickup_latitude' doesn't have a default value
+05-06-2021 15:46:01 [Logger.js] [error]: Database Selection failed err:  Include unexpected. Element has to be either a Model, an Association or an object.
+05-06-2021 15:46:01 [Logger.js] [error]: Database insertion failed err:  Field 'pickup_latitude' doesn't have a default value
+05-06-2021 15:47:39 [Logger.js] [error]: Database Selection failed err:  Include unexpected. Element has to be either a Model, an Association or an object.
+05-06-2021 15:47:39 [Logger.js] [error]: Database insertion failed err:  Field 'pickup_latitude' doesn't have a default value
+05-06-2021 15:48:47 [Logger.js] [error]: Database Selection failed err:  Include unexpected. Element has to be either a Model, an Association or an object.
+05-06-2021 15:48:47 [Logger.js] [error]: Database insertion failed err:  Field 'pickup_latitude' doesn't have a default value
+05-06-2021 16:07:18 [Logger.js] [error]: Database Selection failed err:  Include unexpected. Element has to be either a Model, an Association or an object.
+05-06-2021 16:07:18 [Logger.js] [error]: Database insertion failed err:  Field 'pickup_latitude' doesn't have a default value
+05-06-2021 16:09:27 [Logger.js] [error]: Database insertion failed err:  Field 'pickup_latitude' doesn't have a default value
+05-06-2021 16:10:34 [Logger.js] [error]: Database insertion failed err:  Validation error: Validation isDecimal on total_price failed
+05-06-2021 16:12:37 [Logger.js] [error]: Database insertion failed err:  Validation error: Validation isDecimal on total_price failed
+05-06-2021 16:16:06 [Logger.js] [error]: Database insertion failed err:  Validation error: Validation isDecimal on total_price failed
+05-06-2021 16:16:53 [Logger.js] [error]: Database insertion failed err:  Validation error: Validation isDecimal on total_price failed
+05-06-2021 16:17:34 [Logger.js] [error]: Database insertion failed err:  Validation error: Validation isDecimal on total_price failed
+05-06-2021 16:18:59 [Logger.js] [error]: Database insertion failed err:  Validation error: Validation isDecimal on total_price failed
+05-06-2021 16:26:11 [Logger.js] [error]: Database insertion failed err:  Validation error: Validation isDecimal on total_price failed
+05-06-2021 16:27:02 [Logger.js] [error]: Database insertion failed err:  Validation error: Validation isDecimal on total_price failed
+05-06-2021 16:28:11 [Logger.js] [error]: Database insertion failed err:  log is not defined
+05-06-2021 16:28:30 [Logger.js] [error]: Database insertion failed err:  Validation error: Validation isDecimal on total_price failed
+05-06-2021 16:29:21 [Logger.js] [error]: Database insertion failed err:  Validation error: Validation isDecimal on total_price failed
+05-06-2021 16:30:37 [Logger.js] [error]: Database insertion failed err:  Validation error: Validation isDecimal on total_price failed
+05-06-2021 16:32:32 [Logger.js] [error]: Database insertion failed err:  Validation error: Validation isDecimal on total_price failed
+05-06-2021 16:33:16 [Logger.js] [error]: Database insertion failed err:  Validation error: Validation isDecimal on total_price failed
+05-06-2021 16:33:48 [Logger.js] [error]: Database insertion failed err:  Validation error: Validation isDecimal on total_price failed
+05-06-2021 16:34:24 [Logger.js] [error]: Database insertion failed err:  Validation error: Validation isDecimal on total_price failed
+05-06-2021 16:36:10 [Logger.js] [error]: Database insertion failed err:  Field 'order_status' doesn't have a default value
+05-06-2021 16:37:29 [Logger.js] [error]: Database insertion failed err:  Validation error: Validation isIn on order_status failed
+05-06-2021 16:38:12 [Logger.js] [error]: Database insertion failed err:  Field 'client_id' doesn't have a default value
+05-06-2021 16:41:04 [Logger.js] [error]: Database insertion failed err:  Cannot read property 'Create' of undefined
+05-06-2021 16:42:47 [Logger.js] [error]: Database insertion failed err:  Cannot read property 'create' of undefined
+05-06-2021 16:44:37 [Logger.js] [error]: Database insertion failed err:  Cannot read property 'create' of undefined
+05-06-2021 16:44:52 [Logger.js] [error]: Database insertion failed err:  Cannot read property 'create' of undefined
+05-06-2021 16:45:55 [Logger.js] [error]: Database insertion failed err:  Column 'item_id' cannot be null
+05-06-2021 16:48:59 [Logger.js] [error]: Database insertion failed err:  Column 'item_id' cannot be null
+05-06-2021 16:51:28 [Logger.js] [error]: Database insertion failed err:  Column 'item_id' cannot be null
+05-06-2021 16:52:07 [Logger.js] [error]: Database insertion failed err:  Column 'item_id' cannot be null
+05-06-2021 17:46:48 [Logger.js] [error]: Database insertion failed err:  Validation error: Validation isDecimal on total_price failed
+05-06-2021 17:51:53 [Logger.js] [error]: Database insertion failed err:  Validation error: Validation isDecimal on total_price failed
+05-06-2021 17:53:38 [Logger.js] [error]: Database insertion failed err:  Validation error: Validation isDecimal on total_price failed
+05-06-2021 17:59:22 [Logger.js] [error]: Database insertion failed err:  Column 'item_id' cannot be null
+05-06-2021 18:01:57 [Logger.js] [error]: Database insertion failed err:  Column 'item_id' cannot be null
+05-06-2021 18:03:55 [Logger.js] [error]: Database insertion failed err:  Column 'item_id' cannot be null
+05-06-2021 18:05:57 [Logger.js] [error]: Database insertion failed err:  Column 'item_id' cannot be null
+05-06-2021 18:08:15 [Logger.js] [error]: Database insertion failed err:  Column 'item_id' cannot be null
+05-06-2021 18:16:32 [Logger.js] [error]: Database insertion failed err:  Column 'item_id' cannot be null
+05-06-2021 18:19:42 [Logger.js] [error]: Database insertion failed err:  Column 'item_id' cannot be null
+>>>>>>> f45b7f9625cac5ccd53d1dcfb726437703f264f6

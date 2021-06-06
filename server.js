@@ -4,6 +4,7 @@ const https = require("https");
 const dotenv = require("dotenv");
 const httpsServerOptions = require("./certificates");
 const staticDirPoviders = "./images/providers";
+const staticDirOrderStatus = "./images/orderstatus";
 const path = require("path");
 
 //--------------------------------------Route Imports----------------------------------------------------\\
@@ -22,9 +23,13 @@ const providerOrders = require("./API/V1/Providers/orderState");
 
 //---------------Provider--------------------\\
 
+//----------------Orders---------------------//
+const clientooo = require("./API/V1/orders/CreateOrder");
+//----------------Orders---------------------//
 //---------------Client--------------------\\
 const clientAuth = require("./API/V1/Clients/Authentication");
 const clientInfo = require("./API/V1/Clients/ClientInfo");
+const clientOrderStatus = require("./API/V1/Clients/OrderStatus")
 //---------------Client--------------------\\
 
 //---------------guest--------------------\\
@@ -49,6 +54,7 @@ const port = process.env.PORT || 5000;
 const app = express();
 app.use(cors());
 app.use("/providers/images/", express.static(path.join(__dirname, staticDirPoviders)));
+app.use("/orderstatus/images/", express.static(path.join(__dirname, staticDirOrderStatus)));
 app.use(
    express.json({
       limit: "15mb",
@@ -67,7 +73,9 @@ app.use("/api/v1/superuser/delete/provider", deleteProvider);
 app.use("/api/v1/superuser/unapproved/providers", allUnapproved);
 app.use("/api/v1/client/authenticate", clientAuth);
 app.use("/api/v1/client/info", clientInfo);
+app.use("/api/v1/client/order/status", clientOrderStatus);
 
+app.use("/api/v1/orders/CreateOrder",clientooo);
 app.use("/api/v1/forms/", superUserContactUsForm);
 app.use("/api/v1/provider/authenticate", providerAuth);
 app.use("/api/v1/provider/info", providerProfile);
