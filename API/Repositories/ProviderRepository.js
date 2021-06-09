@@ -77,12 +77,16 @@ module.exports.FindProviderInfoById = async (provider_id) => {
             id: provider_id,
          },
          include: [
+            { model: db.Provider_reviews },
             {
                model: db.Category,
                include: {
                   model: db.Item,
                   include: {
                      model: db.Item_Option,
+                     include: {
+                        model: db.Additional_Option,
+                     },
                   },
                },
             },
@@ -199,7 +203,7 @@ module.exports.getAllRestaurants = async () => {
    try {
       const All_Restaurants = await db.Provider.findAll({
          attributes: ["id", "name", "provider_type", "logo"],
-         where: { provider_type: "Restaurant",provider_state: "Active" },
+         where: { provider_type: "Restaurant", provider_state: "Active" },
       });
       return All_Restaurants ? All_Restaurants : false;
    } catch (err) {
@@ -221,15 +225,15 @@ module.exports.getAllUnapproved = async () => {
    }
 };
 
-module.exports.approveProvider = async (provider_id,superUser_id) => {
+module.exports.approveProvider = async (provider_id, superUser_id) => {
    try {
       await db.Provider.update(
-         { provider_state: "Active" , super_user_id: superUser_id},
+         { provider_state: "Active", super_user_id: superUser_id },
          {
             where: {
                id: provider_id,
             },
-         },
+         }
       );
 
       return true;

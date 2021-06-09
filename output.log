@@ -148,3 +148,6 @@ string violation: logo cannot be an array or an object
 05-06-2021 18:16:32 [Logger.js] [error]: Database insertion failed err:  Column 'item_id' cannot be null
 05-06-2021 18:19:42 [Logger.js] [error]: Database insertion failed err:  Column 'item_id' cannot be null
 >>>>>>> f45b7f9625cac5ccd53d1dcfb726437703f264f6
+09-06-2021 21:58:53 [Logger.js] [error]: Database provider selection failed err:  Include unexpected. Element has to be either a Model, an Association or an object.
+09-06-2021 21:59:16 [Logger.js] [error]: Database provider selection failed err:  Provider_reviews is not associated to Provider!
+09-06-2021 22:03:06 [Logger.js] [error]: Database provider selection failed err:  include.model.getTableName is not a function
