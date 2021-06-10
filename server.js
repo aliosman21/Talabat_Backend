@@ -5,6 +5,7 @@ const dotenv = require("dotenv");
 const httpsServerOptions = require("./certificates");
 const staticDirPoviders = "./images/providers";
 const staticDirOrderStatus = "./images/orderstatus";
+const staticDirItems = "./images/items";
 const path = require("path");
 
 //--------------------------------------Route Imports----------------------------------------------------\\
@@ -19,6 +20,10 @@ const allUnapproved = require("./API/V1/SuperUsers/UnApprovedProviders");
 //---------------Provider--------------------\\
 const providerAuth = require("./API/V1/Providers/Authentication");
 const providerProfile = require("./API/V1/Providers/Profile");
+const providerCategories = require("./API/V1/Providers/Categories");
+const providerItems = require("./API/V1/Providers/Items");
+const providerItemOptions = require("./API/V1/Providers/ItemOptions");
+const providerItemAdditionalOptions = require("./API/V1/Providers/ItemAdditionalOptions");
 //---------------Provider--------------------\\
 
 //----------------Orders---------------------//
@@ -29,6 +34,7 @@ const clientAuth = require("./API/V1/Clients/Authentication");
 const clientInfo = require("./API/V1/Clients/ClientInfo");
 const clientOrderStatus = require("./API/V1/Clients/OrderStatus")
 //---------------Client--------------------\\
+
 
 //---------------guest--------------------\\
 const providerSearch = require("./API/V1/Guest/ProvidersSearch");
@@ -52,6 +58,7 @@ const app = express();
 app.use(cors());
 app.use("/providers/images/", express.static(path.join(__dirname, staticDirPoviders)));
 app.use("/orderstatus/images/", express.static(path.join(__dirname, staticDirOrderStatus)));
+app.use("/items/images/", express.static(path.join(__dirname, staticDirItems)));
 app.use(
    express.json({
       limit: "15mb",
@@ -82,6 +89,10 @@ app.use("/api/v1/orders/CreateOrder",clientooo);
 app.use("/api/v1/forms/", superUserContactUsForm);
 app.use("/api/v1/provider/authenticate", providerAuth);
 app.use("/api/v1/provider/info", providerProfile);
+app.use("/api/v1/provider/categories", providerCategories);
+app.use("/api/v1/provider/items", providerItems);
+app.use("/api/v1/provider/itemoptions", providerItemOptions);
+app.use("/api/v1/provider/itemadditionaloptions", providerItemAdditionalOptions);
 //----guest---\\
 app.use("/api/v1/guest/restaurant", restaurant);
 app.use("/api/v1/guest/lookup", providerSearch);

@@ -133,3 +133,20 @@ string violation: logo cannot be an array or an object
 05-06-2021 18:08:15 [Logger.js] [error]: Database insertion failed err:  Column 'item_id' cannot be null
 05-06-2021 18:16:32 [Logger.js] [error]: Database insertion failed err:  Column 'item_id' cannot be null
 05-06-2021 18:19:42 [Logger.js] [error]: Database insertion failed err:  Column 'item_id' cannot be null
+06-06-2021 16:25:11 [Logger.js] [warn]: Attempt to access restricted resources jwt expired
+06-06-2021 16:25:43 [Logger.js] [warn]: Attempt to access restricted resources jwt expired
+06-06-2021 16:25:46 [Logger.js] [warn]: Attempt to access restricted resources jwt expired
+06-06-2021 16:26:05 [Logger.js] [warn]: Attempt to access restricted resources jwt expired
+06-06-2021 16:26:58 [Logger.js] [warn]: Attempt to access restricted resources jwt expired
+06-06-2021 16:27:14 [Logger.js] [warn]: Attempt to access restricted resources jwt expired
+06-06-2021 16:27:22 [Logger.js] [warn]: Attempt to access restricted resources jwt expired
+06-06-2021 16:27:31 [Logger.js] [warn]: Attempt to access restricted resources jwt expired
+07-06-2021 23:31:50 [Logger.js] [warn]: Attempt to access restricted resources jwt expired
+07-06-2021 23:32:13 [Logger.js] [warn]: Attempt to access restricted resources jwt expired
+07-06-2021 23:32:15 [Logger.js] [warn]: Attempt to access restricted resources jwt expired
+07-06-2021 23:33:00 [Logger.js] [warn]: Attempt to access restricted resources jwt expired
+07-06-2021 23:33:19 [Logger.js] [warn]: Attempt to access restricted resources jwt expired
+10-06-2021 00:57:55 [Logger.js] [error]: Database item Insertion failed err:  Field 'availability' doesn't have a default value
+10-06-2021 02:23:39 [Logger.js] [error]: Database item option Insertion failed err:  Field 'section_name' doesn't have a default value
+10-06-2021 02:26:12 [Logger.js] [error]: Database item option Insertion failed err:  Field 'section_name' doesn't have a default value
+10-06-2021 02:28:06 [Logger.js] [error]: Database item option Insertion failed err:  Field 'section_name' doesn't have a default value

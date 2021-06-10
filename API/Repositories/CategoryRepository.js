@@ -1,0 +1,30 @@
+const db = require("../../db/models/index");
+const logger = require("../../Logger");
+const { sequelize } = require("../../db/models/index");
+ 
+module.exports.InsertCategory = async (category_info,prov_id) => {
+   try {
+      await db.Category.create({
+         name: category_info.name,
+         provider_id: prov_id
+      });
+      return true;
+   } catch (err) {
+      logger.error("Database category Insertion failed err: ", err);
+      return false;
+   }
+};
+ 
+module.exports.FindAllProviderCategories = async (prov_id) => {
+   try {
+      const cat_retrieved = await db.Category.findAll({
+        where: {
+            provider_id: prov_id,
+         },
+      });
+      return cat_retrieved ? cat_retrieved : false;
+   } catch (err) {
+      logger.error("Database category Selection failed err: ", err);
+      return false;
+   }
+};
