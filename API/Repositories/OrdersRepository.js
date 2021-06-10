@@ -18,7 +18,8 @@ const transaction = await sequelize.transaction();
         delivery_latitude: order_info.lat,
         delivery_longitude: order_info.lng,
         provider_id: order_info.provider_id,
-        order_status: "Pending"
+        order_status: "Pending",
+        notes : order_info.notes
       },{ transaction: transaction })
       //console.log(Client_Order.dataValues.client_id);
       order_infoParsed = JSON.parse(order_info.cart);
