@@ -20,6 +20,11 @@ module.exports = (sequelize, DataTypes) => {
             onDelete: "CASCADE",
             hooks: true,
          });
+         Provider.hasMany(models.Provider_reviews, {
+            foreignKey: "provider_id",
+            onDelete: "CASCADE",
+            hooks: true,
+         });
          Provider.hasMany(models.Provider_Payment_Options, {
             foreignKey: "id",
             onDelete: "CASCADE",
@@ -62,7 +67,7 @@ module.exports = (sequelize, DataTypes) => {
          },
          formatted_address: {
             type: DataTypes.STRING,
-            allowNull: false, 
+            allowNull: false,
          },
          deleted_by: {
             type: DataTypes.STRING,
@@ -162,6 +167,16 @@ module.exports = (sequelize, DataTypes) => {
                   individualHooks: true,
                }
             );
+         });
+      });
+      instance.getProvider_reviews().then((reviews) => {
+         reviews.forEach((review) => {
+            sequelize.models.review.destroy({
+               where: {
+                  id: review.id,
+               },
+               individualHooks: true,
+            });
          });
       });
    });

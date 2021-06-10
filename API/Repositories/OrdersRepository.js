@@ -1,6 +1,8 @@
 const db = require("../../db/models/index");
 const HashingFunctions = require("../V1/GlobalFunction/HashingFunctions");
 const logger = require("../../Logger");
+const order = require("../../db/models/order");
+const { sequelize } = require("../../db/models/index");
 
 module.exports.InsertOrder = async (order_info,client_info) => {
   try{
@@ -62,7 +64,7 @@ module.exports.FindProviderOrders = async (provider_info) => {
   try {
     const Orders_retrieved = await db.Order.findAll({
       where: {
-        provider_id: provider_info._id,
+        provider_id: provider_info.id,
       },
     });
     if (Orders_retrieved) {
@@ -77,6 +79,28 @@ module.exports.FindProviderOrders = async (provider_info) => {
   }
 };
 
+
+
+module.exports.FindOrderByID = async (order_id) =>{
+  
+  try{
+
+    const order_retrieved = await db.Order.findOne({
+
+      where: {id: order_id},
+    });
+
+    return order_retrieved ? order_retrieved : false
+
+  } catch (err) {
+    console.log(err)
+    logger.error("Database Selection failed err: ", err);
+    return false;
+  }
+
+
+}
+
 module.exports.Update = async (order,updatedData) => {
    try {
      order.update(updatedData)
@@ -86,6 +110,44 @@ module.exports.Update = async (order,updatedData) => {
       return false;
    }
 };
+
+
+module.exports.destroyOrderById = async (order_id, role) => {
+  
+  try {
+    const t = await sequelize.transaction();
+
+     await db.Order.update(
+        { deleted_by: role },
+        {
+           where: {
+              id: order_id,
+           },
+           individualHooks: true,
+        },
+        { transaction: t }
+     );
+
+     await db.Order.destroy(
+        {
+           where: {
+              id: order_id,
+           },
+           individualHooks: true,
+        },
+        { transaction: t }
+     );
+     await t.commit();
+     return true;
+  } catch (err) {
+     logger.error("Database Destruction failed err: ", err);
+     await t.rollback();
+     return false;
+  }
+
+};
+
+
 
 module.exports.FindOrderStatus = async (order_id) => {
   try {

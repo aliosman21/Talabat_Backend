@@ -24,6 +24,8 @@ const providerCategories = require("./API/V1/Providers/Categories");
 const providerItems = require("./API/V1/Providers/Items");
 const providerItemOptions = require("./API/V1/Providers/ItemOptions");
 const providerItemAdditionalOptions = require("./API/V1/Providers/ItemAdditionalOptions");
+const providerOrders = require("./API/V1/Providers/orderState");
+
 //---------------Provider--------------------\\
 
 //----------------Orders---------------------//
@@ -41,6 +43,7 @@ const providerSearch = require("./API/V1/Guest/ProvidersSearch");
 const restaurant = require("./API/V1/Guest/restaurantPage");
 const allRestaurants = require("./API/V1/Guest/allRestaurants");
 //---------------restaurant--------------------\\
+//const restaurant = require("./API/V1/Restaurant/restaurantPage");
 // const restaurant = require("./API/V1/Restaurant/restaurantPage");
 //---------------restaurant--------------------\\
 
@@ -71,13 +74,7 @@ app.get("/", async (req, res) => {
    res.send("Hello ");
 });
 
-// app.post('/api/v1/feedback', jsonparser,(req,res)=>{
 
-//    console.log("helloa"+ req.body.effort );
-
-//    res.send({success: 'heelloooo'})
-
-// })
 app.use("/api/v1/superuser/authenticate", superUserAuth);
 app.use("/api/v1/superuser/delete/provider", deleteProvider);
 app.use("/api/v1/superuser/unapproved/providers", allUnapproved);
@@ -93,8 +90,11 @@ app.use("/api/v1/provider/categories", providerCategories);
 app.use("/api/v1/provider/items", providerItems);
 app.use("/api/v1/provider/itemoptions", providerItemOptions);
 app.use("/api/v1/provider/itemadditionaloptions", providerItemAdditionalOptions);
+app.use("/api/v1/provider/orders", providerOrders);
+
+
 //----guest---\\
-app.use("/api/v1/guest/restaurant", restaurant);
+//app.use("/api/v1/guest/restaurant", restaurant);
 app.use("/api/v1/guest/lookup", providerSearch);
 app.use("/api/v1/guest/restaurants", allRestaurants);
 

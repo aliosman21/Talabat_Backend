@@ -13,6 +13,9 @@ module.exports = (sequelize, DataTypes) => {
          SuperUser.hasMany(models.Provider, {
             foreignKey: "super_user_id",
          });
+         SuperUser.hasMany(models.Coupons, {
+            foreignKey: "super_user_id",
+         });
       }
    }
    SuperUser.init(

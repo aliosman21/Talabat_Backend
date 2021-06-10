@@ -146,7 +146,3 @@ string violation: logo cannot be an array or an object
 07-06-2021 23:32:15 [Logger.js] [warn]: Attempt to access restricted resources jwt expired
 07-06-2021 23:33:00 [Logger.js] [warn]: Attempt to access restricted resources jwt expired
 07-06-2021 23:33:19 [Logger.js] [warn]: Attempt to access restricted resources jwt expired
-10-06-2021 00:57:55 [Logger.js] [error]: Database item Insertion failed err:  Field 'availability' doesn't have a default value
-10-06-2021 02:23:39 [Logger.js] [error]: Database item option Insertion failed err:  Field 'section_name' doesn't have a default value
-10-06-2021 02:26:12 [Logger.js] [error]: Database item option Insertion failed err:  Field 'section_name' doesn't have a default value
-10-06-2021 02:28:06 [Logger.js] [error]: Database item option Insertion failed err:  Field 'section_name' doesn't have a default value
