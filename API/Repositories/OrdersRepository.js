@@ -5,6 +5,7 @@ const order = require("../../db/models/order");
 const { sequelize } = require("../../db/models/index");
 
 module.exports.InsertOrder = async (order_info,client_info) => {
+const transaction = await sequelize.transaction();
   try{
    
     console.log(order_info);
@@ -17,8 +18,9 @@ module.exports.InsertOrder = async (order_info,client_info) => {
         delivery_latitude: order_info.lat,
         delivery_longitude: order_info.lng,
         provider_id: order_info.provider_id,
-        order_status: "Pending"
-      })
+        order_status: "Pending",
+        notes : order_info.notes
+      },{ transaction: transaction })
       //console.log(Client_Order.dataValues.client_id);
       order_infoParsed = JSON.parse(order_info.cart);
       for(let i = 0; i < order_infoParsed.length; i++) {
@@ -29,9 +31,12 @@ module.exports.InsertOrder = async (order_info,client_info) => {
         quantity: order_infoParsed[i].quantity,
         item_id:order_infoParsed[i].id
 
-      })
-    }  }
+      },{ transaction: transaction })
+    }
+    await transaction.commit();
+    }
   catch(err){
+    await transaction.rollback();
     console.log(err)
     logger.error("Database insertion failed err: ", err);
     return false;
