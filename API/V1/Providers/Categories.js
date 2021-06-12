@@ -25,5 +25,14 @@ router.get("/getall", VerifyClearance.CheckAccessPrivilege("Provider"), async (r
    }
 });
 
+router.delete("/delete/:id", VerifyClearance.CheckAccessPrivilege("Provider"), async (req, res) => {
+   const category_deleted = await CategoryRepo.destroyCategoryById(req.params.id);
+   if (category_deleted) {
+      res.status(200).json({ Message : "Category deleted successfuly"});
+   } else {
+      res.status(500).json({ Message: "Database Error Occurred" });
+   }
+});
+
 
 module.exports = router;

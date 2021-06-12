@@ -18,4 +18,37 @@ module.exports.InsertItem = async (Item_info) => {
       return false;
    }
 };
+
+module.exports.FindCategoryItems = async (categoryId) => {
+   try {
+      const items_retrieved = await db.Item.findAll({
+        where: {
+            category_id: categoryId,
+         },
+      });
+      return items_retrieved ? items_retrieved : false;
+   } catch (err) {
+      logger.error("Database category items Selection failed err: ", err);
+      return false;
+   }
+};
+
+module.exports.destroyItemById = async (item_id) => {
+  
+   try {
+      await db.Item.destroy(
+         {
+            where: {
+               id: item_id,
+            },
+            individualHooks: true,
+         },
+      );
+      return true;
+   } catch (err) {
+      logger.error("Database item Destruction failed err: ", err);
+      return false;
+   }
+ 
+ };
  

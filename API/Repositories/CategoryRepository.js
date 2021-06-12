@@ -28,3 +28,22 @@ module.exports.FindAllProviderCategories = async (prov_id) => {
       return false;
    }
 };
+
+module.exports.destroyCategoryById = async (category_id) => {
+  
+   try {
+      await db.Category.destroy(
+         {
+            where: {
+               id: category_id,
+            },
+            individualHooks: true,
+         },
+      );
+      return true;
+   } catch (err) {
+      logger.error("Database category Destruction failed err: ", err);
+      return false;
+   }
+ 
+ };

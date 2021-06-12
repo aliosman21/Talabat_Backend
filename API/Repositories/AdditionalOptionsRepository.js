@@ -15,4 +15,23 @@ module.exports.InsertAdditionalOption = async (ItemAdditionalOption_info) => {
       return false;
    }
 };
+
+module.exports.destroyAdditionalOptionById = async (additional_option_id) => {
+  
+   try {
+      await db.Additional_Option.destroy(
+         {
+            where: {
+               id: additional_option_id,
+            },
+            
+         },
+      );
+      return true;
+   } catch (err) {
+      logger.error("Database additional option Destruction failed err: ", err);
+      return false;
+   }
+ 
+ };
  

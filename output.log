@@ -146,3 +146,13 @@ string violation: logo cannot be an array or an object
 07-06-2021 23:32:15 [Logger.js] [warn]: Attempt to access restricted resources jwt expired
 07-06-2021 23:33:00 [Logger.js] [warn]: Attempt to access restricted resources jwt expired
 07-06-2021 23:33:19 [Logger.js] [warn]: Attempt to access restricted resources jwt expired
+11-06-2021 20:59:23 [Logger.js] [error]: Database provider selection failed err:  Table 'talabat_dev.provider_reviews' doesn't exist
+11-06-2021 20:59:23 [Logger.js] [error]: Database Selection failed err:  WHERE parameter "provider_id" has invalid "undefined" value
+11-06-2021 20:59:57 [Logger.js] [error]: Database provider selection failed err:  Table 'talabat_dev.provider_reviews' doesn't exist
+11-06-2021 20:59:57 [Logger.js] [error]: Database Selection failed err:  WHERE parameter "provider_id" has invalid "undefined" value
+11-06-2021 21:26:30 [Logger.js] [warn]: Attempt to access restricted resources invalid signature
+11-06-2021 21:26:44 [Logger.js] [warn]: Attempt to access restricted resources invalid signature
+12-06-2021 00:07:33 [Logger.js] [error]: Database item options Selection failed err:  Cannot read property 'findAll' of undefined
+12-06-2021 00:08:27 [Logger.js] [error]: Database item options Selection failed err:  Cannot read property 'findAll' of undefined
+12-06-2021 00:08:52 [Logger.js] [error]: Database item options Selection failed err:  Cannot read property 'findAll' of undefined
+12-06-2021 00:09:55 [Logger.js] [error]: Database item options Selection failed err:  Unknown column 'Item_Option.item_option_id' in 'where clause'

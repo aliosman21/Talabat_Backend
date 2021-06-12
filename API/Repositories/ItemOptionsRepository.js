@@ -15,4 +15,38 @@ module.exports.InsertItemOption = async (ItemOption_info) => {
       return false;
    }
 };
+
+module.exports.FindItemOptions = async (itemOptionId) => {
+   try {
+      const item_options_retrieved = await db.Item_Option.findAll({
+        where: {
+            item_id: itemOptionId,
+         },
+      });
+      return item_options_retrieved ? item_options_retrieved : false;
+   } catch (err) {
+      logger.error("Database item options Selection failed err: ", err);
+      return false;
+   }
+};
+
+module.exports.destroyItemOptionById = async (item_option_id) => {
+  
+   try {
+      await db.Item_Option.destroy(
+         {
+            where: {
+               id: item_option_id,
+            },
+            individualHooks: true,
+         },
+      );
+      return true;
+   } catch (err) {
+      logger.error("Database item option Destruction failed err: ", err);
+      return false;
+   }
+ 
+ };
+ 
  
