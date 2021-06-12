@@ -19,7 +19,7 @@ const transaction = await sequelize.transaction();
         delivery_longitude: order_info.lng,
         provider_id: order_info.provider_id,
         order_status: "Pending",
-        notes : order_info.notes
+       
       },{ transaction: transaction })
       //console.log(Client_Order.dataValues.client_id);
       order_infoParsed = JSON.parse(order_info.cart);
@@ -29,7 +29,8 @@ const transaction = await sequelize.transaction();
         order_id: Client_Order.id,
         item_total_price: order_infoParsed[i].price,
         quantity: order_infoParsed[i].quantity,
-        item_id:order_infoParsed[i].id
+        item_id:order_infoParsed[i].id,
+        notes : order_info.notes + order_info.paymentMethod,
 
       },{ transaction: transaction })
     }

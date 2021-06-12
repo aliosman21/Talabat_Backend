@@ -156,6 +156,7 @@ string violation: logo cannot be an array or an object
 12-06-2021 00:08:27 [Logger.js] [error]: Database item options Selection failed err:  Cannot read property 'findAll' of undefined
 12-06-2021 00:08:52 [Logger.js] [error]: Database item options Selection failed err:  Cannot read property 'findAll' of undefined
 12-06-2021 00:09:55 [Logger.js] [error]: Database item options Selection failed err:  Unknown column 'Item_Option.item_option_id' in 'where clause'
+<<<<<<< HEAD
 12-06-2021 16:52:48 [Logger.js] [error]: Database Selection failed err:  connect ECONNREFUSED 127.0.0.1:3306
 12-06-2021 16:54:21 [Logger.js] [error]: Database category Selection failed err:  Table 'talabat_dev.coupons' doesn't exist
 12-06-2021 17:01:27 [Logger.js] [error]: Database category Selection failed err:  Items is not defined
@@ -166,3 +167,8 @@ string violation: logo cannot be an array or an object
 12-06-2021 17:16:32 [Logger.js] [error]: Database category Selection failed err:  Item is not defined
 12-06-2021 17:18:48 [Logger.js] [error]: Database category Selection failed err:  Item_Option is not defined
 12-06-2021 17:18:57 [Logger.js] [error]: Database category Selection failed err:  Item_Option is not defined
+=======
+12-06-2021 18:07:38 [Logger.js] [error]: Database insertion failed err:  Cannot read property 'length' of null
+12-06-2021 18:32:54 [Logger.js] [error]: Database insertion failed err:  Column 'pickup_latitude' cannot be null
+12-06-2021 18:37:54 [Logger.js] [error]: Database insertion failed err:  Column 'total_price' cannot be null
+>>>>>>> cf734d09c8d127c266c9222985ac05fa22b35539
