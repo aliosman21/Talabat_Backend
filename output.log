@@ -156,3 +156,13 @@ string violation: logo cannot be an array or an object
 12-06-2021 00:08:27 [Logger.js] [error]: Database item options Selection failed err:  Cannot read property 'findAll' of undefined
 12-06-2021 00:08:52 [Logger.js] [error]: Database item options Selection failed err:  Cannot read property 'findAll' of undefined
 12-06-2021 00:09:55 [Logger.js] [error]: Database item options Selection failed err:  Unknown column 'Item_Option.item_option_id' in 'where clause'
+12-06-2021 16:52:48 [Logger.js] [error]: Database Selection failed err:  connect ECONNREFUSED 127.0.0.1:3306
+12-06-2021 16:54:21 [Logger.js] [error]: Database category Selection failed err:  Table 'talabat_dev.coupons' doesn't exist
+12-06-2021 17:01:27 [Logger.js] [error]: Database category Selection failed err:  Items is not defined
+12-06-2021 17:02:43 [Logger.js] [error]: Database category Selection failed err:  Items is not defined
+12-06-2021 17:05:49 [Logger.js] [error]: Database category Selection failed err:  Table 'talabat_dev.coupons' doesn't exist
+12-06-2021 17:06:40 [Logger.js] [error]: Database category Selection failed err:  Unknown column 'Provider->Provider_reviews->Client->Orders->Items->Order_Item.ItemId' in 'field list'
+12-06-2021 17:11:52 [Logger.js] [error]: Database category Selection failed err:  Items is not defined
+12-06-2021 17:16:32 [Logger.js] [error]: Database category Selection failed err:  Item is not defined
+12-06-2021 17:18:48 [Logger.js] [error]: Database category Selection failed err:  Item_Option is not defined
+12-06-2021 17:18:57 [Logger.js] [error]: Database category Selection failed err:  Item_Option is not defined
