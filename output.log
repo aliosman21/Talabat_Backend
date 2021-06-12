@@ -156,3 +156,6 @@ string violation: logo cannot be an array or an object
 12-06-2021 00:08:27 [Logger.js] [error]: Database item options Selection failed err:  Cannot read property 'findAll' of undefined
 12-06-2021 00:08:52 [Logger.js] [error]: Database item options Selection failed err:  Cannot read property 'findAll' of undefined
 12-06-2021 00:09:55 [Logger.js] [error]: Database item options Selection failed err:  Unknown column 'Item_Option.item_option_id' in 'where clause'
+12-06-2021 18:07:38 [Logger.js] [error]: Database insertion failed err:  Cannot read property 'length' of null
+12-06-2021 18:32:54 [Logger.js] [error]: Database insertion failed err:  Column 'pickup_latitude' cannot be null
+12-06-2021 18:37:54 [Logger.js] [error]: Database insertion failed err:  Column 'total_price' cannot be null

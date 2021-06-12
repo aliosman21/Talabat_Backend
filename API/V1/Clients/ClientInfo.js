@@ -22,7 +22,9 @@ router.post("/edit", VerifyClearance.CheckAccessPrivilege("Client"), async (req,
        const client_info = jwt.decode(req.headers.authorization.split(" ")[1]);
        const client_Found = await clientRepository.FindByID(client_info);
        const Updated_client = await clientRepository.Update(client_Found,req.body)
+       console.log(req.body);
        if (Updated_client)
+           
             res.status(200).json({ Message : "updated successfully" });
        else
             res.status(500).json({ Message: "Database Error Occurred" });
