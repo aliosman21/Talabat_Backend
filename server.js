@@ -15,6 +15,8 @@ const superUserAuth = require("./API/V1/SuperUsers/Authentication");
 const superUserContactUsForm = require("./API/V1/SuperUsers/ContactUs");
 const deleteProvider = require("./API/V1/SuperUsers/DeleteProvider");
 const allUnapproved = require("./API/V1/SuperUsers/UnApprovedProviders");
+const coupons = require("./API/V1/SuperUsers/Coupons")
+
 //---------------Super User--------------------\\
 
 //---------------Provider--------------------\\
@@ -78,6 +80,9 @@ app.get("/", async (req, res) => {
 app.use("/api/v1/superuser/authenticate", superUserAuth);
 app.use("/api/v1/superuser/delete/provider", deleteProvider);
 app.use("/api/v1/superuser/unapproved/providers", allUnapproved);
+app.use("/api/v1/superuser/coupons",coupons)
+
+
 app.use("/api/v1/client/authenticate", clientAuth);
 app.use("/api/v1/client/info", clientInfo);
 app.use("/api/v1/client/order/status", clientOrderStatus);

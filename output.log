@@ -172,3 +172,9 @@ string violation: logo cannot be an array or an object
 12-06-2021 18:32:54 [Logger.js] [error]: Database insertion failed err:  Column 'pickup_latitude' cannot be null
 12-06-2021 18:37:54 [Logger.js] [error]: Database insertion failed err:  Column 'total_price' cannot be null
 >>>>>>> cf734d09c8d127c266c9222985ac05fa22b35539
+13-06-2021 10:17:44 [Logger.js] [error]: Database copoun Insertion failed err:  Field 'provider_id' doesn't have a default value
+13-06-2021 13:00:51 [Logger.js] [error]: Database coupon Selection failed err:  WHERE parameter "super_user_id" has invalid "undefined" value
+13-06-2021 13:01:17 [Logger.js] [error]: Database coupon Selection failed err:  WHERE parameter "super_user_id" has invalid "undefined" value
+13-06-2021 13:01:21 [Logger.js] [error]: Database coupon Selection failed err:  WHERE parameter "super_user_id" has invalid "undefined" value
+13-06-2021 13:01:54 [Logger.js] [error]: Database coupon Selection failed err:  WHERE parameter "super_user_id" has invalid "undefined" value
+13-06-2021 13:04:50 [Logger.js] [error]: Database coupon Selection failed err:  Unknown column 'Category.super_user_id' in 'where clause'
