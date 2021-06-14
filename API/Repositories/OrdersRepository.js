@@ -52,7 +52,7 @@ module.exports.FindClientOrders = async (client_info) => {
     const Orders_retrieved = await db.Order.findAll({
       where: {
         client_id: client_info._id,
-      },
+      }, include: { model: db.Provider }
     });
     if (Orders_retrieved) {
       return Orders_retrieved;
