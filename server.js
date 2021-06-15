@@ -37,6 +37,7 @@ const clientooo = require("./API/V1/orders/CreateOrder");
 const clientAuth = require("./API/V1/Clients/Authentication");
 const clientInfo = require("./API/V1/Clients/ClientInfo");
 const clientOrderStatus = require("./API/V1/Clients/OrderStatus")
+const clientAddProviderReview = require("./API/V1/Clients/AddReview")
 //---------------Client--------------------\\
 
 
@@ -86,6 +87,7 @@ app.use("/api/v1/superuser/coupons",coupons)
 app.use("/api/v1/client/authenticate", clientAuth);
 app.use("/api/v1/client/info", clientInfo);
 app.use("/api/v1/client/order/status", clientOrderStatus);
+app.use("/api/v1/client/order/review", clientAddProviderReview);
 
 app.use("/api/v1/orders/CreateOrder",clientooo);
 app.use("/api/v1/forms/", superUserContactUsForm);
