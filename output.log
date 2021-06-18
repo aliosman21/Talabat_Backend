@@ -156,9 +156,22 @@ string violation: logo cannot be an array or an object
 12-06-2021 00:08:27 [Logger.js] [error]: Database item options Selection failed err:  Cannot read property 'findAll' of undefined
 12-06-2021 00:08:52 [Logger.js] [error]: Database item options Selection failed err:  Cannot read property 'findAll' of undefined
 12-06-2021 00:09:55 [Logger.js] [error]: Database item options Selection failed err:  Unknown column 'Item_Option.item_option_id' in 'where clause'
+<<<<<<< HEAD
+12-06-2021 16:52:48 [Logger.js] [error]: Database Selection failed err:  connect ECONNREFUSED 127.0.0.1:3306
+12-06-2021 16:54:21 [Logger.js] [error]: Database category Selection failed err:  Table 'talabat_dev.coupons' doesn't exist
+12-06-2021 17:01:27 [Logger.js] [error]: Database category Selection failed err:  Items is not defined
+12-06-2021 17:02:43 [Logger.js] [error]: Database category Selection failed err:  Items is not defined
+12-06-2021 17:05:49 [Logger.js] [error]: Database category Selection failed err:  Table 'talabat_dev.coupons' doesn't exist
+12-06-2021 17:06:40 [Logger.js] [error]: Database category Selection failed err:  Unknown column 'Provider->Provider_reviews->Client->Orders->Items->Order_Item.ItemId' in 'field list'
+12-06-2021 17:11:52 [Logger.js] [error]: Database category Selection failed err:  Items is not defined
+12-06-2021 17:16:32 [Logger.js] [error]: Database category Selection failed err:  Item is not defined
+12-06-2021 17:18:48 [Logger.js] [error]: Database category Selection failed err:  Item_Option is not defined
+12-06-2021 17:18:57 [Logger.js] [error]: Database category Selection failed err:  Item_Option is not defined
+=======
 12-06-2021 18:07:38 [Logger.js] [error]: Database insertion failed err:  Cannot read property 'length' of null
 12-06-2021 18:32:54 [Logger.js] [error]: Database insertion failed err:  Column 'pickup_latitude' cannot be null
 12-06-2021 18:37:54 [Logger.js] [error]: Database insertion failed err:  Column 'total_price' cannot be null
+<<<<<<< HEAD
 12-06-2021 19:48:42 [Logger.js] [error]: Database update client info failed err:  Cannot read property 'create' of undefined
 12-06-2021 19:50:16 [Logger.js] [error]: Database update client info failed err:  data and salt arguments required
 12-06-2021 19:50:46 [Logger.js] [error]: Database update client info failed err:  data and salt arguments required
@@ -176,3 +189,58 @@ string violation: logo cannot be an array or an object
 17-06-2021 15:15:52 [Logger.js] [warn]: Attempt to access restricted resources jwt expired
 17-06-2021 15:17:42 [Logger.js] [warn]: Attempt to access restricted resources jwt expired
 18-06-2021 19:18:47 [Logger.js] [warn]: Attempt to access restricted resources jwt expired
+=======
+>>>>>>> cf734d09c8d127c266c9222985ac05fa22b35539
+13-06-2021 10:17:44 [Logger.js] [error]: Database copoun Insertion failed err:  Field 'provider_id' doesn't have a default value
+13-06-2021 13:00:51 [Logger.js] [error]: Database coupon Selection failed err:  WHERE parameter "super_user_id" has invalid "undefined" value
+13-06-2021 13:01:17 [Logger.js] [error]: Database coupon Selection failed err:  WHERE parameter "super_user_id" has invalid "undefined" value
+13-06-2021 13:01:21 [Logger.js] [error]: Database coupon Selection failed err:  WHERE parameter "super_user_id" has invalid "undefined" value
+13-06-2021 13:01:54 [Logger.js] [error]: Database coupon Selection failed err:  WHERE parameter "super_user_id" has invalid "undefined" value
+13-06-2021 13:04:50 [Logger.js] [error]: Database coupon Selection failed err:  Unknown column 'Category.super_user_id' in 'where clause'
+15-06-2021 04:56:28 [Logger.js] [warn]: Attempt to access restricted resources jwt expired
+15-06-2021 04:59:39 [Logger.js] [error]: Database provider selection failed err:  Table 'talabat_dev.Provider_reviews' doesn't exist
+15-06-2021 05:09:11 [Logger.js] [error]: Database provider selection failed err:  Table 'talabat_dev.Provider_reviews' doesn't exist
+15-06-2021 05:09:26 [Logger.js] [error]: Database provider selection failed err:  Table 'talabat_dev.Provider_reviews' doesn't exist
+15-06-2021 05:09:52 [Logger.js] [error]: Database provider selection failed err:  Table 'talabat_dev.Provider_reviews' doesn't exist
+15-06-2021 05:10:00 [Logger.js] [error]: Database provider selection failed err:  Table 'talabat_dev.Provider_reviews' doesn't exist
+15-06-2021 05:10:11 [Logger.js] [error]: Database provider selection failed err:  Table 'talabat_dev.Provider_reviews' doesn't exist
+15-06-2021 05:10:22 [Logger.js] [error]: Database provider selection failed err:  Table 'talabat_dev.Provider_reviews' doesn't exist
+15-06-2021 05:10:58 [Logger.js] [error]: Database provider selection failed err:  Table 'talabat_dev.Provider_reviews' doesn't exist
+15-06-2021 05:11:10 [Logger.js] [error]: Database provider selection failed err:  Table 'talabat_dev.Provider_reviews' doesn't exist
+15-06-2021 07:23:09 [Logger.js] [error]: Database provider selection failed err:  Table 'talabat_dev.Provider_reviews' doesn't exist
+15-06-2021 07:24:10 [Logger.js] [error]: Database provider selection failed err:  Table 'talabat_dev.Provider_reviews' doesn't exist
+15-06-2021 07:24:55 [Logger.js] [error]: Database provider selection failed err:  Table 'talabat_dev.Provider_reviews' doesn't exist
+15-06-2021 07:27:07 [Logger.js] [error]: Database provider selection failed err:  Table 'talabat_dev.Provider_reviews' doesn't exist
+15-06-2021 07:27:59 [Logger.js] [error]: Database provider selection failed err:  Table 'talabat_dev.Provider_reviews' doesn't exist
+15-06-2021 07:28:08 [Logger.js] [error]: Database provider selection failed err:  Table 'talabat_dev.Provider_reviews' doesn't exist
+15-06-2021 07:28:22 [Logger.js] [error]: Database provider selection failed err:  Table 'talabat_dev.Provider_reviews' doesn't exist
+15-06-2021 07:29:58 [Logger.js] [error]: Database provider selection failed err:  Table 'talabat_dev.Provider_reviews' doesn't exist
+15-06-2021 07:31:05 [Logger.js] [error]: Database provider selection failed err:  Table 'talabat_dev.Provider_reviews' doesn't exist
+15-06-2021 07:31:32 [Logger.js] [error]: Database provider selection failed err:  Table 'talabat_dev.Provider_reviews' doesn't exist
+15-06-2021 07:31:39 [Logger.js] [error]: Database provider selection failed err:  Table 'talabat_dev.Provider_reviews' doesn't exist
+15-06-2021 07:31:43 [Logger.js] [error]: Database provider selection failed err:  Table 'talabat_dev.Provider_reviews' doesn't exist
+15-06-2021 07:32:30 [Logger.js] [error]: Database provider selection failed err:  Table 'talabat_dev.Provider_reviews' doesn't exist
+15-06-2021 07:32:32 [Logger.js] [error]: Database provider selection failed err:  Table 'talabat_dev.Provider_reviews' doesn't exist
+15-06-2021 07:33:35 [Logger.js] [error]: Database provider selection failed err:  Table 'talabat_dev.Provider_reviews' doesn't exist
+15-06-2021 07:33:40 [Logger.js] [error]: Database provider selection failed err:  Table 'talabat_dev.Provider_reviews' doesn't exist
+15-06-2021 07:34:26 [Logger.js] [error]: Database provider selection failed err:  Table 'talabat_dev.Provider_reviews' doesn't exist
+15-06-2021 07:34:46 [Logger.js] [error]: Database provider selection failed err:  Table 'talabat_dev.Provider_reviews' doesn't exist
+15-06-2021 07:36:13 [Logger.js] [error]: Database provider selection failed err:  Table 'talabat_dev.Provider_reviews' doesn't exist
+15-06-2021 07:37:45 [Logger.js] [error]: Database provider selection failed err:  Table 'talabat_dev.Provider_reviews' doesn't exist
+15-06-2021 07:37:58 [Logger.js] [error]: Database provider selection failed err:  Table 'talabat_dev.Provider_reviews' doesn't exist
+15-06-2021 07:39:07 [Logger.js] [error]: Database provider selection failed err:  Table 'talabat_dev.Provider_reviews' doesn't exist
+15-06-2021 07:40:05 [Logger.js] [error]: Database provider selection failed err:  Table 'talabat_dev.Provider_reviews' doesn't exist
+16-06-2021 08:18:57 [Logger.js] [warn]: Attempt to access restricted resources jwt expired
+16-06-2021 08:19:59 [Logger.js] [warn]: Attempt to access restricted resources jwt malformed
+18-06-2021 13:47:31 [Logger.js] [error]: Database Insertion failed err:  Field 'work_state' doesn't have a default value
+18-06-2021 13:55:55 [Logger.js] [error]: Database Insertion failed err:  Field 'work_state' doesn't have a default value
+18-06-2021 13:56:26 [Logger.js] [error]: Database Insertion failed err:  Field 'work_state' doesn't have a default value
+18-06-2021 13:57:12 [Logger.js] [error]: Database Insertion failed err:  Field 'work_state' doesn't have a default value
+18-06-2021 13:57:28 [Logger.js] [error]: Database Insertion failed err:  Field 'work_state' doesn't have a default value
+18-06-2021 15:12:31 [Logger.js] [error]: Database Insertion failed err:  Field 'work_state' doesn't have a default value
+18-06-2021 15:32:47 [Logger.js] [error]: Database login failed err:  FindByID is not defined
+18-06-2021 15:35:19 [Logger.js] [error]: Database login failed err:  FindByID is not defined
+18-06-2021 15:35:58 [Logger.js] [error]: Database login failed err:  FindByID is not defined
+18-06-2021 15:36:12 [Logger.js] [error]: Database login failed err:  FindByID is not defined
+18-06-2021 15:39:39 [Logger.js] [error]: Database login failed err:  Validation error: Validation isDecimal on last_longitude failed
+>>>>>>> dd47ef94bba8e504667aadc63c2ef948cb140b58

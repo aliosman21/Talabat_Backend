@@ -21,5 +21,16 @@ router.delete("/delete/:id", VerifyClearance.CheckAccessPrivilege("Provider"), a
    }
 });
 
+router.get("/getadditionaloptions/:id", VerifyClearance.CheckAccessPrivilege("Provider"), async (req, res) => {
+   console.log(req.params.id);
+   const additional_options_Found = await ItemAdditionalOptionsRepo.FindOptionAdditionalOptions(req.params.id);
+   if (additional_options_Found) {
+      res.status(200).json(additional_options_Found);
+   } else {
+      res.status(500).json({ Message: "Database Error Occurred" });
+   }
+});
+
+
 
 module.exports = router;

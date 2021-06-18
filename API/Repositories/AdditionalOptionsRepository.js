@@ -34,4 +34,18 @@ module.exports.destroyAdditionalOptionById = async (additional_option_id) => {
    }
  
  };
+
+ module.exports.FindOptionAdditionalOptions = async (itemOptionId) => {
+   try {
+      const additional_options_retrieved = await db.Additional_Option.findAll({
+        where: {
+            item_option_id: itemOptionId,
+         },
+      });
+      return additional_options_retrieved ? additional_options_retrieved : false;
+   } catch (err) {
+      logger.error("Database option's additional option Selection failed err: ", err);
+      return false;
+   }
+};
  

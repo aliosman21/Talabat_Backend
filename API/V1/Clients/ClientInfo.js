@@ -73,4 +73,15 @@ router.delete("/delete", VerifyClearance.CheckAccessPrivilege("Client"), async (
 
 });
 
+router.get("/allorders", VerifyClearance.CheckAccessPrivilege("Client"), async (req, res) => {
+   const client_info = jwt.decode(req.headers.authorization.split(" ")[1]);
+   
+      const Orders_Found = await OrdersRepo.FindClientOrders(client_info);
+      if(Orders_Found){
+         res.status(200).json(Orders_Found);
+      } else {
+         res.status(500).json({ Message: "Database Error Occurred" });
+      }
+});
+
 module.exports = router;

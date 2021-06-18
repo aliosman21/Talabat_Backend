@@ -15,6 +15,9 @@ const superUserAuth = require("./API/V1/SuperUsers/Authentication");
 const superUserContactUsForm = require("./API/V1/SuperUsers/ContactUs");
 const deleteProvider = require("./API/V1/SuperUsers/DeleteProvider");
 const allUnapproved = require("./API/V1/SuperUsers/UnApprovedProviders");
+const coupons = require("./API/V1/SuperUsers/Coupons");
+const allDrivers = require("./API/V1/SuperUsers/AllDrivers");
+
 //---------------Super User--------------------\\
 
 //---------------Provider--------------------\\
@@ -31,12 +34,18 @@ const providerOrders = require("./API/V1/Providers/orderState");
 //----------------Orders---------------------//
 const clientooo = require("./API/V1/orders/CreateOrder");
 //----------------Orders---------------------//
+
 //---------------Client--------------------\\
 const clientAuth = require("./API/V1/Clients/Authentication");
 const clientInfo = require("./API/V1/Clients/ClientInfo");
-const clientOrderStatus = require("./API/V1/Clients/OrderStatus")
+const clientOrderStatus = require("./API/V1/Clients/OrderStatus");
+const clientAddProviderReview = require("./API/V1/Clients/AddReview");
 //---------------Client--------------------\\
 
+//---------------Driver--------------------\\
+const driverAuth = require("./API/V1/Driver/Authentication");
+const driverInfo = require("./API/V1/Driver/DriverInfo");
+//---------------Driver--------------------\\
 
 //---------------guest--------------------\\
 const providerSearch = require("./API/V1/Guest/ProvidersSearch");
@@ -59,39 +68,53 @@ dotenv.config();
 const port = process.env.PORT || 5000;
 const app = express();
 app.use(cors());
-app.use("/providers/images/", express.static(path.join(__dirname, staticDirPoviders)));
-app.use("/orderstatus/images/", express.static(path.join(__dirname, staticDirOrderStatus)));
+app.use(
+  "/providers/images/",
+  express.static(path.join(__dirname, staticDirPoviders))
+);
+app.use(
+  "/orderstatus/images/",
+  express.static(path.join(__dirname, staticDirOrderStatus))
+);
 app.use("/items/images/", express.static(path.join(__dirname, staticDirItems)));
 app.use(
-   express.json({
-      limit: "15mb",
-   })
+  express.json({
+    limit: "15mb",
+  })
 );
 //--------------------------------------Server Configurations----------------------------------------------------\\
 
 //--------------------------------------Routes-------------------------------------------------------------\\
 app.get("/", async (req, res) => {
-   res.send("Hello ");
+  res.send("Hello ");
 });
-
 
 app.use("/api/v1/superuser/authenticate", superUserAuth);
 app.use("/api/v1/superuser/delete/provider", deleteProvider);
 app.use("/api/v1/superuser/unapproved/providers", allUnapproved);
+app.use("/api/v1/superuser/coupons", coupons);
+app.use("/api/v1/superuser/get/alldrivers", allDrivers);
+
 app.use("/api/v1/client/authenticate", clientAuth);
 app.use("/api/v1/client/info", clientInfo);
 app.use("/api/v1/client/order/status", clientOrderStatus);
+app.use("/api/v1/client/order/review", clientAddProviderReview);
 
-app.use("/api/v1/orders/CreateOrder",clientooo);
+app.use("/api/v1/orders/CreateOrder", clientooo);
 app.use("/api/v1/forms/", superUserContactUsForm);
 app.use("/api/v1/provider/authenticate", providerAuth);
 app.use("/api/v1/provider/info", providerProfile);
 app.use("/api/v1/provider/categories", providerCategories);
 app.use("/api/v1/provider/items", providerItems);
 app.use("/api/v1/provider/itemoptions", providerItemOptions);
-app.use("/api/v1/provider/itemadditionaloptions", providerItemAdditionalOptions);
+app.use(
+  "/api/v1/provider/itemadditionaloptions",
+  providerItemAdditionalOptions
+);
 app.use("/api/v1/provider/orders", providerOrders);
 
+app.use("/api/v1/driver/authenticate", driverAuth);
+app.use("/api/v1/driver/info", driverInfo);
 
 //----guest---\\
 //app.use("/api/v1/guest/restaurant", restaurant);
