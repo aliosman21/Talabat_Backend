@@ -63,3 +63,17 @@ module.exports.updateLatLng = async (driver_latAndLng, id) => {
     return false;
   }
 };
+
+module.exports.FindAll = async () => {
+  try {
+    const fetchedResponses = await db.Driver.findAll({
+      attributes: {
+        exclude: ["password", "createdAt", "updatedAt"],
+      },
+    });
+    return fetchedResponses;
+  } catch (err) {
+    logger.error("Database Selection failed err: ", err);
+    return false;
+  }
+};

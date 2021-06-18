@@ -16,6 +16,7 @@ const superUserContactUsForm = require("./API/V1/SuperUsers/ContactUs");
 const deleteProvider = require("./API/V1/SuperUsers/DeleteProvider");
 const allUnapproved = require("./API/V1/SuperUsers/UnApprovedProviders");
 const coupons = require("./API/V1/SuperUsers/Coupons");
+const allDrivers = require("./API/V1/SuperUsers/AllDrivers");
 
 //---------------Super User--------------------\\
 
@@ -92,6 +93,7 @@ app.use("/api/v1/superuser/authenticate", superUserAuth);
 app.use("/api/v1/superuser/delete/provider", deleteProvider);
 app.use("/api/v1/superuser/unapproved/providers", allUnapproved);
 app.use("/api/v1/superuser/coupons", coupons);
+app.use("/api/v1/superuser/get/alldrivers", allDrivers);
 
 app.use("/api/v1/client/authenticate", clientAuth);
 app.use("/api/v1/client/info", clientInfo);
