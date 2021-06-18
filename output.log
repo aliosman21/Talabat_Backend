@@ -159,3 +159,20 @@ string violation: logo cannot be an array or an object
 12-06-2021 18:07:38 [Logger.js] [error]: Database insertion failed err:  Cannot read property 'length' of null
 12-06-2021 18:32:54 [Logger.js] [error]: Database insertion failed err:  Column 'pickup_latitude' cannot be null
 12-06-2021 18:37:54 [Logger.js] [error]: Database insertion failed err:  Column 'total_price' cannot be null
+12-06-2021 19:48:42 [Logger.js] [error]: Database update client info failed err:  Cannot read property 'create' of undefined
+12-06-2021 19:50:16 [Logger.js] [error]: Database update client info failed err:  data and salt arguments required
+12-06-2021 19:50:46 [Logger.js] [error]: Database update client info failed err:  data and salt arguments required
+12-06-2021 19:53:02 [Logger.js] [error]: Database update client info failed err:  data and salt arguments required
+12-06-2021 19:53:45 [Logger.js] [error]: Database update client info failed err:  Cannot read property 'create' of undefined
+12-06-2021 19:54:06 [Logger.js] [error]: Database update client info failed err:  Validation error: Validation isIn on address_type failed
+12-06-2021 19:54:57 [Logger.js] [error]: Database update client info failed err:  Column 'id' cannot be null
+12-06-2021 19:56:48 [Logger.js] [error]: Database Insertion failed err:  Cannot read property 'create' of undefined
+12-06-2021 19:56:56 [Logger.js] [error]: Database Insertion failed err:  Cannot read property 'create' of undefined
+12-06-2021 19:57:29 [Logger.js] [error]: Database Insertion failed err:  Cannot read property 'create' of undefined
+12-06-2021 19:57:57 [Logger.js] [error]: Database Insertion failed err:  Cannot read property 'create' of undefined
+12-06-2021 20:01:27 [Logger.js] [error]: Database Insertion failed err:  Cannot read property 'create' of undefined
+16-06-2021 18:58:42 [Logger.js] [error]: Database Insertion failed err:  Validation error
+16-06-2021 19:52:23 [Logger.js] [error]: Database Insertion failed err:  Validation error
+17-06-2021 15:15:52 [Logger.js] [warn]: Attempt to access restricted resources jwt expired
+17-06-2021 15:17:42 [Logger.js] [warn]: Attempt to access restricted resources jwt expired
+18-06-2021 19:18:47 [Logger.js] [warn]: Attempt to access restricted resources jwt expired
