@@ -16,11 +16,11 @@ module.exports.InsertItemOption = async (ItemOption_info) => {
    }
 };
 
-module.exports.FindItemOptions = async (itemOptionId) => {
+module.exports.FindItemOptions = async (item_id) => {
    try {
       const item_options_retrieved = await db.Item_Option.findAll({
         where: {
-            item_id: itemOptionId,
+            item_id: item_id,
          },
       });
       return item_options_retrieved ? item_options_retrieved : false;
@@ -29,6 +29,24 @@ module.exports.FindItemOptions = async (itemOptionId) => {
       return false;
    }
 };
+
+
+module.exports.FindItemOption = async (itemoption_id) => {
+   try {
+      const item_options_retrieved = await db.Item_Option.findOne({
+        where: {
+            id: itemoption_id,
+         },
+      });
+      return item_options_retrieved ? item_options_retrieved : false;
+   } catch (err) {
+      logger.error("Database item options Selection failed err: ", err);
+      return false;
+   }
+};
+
+
+
 
 module.exports.destroyItemOptionById = async (item_option_id) => {
   
@@ -48,5 +66,17 @@ module.exports.destroyItemOptionById = async (item_option_id) => {
    }
  
  };
+
+
+ 
+ module.exports.UpdateItemOption = async (itemopt,updatedData) => {
+   try {
+     itemopt.update(updatedData)
+      return true
+   } catch (err) {
+      logger.error("Database update client info failed err: ", err);
+      return false;
+   }
+};
  
  

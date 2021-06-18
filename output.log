@@ -178,3 +178,31 @@ string violation: logo cannot be an array or an object
 13-06-2021 13:01:21 [Logger.js] [error]: Database coupon Selection failed err:  WHERE parameter "super_user_id" has invalid "undefined" value
 13-06-2021 13:01:54 [Logger.js] [error]: Database coupon Selection failed err:  WHERE parameter "super_user_id" has invalid "undefined" value
 13-06-2021 13:04:50 [Logger.js] [error]: Database coupon Selection failed err:  Unknown column 'Category.super_user_id' in 'where clause'
+17-06-2021 12:00:55 [Logger.js] [warn]: Attempt to access restricted resources jwt expired
+17-06-2021 12:08:35 [Logger.js] [warn]: Attempt to access restricted resources jwt expired
+17-06-2021 12:08:50 [Logger.js] [warn]: Attempt to access restricted resources jwt expired
+17-06-2021 12:09:11 [Logger.js] [warn]: Attempt to access restricted resources jwt expired
+17-06-2021 12:09:13 [Logger.js] [warn]: Attempt to access restricted resources jwt expired
+17-06-2021 12:09:14 [Logger.js] [warn]: Attempt to access restricted resources jwt expired
+17-06-2021 12:09:14 [Logger.js] [warn]: Attempt to access restricted resources jwt expired
+17-06-2021 12:09:14 [Logger.js] [warn]: Attempt to access restricted resources jwt expired
+17-06-2021 12:09:14 [Logger.js] [warn]: Attempt to access restricted resources jwt expired
+17-06-2021 12:09:14 [Logger.js] [warn]: Attempt to access restricted resources jwt expired
+17-06-2021 12:09:22 [Logger.js] [warn]: Attempt to access restricted resources jwt expired
+17-06-2021 12:28:22 [Logger.js] [error]: Database item option Insertion failed err:  Field 'item_id' doesn't have a default value
+17-06-2021 20:24:21 [Logger.js] [error]: Database update client info failed err:  category.update is not a function
+17-06-2021 20:25:45 [Logger.js] [error]: Database update client info failed err:  category.update is not a function
+18-06-2021 00:44:52 [Logger.js] [warn]: Attempt to access restricted resources jwt expired
+18-06-2021 00:54:03 [Logger.js] [error]: Database update client info failed err:  itemopt.update is not a function
+18-06-2021 00:58:47 [Logger.js] [error]: Database update client info failed err:  itemopt.update is not a function
+18-06-2021 10:33:17 [Logger.js] [warn]: Attempt to access restricted resources jwt expired
+18-06-2021 10:33:21 [Logger.js] [warn]: Attempt to access restricted resources jwt expired
+18-06-2021 10:33:37 [Logger.js] [warn]: Attempt to access restricted resources jwt expired
+18-06-2021 10:35:00 [Logger.js] [warn]: Attempt to access restricted resources jwt expired
+18-06-2021 10:40:10 [Logger.js] [warn]: Attempt to access restricted resources jwt expired
+18-06-2021 11:56:45 [Logger.js] [error]: Database category Selection failed err:  WHERE parameter "id" has invalid "undefined" value
+18-06-2021 11:57:22 [Logger.js] [error]: Database category Selection failed err:  WHERE parameter "id" has invalid "undefined" value
+18-06-2021 11:57:34 [Logger.js] [error]: Database category Selection failed err:  WHERE parameter "id" has invalid "undefined" value
+18-06-2021 11:57:41 [Logger.js] [error]: Database category Selection failed err:  WHERE parameter "id" has invalid "undefined" value
+18-06-2021 11:57:45 [Logger.js] [error]: Database category Selection failed err:  WHERE parameter "id" has invalid "undefined" value
+18-06-2021 11:58:25 [Logger.js] [error]: Database category Selection failed err:  WHERE parameter "id" has invalid "undefined" value

@@ -49,3 +49,31 @@ module.exports.destroyAdditionalOptionById = async (additional_option_id) => {
    }
 };
  
+
+module.exports.FindAdditionalOption = async (additional_option_id) => {
+   try {
+      const additional_option_retrieved = await db.Additional_Option.findOne({
+        where: {
+            id: additional_option_id,
+         },
+      });
+      return additional_option_retrieved ? additional_option_retrieved : false;
+   } catch (err) {
+      logger.error("Database option's additional option Selection failed err: ", err);
+      return false;
+   }
+};
+
+
+
+
+ 
+module.exports.UpdateAdditionalOption = async (additional_option,updatedData) => {
+   try {
+      additional_option.update(updatedData)
+      return true
+   } catch (err) {
+      logger.error("Database update client info failed err: ", err);
+      return false;
+   }
+};
