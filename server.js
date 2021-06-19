@@ -7,6 +7,7 @@ const staticDirPoviders = "./images/providers";
 const staticDirOrderStatus = "./images/orderstatus";
 const staticDirItems = "./images/items";
 const path = require("path");
+const socket = require("socket.io");
 
 //--------------------------------------Route Imports----------------------------------------------------\\
 
@@ -40,11 +41,13 @@ const clientAuth = require("./API/V1/Clients/Authentication");
 const clientInfo = require("./API/V1/Clients/ClientInfo");
 const clientOrderStatus = require("./API/V1/Clients/OrderStatus");
 const clientAddProviderReview = require("./API/V1/Clients/AddReview");
+const lastCoupon = require("./API/V1/Clients/GetLastCoupon");
 //---------------Client--------------------\\
 
 //---------------Driver--------------------\\
 const driverAuth = require("./API/V1/Driver/Authentication");
 const driverInfo = require("./API/V1/Driver/DriverInfo");
+const driverSocket = require("./API/V1/Driver/driverSocket");
 //---------------Driver--------------------\\
 
 //---------------guest--------------------\\
@@ -99,6 +102,7 @@ app.use("/api/v1/client/authenticate", clientAuth);
 app.use("/api/v1/client/info", clientInfo);
 app.use("/api/v1/client/order/status", clientOrderStatus);
 app.use("/api/v1/client/order/review", clientAddProviderReview);
+app.use("/api/v1/client/coupon", lastCoupon);
 
 app.use("/api/v1/orders/CreateOrder", clientooo);
 app.use("/api/v1/forms/", superUserContactUsForm);
@@ -115,6 +119,7 @@ app.use("/api/v1/provider/orders", providerOrders);
 
 app.use("/api/v1/driver/authenticate", driverAuth);
 app.use("/api/v1/driver/info", driverInfo);
+app.use("/api/v1/driver/socket", driverSocket);
 
 //----guest---\\
 //app.use("/api/v1/guest/restaurant", restaurant);
@@ -127,9 +132,15 @@ app.use("/api/v1/feedback", feedback);
 
 //--------------------------------------Server Listener----------------------------------------------------\\
 
-const server = https.createServer(httpsServerOptions.options, app);
-app.listen(port, () => console.log("Server Up niggas"));
+// const server = https.createServer(httpsServerOptions.options, app);
+const server = app.listen(port, () => console.log("Server Up niggas"));
+const io = socket(server);
+global.socket = io;
 
+global.socket.on("connection", function (socket) {
+  socket.on("room", function (room) {
+    console.log(room);
+    socket.join(room);
+  });
+});
 //--------------------------------------Server Listener----------------------------------------------------\\
-
-// const io = socket(server);

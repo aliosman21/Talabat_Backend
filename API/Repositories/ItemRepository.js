@@ -33,6 +33,22 @@ module.exports.FindCategoryItems = async (categoryId) => {
    }
 };
 
+
+module.exports.FindItemById = async (item_id) => {
+   try {
+      const item_retrieved = await db.Item.findOne({
+        where: {
+            id: item_id,
+         },
+      });
+      return item_retrieved ? item_retrieved : false;
+   } catch (err) {
+      logger.error("Database category Selection failed err: ", err);
+      return false;
+   }
+};
+
+
 module.exports.destroyItemById = async (item_id) => {
   
    try {
@@ -52,3 +68,15 @@ module.exports.destroyItemById = async (item_id) => {
  
  };
  
+
+
+ 
+ module.exports.UpdateItem = async (item,updatedData) => {
+   try {
+     item.update(updatedData)
+      return true
+   } catch (err) {
+      logger.error("Database update client info failed err: ", err);
+      return false;
+   }
+};

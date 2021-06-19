@@ -29,6 +29,25 @@ module.exports.FindAllProviderCategories = async (prov_id) => {
    }
 };
 
+
+
+
+
+ 
+module.exports.FindCategoryById = async (category_id) => {
+   try {
+      const cat_retrieved = await db.Category.findOne({
+        where: {
+            id: category_id,
+         },
+      });
+      return cat_retrieved ? cat_retrieved : false;
+   } catch (err) {
+      logger.error("Database category Selection failed err: ", err);
+      return false;
+   }
+};
+
 module.exports.destroyCategoryById = async (category_id) => {
   
    try {
@@ -47,3 +66,15 @@ module.exports.destroyCategoryById = async (category_id) => {
    }
  
  };
+
+
+
+ module.exports.UpdateCategory = async (category,updatedData) => {
+   try {
+     category.update(updatedData)
+      return true
+   } catch (err) {
+      logger.error("Database update client info failed err: ", err);
+      return false;
+   }
+};

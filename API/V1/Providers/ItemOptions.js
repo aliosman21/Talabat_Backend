@@ -22,6 +22,17 @@ router.get("/getitemoptions/:id", VerifyClearance.CheckAccessPrivilege("Provider
    }
 });
 
+
+router.get("/getitemoption/:id", VerifyClearance.CheckAccessPrivilege("Provider"), async (req, res) => {
+   console.log(req.params.id);
+   const item_options_Found = await ItemOptionsRepo.FindItemOption(req.params.id);
+   if (item_options_Found) {
+      res.status(200).json(item_options_Found);
+   } else {
+      res.status(500).json({ Message: "Database Error Occurred" });
+   }
+});
+
 router.delete("/delete/:id", VerifyClearance.CheckAccessPrivilege("Provider"), async (req, res) => {
    const item_option_deleted = await ItemOptionsRepo.destroyItemOptionById(req.params.id);
    if (item_option_deleted) {
@@ -30,6 +41,37 @@ router.delete("/delete/:id", VerifyClearance.CheckAccessPrivilege("Provider"), a
       res.status(500).json({ Message: "Database Error Occurred" });
    }
 });
+
+
+
+
+router.put('/edit/:id', VerifyClearance.CheckAccessPrivilege("Provider"),async (req, res) =>{
+
+  
+   console.log('this is reqbody ',req.body)
+
+
+   let itemopt = await ItemOptionsRepo.FindItemOption(req.params.id);
+
+   console.log(itemopt);
+
+   let updatestate = await ItemOptionsRepo.UpdateItemOption(itemopt,{ 
+      
+      section_name: req.body.section_name,
+      section_type: req.body.section_type 
+   
+   })
+
+   if(updatestate){
+      res.status(200).json({ Message: "updated successfuly" } );
+   }else{
+      res.status(500).json({ Message: "Database Error Occurred" });
+   }
+
+
+
+})
+
 
 
 module.exports = router;
