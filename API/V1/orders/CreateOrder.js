@@ -17,5 +17,15 @@ router.post("/create", VerifyClearance.CheckAccessPrivilege("Client"), async (re
    
 
 });
+router.post("/checkCoupon", async (req, res) => {
+
+    const checkCoupon = await OrdersRepo.checkCoupon(req.body);
+
+
+
+         res.status(200).json({checkCoupon});
+
+
+});
 
 module.exports = router;

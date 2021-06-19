@@ -6,19 +6,30 @@ const { sequelize } = require("../../db/models/index");
 
 module.exports.InsertOrder = async (order_info,client_info) => {
 const transaction = await sequelize.transaction();
+console.log(order_info.cart)
   try{
-   
+    let discount_percentage ;
+    let total = order_info.coupon =! 0 ? discount_percentage = await db.Coupons.findOne(
+    {
+        where: {
+            coupon_name : order_info.coupon
+        },
+    }
+    ) : null
+    total? total=order_info.total_price-discount_percentage.discount_percentage : total = order_info.total_price
+    total < 0 ? total = 0 : total = total
     console.log(order_info);
       const Client_Order = await db.Order.create({
         client_id: client_info.id,
         pickup_latitude : order_info.lat,
         pickup_longitude: order_info.lng,
-        total_price: order_info.total_price,
+        total_price: total,
         order_status: order_info.order_status,
-        delivery_latitude: order_info.lat,
-        delivery_longitude: order_info.lng,
+        delivery_latitude:10,
+        delivery_longitude: 10,
         provider_id: order_info.provider_id,
         order_status: "Pending",
+
        
       },{ transaction: transaction })
       //console.log(Client_Order.dataValues.client_id);
@@ -38,6 +49,26 @@ const transaction = await sequelize.transaction();
     }
   catch(err){
     await transaction.rollback();
+    console.log(err)
+    logger.error("Database insertion failed err: ", err);
+    return false;
+  }
+
+};
+module.exports.checkCoupon = async (Coupon_info) => {
+  try{
+    let discount_percentage ;
+    let total = Coupon_info.coupon =! 0 ? discount_percentage = await db.Coupons.findOne(
+    {
+        where: {
+            coupon_name : Coupon_info.coupon
+        },
+    }
+    ) : null
+   return discount_percentage ? discount_percentage : false
+    }
+  catch(err){
+
     console.log(err)
     logger.error("Database insertion failed err: ", err);
     return false;

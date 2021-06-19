@@ -244,3 +244,24 @@ string violation: logo cannot be an array or an object
 18-06-2021 15:36:12 [Logger.js] [error]: Database login failed err:  FindByID is not defined
 18-06-2021 15:39:39 [Logger.js] [error]: Database login failed err:  Validation error: Validation isDecimal on last_longitude failed
 >>>>>>> dd47ef94bba8e504667aadc63c2ef948cb140b58
+19-06-2021 15:24:35 [Logger.js] [error]: Database Insertion failed err:  Validation error
+19-06-2021 15:24:37 [Logger.js] [error]: Database Insertion failed err:  Validation error
+19-06-2021 15:29:26 [Logger.js] [error]: Database Insertion failed err:  Validation error
+19-06-2021 15:29:31 [Logger.js] [error]: Database Insertion failed err:  Validation error
+19-06-2021 15:48:39 [Logger.js] [error]: Database insertion failed err:  Validation error: Validation isDecimal on pickup_latitude failed,
+Validation error: Validation isDecimal on pickup_longitude failed,
+Validation error: Validation isDecimal on delivery_latitude failed,
+Validation error: Validation isDecimal on delivery_longitude failed
+19-06-2021 15:52:23 [Logger.js] [error]: Database insertion failed err:  Validation error: Validation isDecimal on pickup_latitude failed,
+Validation error: Validation isDecimal on pickup_longitude failed,
+Validation error: Validation isDecimal on delivery_latitude failed,
+Validation error: Validation isDecimal on delivery_longitude failed
+19-06-2021 15:54:30 [Logger.js] [error]: Database insertion failed err:  Cannot read property 'length' of null
+19-06-2021 15:57:12 [Logger.js] [error]: Database insertion failed err:  Cannot read property 'length' of null
+19-06-2021 15:58:23 [Logger.js] [error]: Database insertion failed err:  Cannot read property 'length' of null
+19-06-2021 15:59:52 [Logger.js] [error]: Database insertion failed err:  Cannot read property 'length' of null
+19-06-2021 16:00:49 [Logger.js] [error]: Database insertion failed err:  Validation error: Validation isDecimal on pickup_latitude failed,
+Validation error: Validation isDecimal on pickup_longitude failed
+19-06-2021 16:02:42 [Logger.js] [error]: Database insertion failed err:  Validation error: Validation isDecimal on pickup_latitude failed,
+Validation error: Validation isDecimal on pickup_longitude failed
+19-06-2021 16:36:53 [Logger.js] [error]: Database insertion failed err:  order_info is not defined
