@@ -57,6 +57,9 @@ module.exports.getLatestCoupon = async () => {
         },
       },
       order: [["createdAt", "DESC"]],
+      attributes: {
+        exclude: ["super_user_id", "createdAt", "updatedAt", "deletedAt"],
+      },
     });
     return lastCoupon ? lastCoupon : false;
   } catch (err) {
