@@ -22,8 +22,8 @@ router.post("/", async (req, res) => {
 });
 
 router.post("/updatelocation", async (req, res) => {
-   global.socket.in("orderIdSent").emit("location", "lat/long");
-   res.status(200).json({ Hello: "MEssage" });
+   global.socket.in(req.body.order_id).emit("location", { lat: req.body.lat, long: req.body.long });
+   res.status(200).json({ Message: "Location Updated" });
 });
 
 module.exports = router;
