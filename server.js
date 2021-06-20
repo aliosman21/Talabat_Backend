@@ -50,6 +50,7 @@ const lastCoupon = require("./API/V1/Clients/GetLastCoupon");
 const driverAuth = require("./API/V1/Driver/Authentication");
 const driverInfo = require("./API/V1/Driver/DriverInfo");
 const driverSocket = require("./API/V1/Driver/driverSocket");
+const driverStatus = require("./API/V1/Driver/DriverStatus");
 //---------------Driver--------------------\\
 
 //---------------guest--------------------\\
@@ -73,19 +74,25 @@ dotenv.config();
 const port = process.env.PORT || 5000;
 const app = express();
 app.use(cors());
-app.use("/providers/images/", express.static(path.join(__dirname, staticDirPoviders)));
-app.use("/orderstatus/images/", express.static(path.join(__dirname, staticDirOrderStatus)));
+app.use(
+  "/providers/images/",
+  express.static(path.join(__dirname, staticDirPoviders))
+);
+app.use(
+  "/orderstatus/images/",
+  express.static(path.join(__dirname, staticDirOrderStatus))
+);
 app.use("/items/images/", express.static(path.join(__dirname, staticDirItems)));
 app.use(
-   express.json({
-      limit: "15mb",
-   })
+  express.json({
+    limit: "15mb",
+  })
 );
 //--------------------------------------Server Configurations----------------------------------------------------\\
 
 //--------------------------------------Routes-------------------------------------------------------------\\
 app.get("/", async (req, res) => {
-   res.send("Hello ");
+  res.send("Hello ");
 });
 
 app.use("/api/v1/superuser/authenticate", superUserAuth);
@@ -107,12 +114,16 @@ app.use("/api/v1/provider/info", providerProfile);
 app.use("/api/v1/provider/categories", providerCategories);
 app.use("/api/v1/provider/items", providerItems);
 app.use("/api/v1/provider/itemoptions", providerItemOptions);
-app.use("/api/v1/provider/itemadditionaloptions", providerItemAdditionalOptions);
+app.use(
+  "/api/v1/provider/itemadditionaloptions",
+  providerItemAdditionalOptions
+);
 app.use("/api/v1/provider/orders", providerOrders);
 
 app.use("/api/v1/driver/authenticate", driverAuth);
 app.use("/api/v1/driver/info", driverInfo);
 app.use("/api/v1/driver/socket", driverSocket);
+app.use("/api/v1/driver/status", driverStatus);
 
 //----guest---\\
 //app.use("/api/v1/guest/restaurant", restaurant);
@@ -138,11 +149,11 @@ global.socket = io;
 // });
 
 global.socket.on("connection", function (socket) {
-   //  console.log("HERE", socket.id);
-   socket.on("room", function (room) {
-      console.log(room);
-      logger.info("Socket Connection made to room ", room);
-      socket.join(room);
-   });
+  //  console.log("HERE", socket.id);
+  socket.on("room", function (room) {
+    console.log(room);
+    logger.info("Socket Connection made to room ", room);
+    socket.join(room);
+  });
 });
 //--------------------------------------Server Listener----------------------------------------------------\\
