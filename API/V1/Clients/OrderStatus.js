@@ -13,17 +13,5 @@ router.get("/:id", VerifyClearance.CheckAccessPrivilege("Client"), async (req, r
       res.status(500).json({ Message: "Database Error Occurred" });
    }
 });
-router.get("/trackorder", VerifyClearance.CheckAccessPrivilege("Client"), async (req, res) => {
-   /**
-    * Client sends the order_id
-    */
-
-   global.socket.on("connection", function (socket) {
-      socket.on("join", function (room) {
-         socket.join(room);
-      });
-   });
-   res.status(200).json({ Message: "Connected to socket" });
-});
 
 module.exports = router;

@@ -1,6 +1,7 @@
 const db = require("../../db/models/index");
 const HashingFunctions = require("../V1/GlobalFunction/HashingFunctions");
 const logger = require("../../Logger");
+const { sequelize } = require("../../db/models/index");
 
 module.exports.InsertDriver = async (Driver_info) => {
    try {
