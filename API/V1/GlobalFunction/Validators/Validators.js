@@ -56,7 +56,7 @@ module.exports.validateMobile = (mobile_to_validate) => {
 module.exports.validateDateOfBirth = (date_of_birth_to_validate) => {
   return /^((19|20)\d{2})\-(0[1-9]|1[0-2])\-(0[1-9]|1\d|2\d|3[01])$/.test(
     date_of_birth_to_validate
-  )
+  ) && date_of_birth_to_validate < "2005-01-01"
     ? true
     : false;
 };
