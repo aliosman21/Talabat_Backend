@@ -23,6 +23,9 @@ const registerInfoValidator = (registerInformation) => {
   validators.validateDateOfBirth(registerInformation.date_of_birth)
     ? true
     : (return_value.error += "date of birth not validated \n");
+  validators.validateJobTitle(registerInformation.job_title)
+    ? true
+    : (return_value.error += "job title not validated \n");
 
   return return_value.error;
 };

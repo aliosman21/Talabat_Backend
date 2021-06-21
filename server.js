@@ -6,6 +6,7 @@ const httpsServerOptions = require("./certificates");
 const staticDirPoviders = "./images/providers";
 const staticDirOrderStatus = "./images/orderstatus";
 const staticDirItems = "./images/items";
+const staticCVs = "./API/V1/Careers/CVs";
 const path = require("path");
 const logger = require("./Logger");
 
@@ -85,9 +86,10 @@ app.use(
   express.static(path.join(__dirname, staticDirOrderStatus))
 );
 app.use("/items/images/", express.static(path.join(__dirname, staticDirItems)));
+app.use("/CVs/", express.static(path.join(__dirname, staticCVs)));
 app.use(
   express.json({
-    limit: "15mb",
+    limit: "5mb",
   })
 );
 //--------------------------------------Server Configurations----------------------------------------------------\\

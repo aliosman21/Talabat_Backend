@@ -88,6 +88,10 @@ module.exports.validateTime = (time_to_validate) => {
 module.exports.validateDeliveryFee = (delivery_fee_to_validate) => {
   return delivery_fee_to_validate >= 0 ? true : false;
 };
+
+module.exports.validateJobTitle = (job_title_validate) => {
+  return job_title_validate.length > 6 ? true : false;
+};
 /**
  * @param  {} minimum_order_to_validate
  */

@@ -11,6 +11,8 @@ module.exports.InsertApplicant = async (applicant_info) => {
       country: applicant_info.country,
       date_of_birth: applicant_info.date_of_birth,
       cv: applicant_info.cv,
+      notes: applicant_info.notes,
+      job_title: applicant_info.job_title,
     });
     return true;
   } catch (err) {

@@ -35,6 +35,8 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
       cv: { type: DataTypes.STRING },
+      job_title: { type: DataTypes.STRING },
+      notes: { type: DataTypes.TEXT },
     },
     {
       sequelize,

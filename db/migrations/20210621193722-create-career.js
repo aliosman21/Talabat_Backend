@@ -33,6 +33,12 @@ module.exports = {
       cv: {
         type: Sequelize.STRING,
       },
+      job_title: {
+        type: Sequelize.STRING,
+      },
+      notes: {
+        type: Sequelize.TEXT,
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
