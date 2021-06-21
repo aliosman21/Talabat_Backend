@@ -67,6 +67,8 @@ const allRestaurants = require("./API/V1/Guest/allRestaurants");
 const feedback = require("./API/V1/feedback/feedback");
 
 //---------------feedback----------------------\\
+
+const careers = require("./API/V1/Careers/apply");
 //--------------------------------------Route Imports-----------------------------------------------------------\\
 
 //--------------------------------------Server Configurations----------------------------------------------------\\
@@ -124,6 +126,8 @@ app.use("/api/v1/driver/authenticate", driverAuth);
 app.use("/api/v1/driver/info", driverInfo);
 app.use("/api/v1/driver/socket", driverSocket);
 app.use("/api/v1/driver/status", driverStatus);
+
+app.use("/api/v1/careers", careers);
 
 //----guest---\\
 //app.use("/api/v1/guest/restaurant", restaurant);
