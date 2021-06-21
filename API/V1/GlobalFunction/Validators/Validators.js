@@ -4,7 +4,9 @@ const states = require("../../../../assets/Config");
  * @param  {} name_to_validate
  */
 module.exports.validateName = (name_to_validate) => {
-  return /^[a-zA-Z ]*$/.test(name_to_validate) ? true : false;
+  return /^[a-zA-Z ]*$/.test(name_to_validate) && name_to_validate > 4
+    ? true
+    : false;
 };
 
 /**
