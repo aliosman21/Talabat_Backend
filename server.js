@@ -6,6 +6,7 @@ const httpsServerOptions = require("./certificates");
 const staticDirPoviders = "./images/providers";
 const staticDirOrderStatus = "./images/orderstatus";
 const staticDirItems = "./images/items";
+const staticCVs = "./API/V1/Careers/CVs";
 const path = require("path");
 const logger = require("./Logger");
 
@@ -67,6 +68,8 @@ const allRestaurants = require("./API/V1/Guest/allRestaurants");
 const feedback = require("./API/V1/feedback/feedback");
 
 //---------------feedback----------------------\\
+
+const careers = require("./API/V1/Careers/apply");
 //--------------------------------------Route Imports-----------------------------------------------------------\\
 
 //--------------------------------------Server Configurations----------------------------------------------------\\
@@ -83,9 +86,10 @@ app.use(
   express.static(path.join(__dirname, staticDirOrderStatus))
 );
 app.use("/items/images/", express.static(path.join(__dirname, staticDirItems)));
+app.use("/CVs/", express.static(path.join(__dirname, staticCVs)));
 app.use(
   express.json({
-    limit: "15mb",
+    limit: "5mb",
   })
 );
 //--------------------------------------Server Configurations----------------------------------------------------\\
@@ -124,6 +128,8 @@ app.use("/api/v1/driver/authenticate", driverAuth);
 app.use("/api/v1/driver/info", driverInfo);
 app.use("/api/v1/driver/socket", driverSocket);
 app.use("/api/v1/driver/status", driverStatus);
+
+app.use("/api/v1/careers", careers);
 
 //----guest---\\
 //app.use("/api/v1/guest/restaurant", restaurant);
