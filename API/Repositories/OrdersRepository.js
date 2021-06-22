@@ -28,15 +28,20 @@ module.exports.InsertOrder = async (order_info, client_info) => {
             pickup_longitude: order_info.lng,
             total_price: total,
             order_status: order_info.order_status,
-            delivery_latitude: 10,
-            delivery_longitude: 10,
+            delivery_latitude: order_info.lat,
+            delivery_longitude: order_info.lng,
             provider_id: order_info.provider_id,
             order_status: "Pending",
          },
          { transaction: transaction }
       );
       //console.log(Client_Order.dataValues.client_id);
-      order_infoParsed = JSON.parse(order_info.cart);
+      // order_infoParsed = JSON.parse(order_info.cart);
+      if(typeof order_info.cart==="string"){
+         order_infoParsed = JSON.parse(order_info.cart);
+      }else{
+         order_infoParsed=order_info.cart;
+      }
       for (let i = 0; i < order_infoParsed.length; i++) {
          console.log(order_infoParsed[i]);
          await db.Order_Item.create(
