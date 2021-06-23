@@ -21,15 +21,24 @@ router.post("/register", async (req, res) => {
 
 router.post("/login", async (req, res) => {
   const provider_found = await ProviderRepo.FindByEmail(req.body);
-  if (provider_found) {
-    (await HashComparer.hashCompare(req.body.password, provider_found.password))
-      ? res.status(200).json({
-          Message: "Provider Logged in successfully",
-          token: tokenFunctions.generateToken(provider_found.id, "Provider"),
-        })
-      : res.status(400).json({ Message: "Provider Credentials error" });
+  if (provider_found.dataValues.provider_state === "active") {
+    if (provider_found) {
+      (await HashComparer.hashCompare(
+        req.body.password,
+        provider_found.password
+      ))
+        ? res.status(200).json({
+            Message: "Provider Logged in successfully",
+            token: tokenFunctions.generateToken(provider_found.id, "Provider"),
+          })
+        : res.status(400).json({ Message: "Provider Credentials error" });
+    } else {
+      res.status(400).json({ Message: "Provider Credentials error" });
+    }
   } else {
-    res.status(400).json({ Message: "Provider Credentials error" });
+    res
+      .status(400)
+      .json({ Message: "Waiting for superuser to approve your request" });
   }
 });
 

@@ -4,7 +4,9 @@ const states = require("../../../../assets/Config");
  * @param  {} name_to_validate
  */
 module.exports.validateName = (name_to_validate) => {
-  return /^[a-zA-Z ]*$/.test(name_to_validate) ? true : false;
+  return /^[a-zA-Z ]*$/.test(name_to_validate) && name_to_validate.length > 4
+    ? true
+    : false;
 };
 
 /**
@@ -54,7 +56,7 @@ module.exports.validateMobile = (mobile_to_validate) => {
 module.exports.validateDateOfBirth = (date_of_birth_to_validate) => {
   return /^((19|20)\d{2})\-(0[1-9]|1[0-2])\-(0[1-9]|1\d|2\d|3[01])$/.test(
     date_of_birth_to_validate
-  )
+  ) && date_of_birth_to_validate < "2005-01-01"
     ? true
     : false;
 };
@@ -85,6 +87,10 @@ module.exports.validateTime = (time_to_validate) => {
  */
 module.exports.validateDeliveryFee = (delivery_fee_to_validate) => {
   return delivery_fee_to_validate >= 0 ? true : false;
+};
+
+module.exports.validateJobTitle = (job_title_validate) => {
+  return job_title_validate.length > 6 ? true : false;
 };
 /**
  * @param  {} minimum_order_to_validate
