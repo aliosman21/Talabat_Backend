@@ -1,3 +1,3 @@
 module.exports = {
-  Types: ["Restaurant", "Pharmacy", "Store"],
+  Types: ["Restaurant", "Pharmacy", "Store", "Flower"],
 };
