@@ -212,6 +212,21 @@ module.exports.getAllRestaurants = async () => {
    }
 };
 
+module.exports.getAllProvs = async (prov_type) => {
+   console.log("from provider repo",prov_type);
+   try {
+      const All_Providers = await db.Provider.findAll({
+         attributes: ["id", "name", "provider_type", "logo"],
+         where: { provider_type: prov_type, provider_state: "Active" },
+      });
+      console.log("from rep 2 ",All_Providers);
+      return All_Providers ? All_Providers : false;
+   } catch (err) {
+      logger.error("Database get all restaurants failed err: ", err);
+      return false;
+   }
+};
+
 module.exports.getAllUnapproved = async () => {
    try {
       const All_Unapproved = await db.Provider.findAll({

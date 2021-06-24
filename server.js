@@ -6,6 +6,7 @@ const httpsServerOptions = require("./certificates");
 const staticDirPoviders = "./images/providers";
 const staticDirOrderStatus = "./images/orderstatus";
 const staticDirItems = "./images/items";
+const staticDirHomePage = "./images/homepage";
 const staticCVs = "./API/V1/Careers/CVs";
 const path = require("path");
 const logger = require("./Logger");
@@ -58,6 +59,7 @@ const driverStatus = require("./API/V1/Driver/DriverStatus");
 const providerSearch = require("./API/V1/Guest/ProvidersSearch");
 const restaurant = require("./API/V1/Guest/restaurantPage");
 const allRestaurants = require("./API/V1/Guest/allRestaurants");
+const allProviders = require("./API/V1/Guest/allProviders");
 //---------------restaurant--------------------\\
 //const restaurant = require("./API/V1/Restaurant/restaurantPage");
 // const restaurant = require("./API/V1/Restaurant/restaurantPage");
@@ -87,6 +89,7 @@ app.use(
 );
 app.use("/items/images/", express.static(path.join(__dirname, staticDirItems)));
 app.use("/CVs/", express.static(path.join(__dirname, staticCVs)));
+app.use("/homepage/images/", express.static(path.join(__dirname, staticDirHomePage)));
 app.use(
   express.json({
     limit: "5mb",
@@ -135,6 +138,7 @@ app.use("/api/v1/careers", careers);
 //app.use("/api/v1/guest/restaurant", restaurant);
 app.use("/api/v1/guest/lookup", providerSearch);
 app.use("/api/v1/guest/restaurants", allRestaurants);
+app.use("/api/v1/guest/providers", allProviders);
 
 app.use("/api/v1/feedback", feedback);
 
