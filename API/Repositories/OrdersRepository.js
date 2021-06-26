@@ -3,6 +3,9 @@ const HashingFunctions = require("../V1/GlobalFunction/HashingFunctions");
 const logger = require("../../Logger");
 const order = require("../../db/models/order");
 const { sequelize } = require("../../db/models/index");
+const { Sequelize } = require("../../db/models/index");
+const { gt, lte, ne, in: opIn } = Sequelize.Op;
+
 
 module.exports.InsertOrder = async (order_info, client_info) => {
    const transaction = await sequelize.transaction();
@@ -13,6 +16,9 @@ module.exports.InsertOrder = async (order_info, client_info) => {
          ? (discount_percentage = await db.Coupons.findOne({
               where: {
                  coupon_name: order_info.coupon,
+                 expiration_date :{
+                         [gt]: new Date(),
+                       },
               },
            }))
          : null);
@@ -70,6 +76,9 @@ module.exports.checkCoupon = async (Coupon_info) => {
          ? (discount_percentage = await db.Coupons.findOne({
               where: {
                  coupon_name: Coupon_info.coupon,
+                 expiration_date :{
+                                            [gt]: new Date(),
+                                          },
               },
            }))
          : null);
